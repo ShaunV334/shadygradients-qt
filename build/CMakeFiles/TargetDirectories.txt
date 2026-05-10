@@ -1,0 +1,12 @@
+/home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt-preview.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/edit_cache.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/rebuild_cache.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/list_install_components.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/install.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/install/local.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/install/strip.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt_autogen_timestamp_deps.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt_autogen.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt-preview_autogen_timestamp_deps.dir
+/home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt-preview_autogen.dir

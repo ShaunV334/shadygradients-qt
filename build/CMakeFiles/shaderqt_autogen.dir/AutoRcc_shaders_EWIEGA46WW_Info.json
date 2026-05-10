@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "/home/shaun/Projects/shaderqt/build/shaderqt_autogen",
+	"CMAKE_BINARY_DIR" : "/home/shaun/Projects/shaderqt/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/shaun/Projects/shaderqt/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/shaun/Projects/shaderqt",
+	"CMAKE_SOURCE_DIR" : "/home/shaun/Projects/shaderqt",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/shaun/Projects/shaderqt/build/shaderqt_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/shaun/Projects/shaderqt/shaders/waterplane.frag",
+		"/home/shaun/Projects/shaderqt/shaders/waterplane.vert"
+	],
+	"LOCK_FILE" : "/home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt_autogen.dir/AutoRcc_shaders_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "shaders" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_shaders.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt_autogen.dir/AutoRcc_shaders_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/shaun/Projects/shaderqt/shaders.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

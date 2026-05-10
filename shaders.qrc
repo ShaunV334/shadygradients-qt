@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/shaders">
+        <file alias="waterplane.vert">shaders/waterplane.vert</file>
+        <file alias="waterplane.frag">shaders/waterplane.frag</file>
+    </qresource>
+</RCC>
