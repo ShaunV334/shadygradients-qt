@@ -2,5 +2,7 @@
     <qresource prefix="/shaders">
         <file alias="waterplane.vert">shaders/waterplane.vert</file>
         <file alias="waterplane.frag">shaders/waterplane.frag</file>
+        <file alias="sphere.vert">shaders/sphere.vert</file>
+        <file alias="sphere.frag">shaders/sphere.frag</file>
     </qresource>
 </RCC>

@@ -9,6 +9,8 @@
 	"INCLUDE_DIR" : "/home/shaun/Projects/shaderqt/build/shaderqt_autogen/include",
 	"INPUTS" : 
 	[
+		"/home/shaun/Projects/shaderqt/shaders/sphere.vert",
+		"/home/shaun/Projects/shaderqt/shaders/sphere.frag",
 		"/home/shaun/Projects/shaderqt/shaders/waterplane.frag",
 		"/home/shaun/Projects/shaderqt/shaders/waterplane.vert"
 	],

@@ -39,65 +39,98 @@ template <> constexpr inline auto ShaderGradientWidget::qt_create_metaobjectdata
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "ShaderGradientWidget",
-        "speedChanged",
+        "typeChanged",
         "",
+        "Type",
+        "t",
+        "speedChanged",
         "v",
         "noiseDensityChanged",
         "noiseStrengthChanged",
+        "spiralChanged",
+        "pixelDensityChanged",
         "color1Changed",
         "QColor",
         "c",
         "color2Changed",
         "color3Changed",
+        "type",
         "speed",
         "noiseDensity",
         "noiseStrength",
+        "spiral",
+        "pixelDensity",
         "color1",
         "color2",
-        "color3"
+        "color3",
+        "WaterPlane",
+        "Sphere"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Signal 'typeChanged'
+        QtMocHelpers::SignalData<void(enum Type)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 3, 4 },
+        }}),
         // Signal 'speedChanged'
-        QtMocHelpers::SignalData<void(float)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Float, 3 },
+        QtMocHelpers::SignalData<void(float)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Float, 6 },
         }}),
         // Signal 'noiseDensityChanged'
-        QtMocHelpers::SignalData<void(float)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Float, 3 },
+        QtMocHelpers::SignalData<void(float)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Float, 6 },
         }}),
         // Signal 'noiseStrengthChanged'
-        QtMocHelpers::SignalData<void(float)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Float, 3 },
+        QtMocHelpers::SignalData<void(float)>(8, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Float, 6 },
+        }}),
+        // Signal 'spiralChanged'
+        QtMocHelpers::SignalData<void(float)>(9, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Float, 6 },
+        }}),
+        // Signal 'pixelDensityChanged'
+        QtMocHelpers::SignalData<void(float)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Float, 6 },
         }}),
         // Signal 'color1Changed'
-        QtMocHelpers::SignalData<void(const QColor &)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 7, 8 },
+        QtMocHelpers::SignalData<void(const QColor &)>(11, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 12, 13 },
         }}),
         // Signal 'color2Changed'
-        QtMocHelpers::SignalData<void(const QColor &)>(9, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 7, 8 },
+        QtMocHelpers::SignalData<void(const QColor &)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 12, 13 },
         }}),
         // Signal 'color3Changed'
-        QtMocHelpers::SignalData<void(const QColor &)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 7, 8 },
+        QtMocHelpers::SignalData<void(const QColor &)>(15, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 12, 13 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
+        // property 'type'
+        QtMocHelpers::PropertyData<enum Type>(16, 0x80000000 | 3, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet, 0),
         // property 'speed'
-        QtMocHelpers::PropertyData<float>(11, QMetaType::Float, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 0),
+        QtMocHelpers::PropertyData<float>(17, QMetaType::Float, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 1),
         // property 'noiseDensity'
-        QtMocHelpers::PropertyData<float>(12, QMetaType::Float, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 1),
+        QtMocHelpers::PropertyData<float>(18, QMetaType::Float, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 2),
         // property 'noiseStrength'
-        QtMocHelpers::PropertyData<float>(13, QMetaType::Float, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 2),
+        QtMocHelpers::PropertyData<float>(19, QMetaType::Float, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 3),
+        // property 'spiral'
+        QtMocHelpers::PropertyData<float>(20, QMetaType::Float, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 4),
+        // property 'pixelDensity'
+        QtMocHelpers::PropertyData<float>(21, QMetaType::Float, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 5),
         // property 'color1'
-        QtMocHelpers::PropertyData<QColor>(14, 0x80000000 | 7, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet, 3),
+        QtMocHelpers::PropertyData<QColor>(22, 0x80000000 | 12, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet, 6),
         // property 'color2'
-        QtMocHelpers::PropertyData<QColor>(15, 0x80000000 | 7, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet, 4),
+        QtMocHelpers::PropertyData<QColor>(23, 0x80000000 | 12, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet, 7),
         // property 'color3'
-        QtMocHelpers::PropertyData<QColor>(16, 0x80000000 | 7, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet, 5),
+        QtMocHelpers::PropertyData<QColor>(24, 0x80000000 | 12, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet, 8),
     };
     QtMocHelpers::UintData qt_enums {
+        // enum 'Type'
+        QtMocHelpers::EnumData<enum Type>(3, 3, QMC::EnumIsScoped).add({
+            {   25, Type::WaterPlane },
+            {   26, Type::Sphere },
+        }),
     };
     return QtMocHelpers::metaObjectData<ShaderGradientWidget, qt_meta_tag_ZN20ShaderGradientWidgetE_t>(QMC::MetaObjectFlag{}, qt_stringData,
             qt_methods, qt_properties, qt_enums);
@@ -117,50 +150,65 @@ void ShaderGradientWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
     auto *_t = static_cast<ShaderGradientWidget *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->speedChanged((*reinterpret_cast<std::add_pointer_t<float>>(_a[1]))); break;
-        case 1: _t->noiseDensityChanged((*reinterpret_cast<std::add_pointer_t<float>>(_a[1]))); break;
-        case 2: _t->noiseStrengthChanged((*reinterpret_cast<std::add_pointer_t<float>>(_a[1]))); break;
-        case 3: _t->color1Changed((*reinterpret_cast<std::add_pointer_t<QColor>>(_a[1]))); break;
-        case 4: _t->color2Changed((*reinterpret_cast<std::add_pointer_t<QColor>>(_a[1]))); break;
-        case 5: _t->color3Changed((*reinterpret_cast<std::add_pointer_t<QColor>>(_a[1]))); break;
+        case 0: _t->typeChanged((*reinterpret_cast<std::add_pointer_t<enum Type>>(_a[1]))); break;
+        case 1: _t->speedChanged((*reinterpret_cast<std::add_pointer_t<float>>(_a[1]))); break;
+        case 2: _t->noiseDensityChanged((*reinterpret_cast<std::add_pointer_t<float>>(_a[1]))); break;
+        case 3: _t->noiseStrengthChanged((*reinterpret_cast<std::add_pointer_t<float>>(_a[1]))); break;
+        case 4: _t->spiralChanged((*reinterpret_cast<std::add_pointer_t<float>>(_a[1]))); break;
+        case 5: _t->pixelDensityChanged((*reinterpret_cast<std::add_pointer_t<float>>(_a[1]))); break;
+        case 6: _t->color1Changed((*reinterpret_cast<std::add_pointer_t<QColor>>(_a[1]))); break;
+        case 7: _t->color2Changed((*reinterpret_cast<std::add_pointer_t<QColor>>(_a[1]))); break;
+        case 8: _t->color3Changed((*reinterpret_cast<std::add_pointer_t<QColor>>(_a[1]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(float )>(_a, &ShaderGradientWidget::speedChanged, 0))
+        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(Type )>(_a, &ShaderGradientWidget::typeChanged, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(float )>(_a, &ShaderGradientWidget::noiseDensityChanged, 1))
+        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(float )>(_a, &ShaderGradientWidget::speedChanged, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(float )>(_a, &ShaderGradientWidget::noiseStrengthChanged, 2))
+        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(float )>(_a, &ShaderGradientWidget::noiseDensityChanged, 2))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(const QColor & )>(_a, &ShaderGradientWidget::color1Changed, 3))
+        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(float )>(_a, &ShaderGradientWidget::noiseStrengthChanged, 3))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(const QColor & )>(_a, &ShaderGradientWidget::color2Changed, 4))
+        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(float )>(_a, &ShaderGradientWidget::spiralChanged, 4))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(const QColor & )>(_a, &ShaderGradientWidget::color3Changed, 5))
+        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(float )>(_a, &ShaderGradientWidget::pixelDensityChanged, 5))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(const QColor & )>(_a, &ShaderGradientWidget::color1Changed, 6))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(const QColor & )>(_a, &ShaderGradientWidget::color2Changed, 7))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (ShaderGradientWidget::*)(const QColor & )>(_a, &ShaderGradientWidget::color3Changed, 8))
             return;
     }
     if (_c == QMetaObject::ReadProperty) {
         void *_v = _a[0];
         switch (_id) {
-        case 0: *reinterpret_cast<float*>(_v) = _t->speed(); break;
-        case 1: *reinterpret_cast<float*>(_v) = _t->noiseDensity(); break;
-        case 2: *reinterpret_cast<float*>(_v) = _t->noiseStrength(); break;
-        case 3: *reinterpret_cast<QColor*>(_v) = _t->color1(); break;
-        case 4: *reinterpret_cast<QColor*>(_v) = _t->color2(); break;
-        case 5: *reinterpret_cast<QColor*>(_v) = _t->color3(); break;
+        case 0: *reinterpret_cast<enum Type*>(_v) = _t->type(); break;
+        case 1: *reinterpret_cast<float*>(_v) = _t->speed(); break;
+        case 2: *reinterpret_cast<float*>(_v) = _t->noiseDensity(); break;
+        case 3: *reinterpret_cast<float*>(_v) = _t->noiseStrength(); break;
+        case 4: *reinterpret_cast<float*>(_v) = _t->spiral(); break;
+        case 5: *reinterpret_cast<float*>(_v) = _t->pixelDensity(); break;
+        case 6: *reinterpret_cast<QColor*>(_v) = _t->color1(); break;
+        case 7: *reinterpret_cast<QColor*>(_v) = _t->color2(); break;
+        case 8: *reinterpret_cast<QColor*>(_v) = _t->color3(); break;
         default: break;
         }
     }
     if (_c == QMetaObject::WriteProperty) {
         void *_v = _a[0];
         switch (_id) {
-        case 0: _t->setSpeed(*reinterpret_cast<float*>(_v)); break;
-        case 1: _t->setNoiseDensity(*reinterpret_cast<float*>(_v)); break;
-        case 2: _t->setNoiseStrength(*reinterpret_cast<float*>(_v)); break;
-        case 3: _t->setColor1(*reinterpret_cast<QColor*>(_v)); break;
-        case 4: _t->setColor2(*reinterpret_cast<QColor*>(_v)); break;
-        case 5: _t->setColor3(*reinterpret_cast<QColor*>(_v)); break;
+        case 0: _t->setType(*reinterpret_cast<enum Type*>(_v)); break;
+        case 1: _t->setSpeed(*reinterpret_cast<float*>(_v)); break;
+        case 2: _t->setNoiseDensity(*reinterpret_cast<float*>(_v)); break;
+        case 3: _t->setNoiseStrength(*reinterpret_cast<float*>(_v)); break;
+        case 4: _t->setSpiral(*reinterpret_cast<float*>(_v)); break;
+        case 5: _t->setPixelDensity(*reinterpret_cast<float*>(_v)); break;
+        case 6: _t->setColor1(*reinterpret_cast<QColor*>(_v)); break;
+        case 7: _t->setColor2(*reinterpret_cast<QColor*>(_v)); break;
+        case 8: _t->setColor3(*reinterpret_cast<QColor*>(_v)); break;
         default: break;
         }
     }
@@ -187,57 +235,75 @@ int ShaderGradientWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 9;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 9;
     }
     return _id;
 }
 
 // SIGNAL 0
-void ShaderGradientWidget::speedChanged(float _t1)
+void ShaderGradientWidget::typeChanged(Type _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
 }
 
 // SIGNAL 1
-void ShaderGradientWidget::noiseDensityChanged(float _t1)
+void ShaderGradientWidget::speedChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
 }
 
 // SIGNAL 2
-void ShaderGradientWidget::noiseStrengthChanged(float _t1)
+void ShaderGradientWidget::noiseDensityChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
 }
 
 // SIGNAL 3
-void ShaderGradientWidget::color1Changed(const QColor & _t1)
+void ShaderGradientWidget::noiseStrengthChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1);
 }
 
 // SIGNAL 4
-void ShaderGradientWidget::color2Changed(const QColor & _t1)
+void ShaderGradientWidget::spiralChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 4, nullptr, _t1);
 }
 
 // SIGNAL 5
-void ShaderGradientWidget::color3Changed(const QColor & _t1)
+void ShaderGradientWidget::pixelDensityChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 5, nullptr, _t1);
+}
+
+// SIGNAL 6
+void ShaderGradientWidget::color1Changed(const QColor & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 6, nullptr, _t1);
+}
+
+// SIGNAL 7
+void ShaderGradientWidget::color2Changed(const QColor & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 7, nullptr, _t1);
+}
+
+// SIGNAL 8
+void ShaderGradientWidget::color3Changed(const QColor & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 8, nullptr, _t1);
 }
 QT_WARNING_POP

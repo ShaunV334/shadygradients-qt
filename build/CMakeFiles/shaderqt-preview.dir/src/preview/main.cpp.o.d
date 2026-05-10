@@ -424,6 +424,13 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: \
  /usr/include/qt6/QtCore/qregularexpression.h \
  /usr/include/qt6/QtWidgets/QGroupBox \
  /usr/include/qt6/QtWidgets/qgroupbox.h \
+ /usr/include/qt6/QtWidgets/QComboBox \
+ /usr/include/qt6/QtWidgets/qcombobox.h \
+ /usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
+ /usr/include/qt6/QtWidgets/qstyleoption.h \
+ /usr/include/qt6/QtWidgets/qstyle.h /usr/include/qt6/QtWidgets/qtabbar.h \
+ /usr/include/qt6/QtWidgets/qrubberband.h \
+ /usr/include/qt6/QtCore/qabstractitemmodel.h \
  /usr/include/qt6/QtGui/QSurfaceFormat /usr/include/qt6/QtGui/QFont \
  /usr/include/qt6/QtGui/QFontDatabase \
  /usr/include/qt6/QtGui/qfontdatabase.h

@@ -19,6 +19,7 @@
 #include <QColorDialog>
 #include <QDoubleSpinBox>
 #include <QGroupBox>
+#include <QComboBox>
 #include <QSurfaceFormat>
 #include <QFont>
 #include <QFontDatabase>
@@ -142,10 +143,17 @@ int main(int argc, char *argv[])
     // Title
     auto *titleLbl = new QLabel("ShaderGradient");
     titleLbl->setObjectName("titleLabel");
-    auto *subtitleLbl = new QLabel("waterPlane · Cosmic Aurora");
+    auto *subtitleLbl = new QLabel("waterPlane / sphere · Cosmic Aurora");
     subtitleLbl->setObjectName("subtitleLabel");
     pLayout->addWidget(titleLbl);
     pLayout->addWidget(subtitleLbl);
+
+    // Type Selector
+    auto *typeCombo = new QComboBox;
+    typeCombo->addItem("WaterPlane", QVariant::fromValue(ShaderGradientWidget::Type::WaterPlane));
+    typeCombo->addItem("Sphere", QVariant::fromValue(ShaderGradientWidget::Type::Sphere));
+    typeCombo->setStyleSheet("QComboBox { background-color: #1a1a2e; border: 1px solid #333; border-radius: 4px; padding: 4px; }");
+    pLayout->addWidget(typeCombo);
 
     // ---- Helper: labelled slider ----
     auto addSlider = [&](QVBoxLayout *parent, const QString &label,
@@ -181,6 +189,29 @@ int main(int argc, char *argv[])
         });
 
         pLayout->addWidget(grp);
+
+        // Update when type changes
+        QObject::connect(typeCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), [=](int index) {
+            auto type = typeCombo->itemData(index).value<ShaderGradientWidget::Type>();
+            sg->setType(type);
+            if (type == ShaderGradientWidget::Type::Sphere) {
+                sg->setColor1(QColor("#809bd6"));
+                sg->setColor2(QColor("#910aff"));
+                sg->setColor3(QColor("#af38ff"));
+                sg->setSpeed(0.3f);
+                sg->setNoiseDensity(0.8f);
+                sg->setNoiseStrength(0.4f);
+                sg->setSpiral(2.0f);
+            } else {
+                sg->setColor1(QColor(0, 200, 255));
+                sg->setColor2(QColor(180, 0, 255));
+                sg->setColor3(QColor(0, 20, 80));
+                sg->setSpeed(0.3f);
+                sg->setNoiseDensity(1.5f);
+                sg->setNoiseStrength(0.8f);
+                sg->setSpiral(2.0f);
+            }
+        });
     }
 
     // ---- Surface group ----
@@ -198,6 +229,11 @@ int main(int argc, char *argv[])
             sg->setNoiseStrength(v / 100.0f);
         });
 
+        // Spiral — 0..100 → 0.0..10.0
+        addSlider(gl, "Spiral", 0, 100, 20, [sg](int v) {
+            sg->setSpiral(v / 10.0f);
+        });
+
         pLayout->addWidget(grp);
     }
 
@@ -208,6 +244,10 @@ int main(int argc, char *argv[])
         gl->setSpacing(10);
 
         struct ColorEntry { QString label; QColor *prop; void (ShaderGradientWidget::*setter)(const QColor&); };
+
+        addSlider(gl, "Pixel Density", 1, 40, 10, [sg](int v) {
+            sg->setPixelDensity(v / 10.0f);
+        });
 
         // We need stable pointers — store colors on the heap
         static QColor c1(  0, 200, 255), c2(180,   0, 255), c3(  0,  20,  80);

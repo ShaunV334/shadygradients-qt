@@ -1057,81 +1057,22 @@ shaderqt-preview_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt
   /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
   /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake \
   /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-  /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in \
-  /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp \
   /usr/share/cmake/Modules/CMakeCXXInformation.cmake \
   /usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
   /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake \
-  /usr/share/cmake/Modules/CMakeFindBinUtils.cmake \
   /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake \
   /usr/share/cmake/Modules/CMakeGenericSystem.cmake \
   /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake \
   /usr/share/cmake/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake \
-  /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake \
-  /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake \
-  /usr/share/cmake/Modules/CMakeSystem.cmake.in \
   /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake \
   /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake \
-  /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake \
-  /usr/share/cmake/Modules/CMakeUnixFindMake.cmake \
   /usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake \
   /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake \
   /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake \
   /usr/share/cmake/Modules/CheckLibraryExists.cmake \
-  /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-  /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Diab-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake \
   /usr/share/cmake/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-  /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Renesas-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/FindOpenGL.cmake \
   /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake \
   /usr/share/cmake/Modules/FindPackageMessage.cmake \
@@ -1140,19 +1081,15 @@ shaderqt-preview_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt
   /usr/share/cmake/Modules/GNUInstallDirs.cmake \
   /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake \
   /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake \
-  /usr/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake \
   /usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake \
   /usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake \
   /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake \
-  /usr/share/cmake/Modules/Internal/FeatureTesting.cmake \
   /usr/share/cmake/Modules/Linker/GNU-CXX.cmake \
   /usr/share/cmake/Modules/Linker/GNU.cmake \
   /usr/share/cmake/Modules/MacroAddFileDependencies.cmake \
   /usr/share/cmake/Modules/Platform/Linker/GNU.cmake \
   /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linux-GNU.cmake \
   /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake \
@@ -1465,6 +1402,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtCore/q23type_traits.h \
   /usr/include/qt6/QtCore/q23utility.h \
   /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
+  /usr/include/qt6/QtCore/qabstractitemmodel.h \
   /usr/include/qt6/QtCore/qalgorithms.h \
   /usr/include/qt6/QtCore/qalloc.h \
   /usr/include/qt6/QtCore/qanystringview.h \
@@ -1664,6 +1602,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
   /usr/include/qt6/QtWidgets/QApplication \
   /usr/include/qt6/QtWidgets/QColorDialog \
+  /usr/include/qt6/QtWidgets/QComboBox \
   /usr/include/qt6/QtWidgets/QDoubleSpinBox \
   /usr/include/qt6/QtWidgets/QFormLayout \
   /usr/include/qt6/QtWidgets/QGroupBox \
@@ -1676,11 +1615,13 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
+  /usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
   /usr/include/qt6/QtWidgets/qabstractslider.h \
   /usr/include/qt6/QtWidgets/qabstractspinbox.h \
   /usr/include/qt6/QtWidgets/qapplication.h \
   /usr/include/qt6/QtWidgets/qboxlayout.h \
   /usr/include/qt6/QtWidgets/qcolordialog.h \
+  /usr/include/qt6/QtWidgets/qcombobox.h \
   /usr/include/qt6/QtWidgets/qdialog.h \
   /usr/include/qt6/QtWidgets/qformlayout.h \
   /usr/include/qt6/QtWidgets/qframe.h \
@@ -1691,9 +1632,13 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/qt6/QtWidgets/qmainwindow.h \
   /usr/include/qt6/QtWidgets/qpushbutton.h \
+  /usr/include/qt6/QtWidgets/qrubberband.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/qt6/QtWidgets/qslider.h \
   /usr/include/qt6/QtWidgets/qspinbox.h \
+  /usr/include/qt6/QtWidgets/qstyle.h \
+  /usr/include/qt6/QtWidgets/qstyleoption.h \
+  /usr/include/qt6/QtWidgets/qtabbar.h \
   /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
@@ -1893,6 +1838,8 @@ libshaderqt.so:
 
 /usr/lib/libpcre2-16.so.0:
 
+/usr/lib/libngtcp2_crypto_ossl.so.0:
+
 /usr/lib/libngtcp2.so.16:
 
 /usr/lib/libnghttp2.so.14:
@@ -1981,6 +1928,8 @@ libshaderqt.so:
 
 /usr/include/wchar.h:
 
+/usr/include/sys/types.h:
+
 /usr/include/sys/cdefs.h:
 
 /usr/include/strings.h:
@@ -2003,17 +1952,23 @@ libshaderqt.so:
 
 /usr/include/qt6/QtWidgets/qsizepolicy.h:
 
+/usr/include/qt6/QtWidgets/qrubberband.h:
+
 /usr/lib/libQt6Widgets.so.6.11.0:
 
 /usr/include/qt6/QtWidgets/qpushbutton.h:
 
 /usr/include/qt6/QtWidgets/qmainwindow.h:
 
+/usr/include/qt6/QtWidgets/qlayout.h:
+
 /usr/include/qt6/QtWidgets/qlabel.h:
 
 /usr/include/qt6/QtWidgets/qgroupbox.h:
 
 /usr/include/qt6/QtWidgets/qformlayout.h:
+
+/usr/include/qt6/QtWidgets/qcombobox.h:
 
 /usr/include/qt6/QtWidgets/qcolordialog.h:
 
@@ -2043,6 +1998,8 @@ libshaderqt.so:
 
 /usr/lib/libduktape.so.207:
 
+/usr/include/qt6/QtWidgets/qabstractitemdelegate.h:
+
 /usr/include/qt6/QtGui/qvector3d.h:
 
 /usr/include/qt6/QtGui/qvector2d.h:
@@ -2066,6 +2023,8 @@ libshaderqt.so:
 /usr/include/qt6/QtGui/qrgb.h:
 
 /usr/include/qt6/QtGui/qregion.h:
+
+/usr/include/qt6/QtGui/qpolygon.h:
 
 /usr/include/qt6/QtGui/qpixmap.h:
 
@@ -2115,6 +2074,8 @@ libshaderqt.so:
 
 /usr/include/qt6/QtCore/qtpreprocessorsupport.h:
 
+/usr/include/qt6/QtCore/qtnoop.h:
+
 /usr/include/qt6/QtCore/qtmetamacros.h:
 
 /usr/include/qt6/QtCore/qtformat_impl.h:
@@ -2147,6 +2108,10 @@ libshaderqt.so:
 
 /usr/include/qt6/QtCore/qstring.h:
 
+/usr/lib/libblkid.so.1:
+
+/usr/include/qt6/QtCore/qstdlibdetection.h:
+
 /usr/include/qt6/QtCore/qspan.h:
 
 /usr/include/qt6/QtCore/qsharedpointer.h:
@@ -2170,6 +2135,8 @@ libshaderqt.so:
 /usr/include/qt6/QtCore/qobjectdefs.h:
 
 /usr/include/qt6/QtCore/qobject.h:
+
+/usr/include/qt6/QtCore/qnumeric.h:
 
 /usr/include/qt6/QtCore/qnativeinterface.h:
 
@@ -2255,6 +2222,8 @@ libshaderqt.so:
 
 /usr/include/qt6/QtCore/qalgorithms.h:
 
+/usr/include/qt6/QtCore/qabstractitemmodel.h:
+
 /usr/include/qt6/QtCore/qabstracteventdispatcher.h:
 
 /usr/include/qt6/QtGui/qwindowdefs.h:
@@ -2289,6 +2258,10 @@ libshaderqt.so:
 
 /usr/include/inttypes.h:
 
+/usr/include/features-time64.h:
+
+/usr/include/errno.h:
+
 /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/error_constants.h:
 
 /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++config.h:
@@ -2309,6 +2282,8 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/tuple:
 
+/usr/include/c++/16.1.1/tr1/special_function_util.h:
+
 /usr/lib32/libcurl.so.4:
 
 /usr/include/c++/16.1.1/tr1/poly_laguerre.tcc:
@@ -2317,7 +2292,11 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/tr1/gamma.tcc:
 
+/usr/include/c++/16.1.1/tr1/bessel_function.tcc:
+
 /usr/include/c++/16.1.1/string_view:
+
+/usr/include/c++/16.1.1/streambuf:
 
 /usr/include/features.h:
 
@@ -2343,13 +2322,21 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/iosfwd:
 
+/usr/include/c++/16.1.1/initializer_list:
+
 /usr/include/c++/16.1.1/functional:
 
 /usr/include/c++/16.1.1/ext/atomicity.h:
 
+/usr/include/qt6/QtWidgets/QComboBox:
+
 /usr/include/c++/16.1.1/ext/alloc_traits.h:
 
 /usr/include/c++/16.1.1/ext/aligned_buffer.h:
+
+/usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h:
+
+/usr/include/c++/16.1.1/exception:
 
 /usr/include/c++/16.1.1/debug/debug.h:
 
@@ -2364,6 +2351,8 @@ libshaderqt.so:
 /usr/include/c++/16.1.1/cstdlib:
 
 /usr/include/c++/16.1.1/cstdio:
+
+/usr/include/c++/16.1.1/cstdint:
 
 /usr/include/c++/16.1.1/cmath:
 
@@ -2439,6 +2428,8 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/bits/requires_hosted.h:
 
+/usr/include/c++/16.1.1/bits/refwrap.h:
+
 /usr/include/c++/16.1.1/bits/predefined_ops.h:
 
 /usr/lib32/libbz2.so.1.0:
@@ -2495,7 +2486,11 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/bits/charconv.h:
 
+/usr/include/c++/16.1.1/bits/char_traits.h:
+
 /usr/include/c++/16.1.1/bits/basic_string.tcc:
+
+/usr/include/qt6/QtWidgets/qtabbar.h:
 
 /usr/include/c++/16.1.1/bits/streambuf_iterator.h:
 
@@ -2506,6 +2501,8 @@ libshaderqt.so:
 /usr/include/qt6/QtCore/qyieldcpu.h:
 
 /usr/include/c++/16.1.1/bits/allocator.h:
+
+/usr/include/c++/16.1.1/bits/allocated_ptr.h:
 
 /usr/include/qt6/QtCore/qglobalstatic.h:
 
@@ -2651,118 +2648,6 @@ libshaderqt.so:
 
 /usr/include/assert.h:
 
-/usr/include/asm/bitsperlong.h:
-
-/usr/include/asm-generic/posix_types.h:
-
-/usr/include/asm-generic/int-ll64.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/GL/gl.h:
-
-/usr/include/c++/16.1.1/bits/stream_iterator.h:
-
-/home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h:
-
-/usr/include/qt6/QtOpenGL/qtopenglglobal.h:
-
-/home/shaun/Projects/shaderqt/shaderqt_global.h:
-
-/usr/include/stdc-predef.h:
-
-shaderqt-preview_autogen/mocs_compilation.cpp:
-
-/usr/share/cmake/Modules/Platform/Linux.cmake:
-
-/usr/include/bits/stdlib-float.h:
-
-/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake:
-
-/usr/share/cmake/Modules/Platform/Linux-GNU.cmake:
-
-/usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake:
-
-/usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake:
-
-/usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake:
-
-/usr/share/cmake/Modules/Platform/Linker/GNU.cmake:
-
-/usr/share/cmake/Modules/Linker/GNU-CXX.cmake:
-
-/usr/share/cmake/Modules/Internal/FeatureTesting.cmake:
-
-/usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake:
-
-/usr/include/c++/16.1.1/string:
-
-/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:
-
-/usr/include/errno.h:
-
-/usr/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake:
-
-/usr/include/c++/16.1.1/streambuf:
-
-/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:
-
-/usr/include/bits/uio_lim.h:
-
-/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake:
-
-/usr/include/asm/posix_types_64.h:
-
-/usr/share/cmake/Modules/GNUInstallDirs.cmake:
-
-/usr/share/cmake/Modules/FindVulkan.cmake:
-
-/usr/share/cmake/Modules/FindPackageMessage.cmake:
-
-/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:
-
-/usr/share/cmake/Modules/FindOpenGL.cmake:
-
-/usr/lib/libngtcp2_crypto_ossl.so.0:
-
-/usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake:
-
-/usr/include/c++/16.1.1/bits/char_traits.h:
-
-/usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake:
-
-/usr/include/qt6/QtCore/qnumeric.h:
-
-/usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake:
-
-/usr/lib/libblkid.so.1:
-
-/usr/include/qt6/QtCore/qstdlibdetection.h:
-
-/usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake:
-
-/usr/include/c++/16.1.1/bits/refwrap.h:
-
-/usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake:
-
-/usr/include/c++/16.1.1/bits/allocated_ptr.h:
-
-/usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake:
-
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginConfig.cmake:
@@ -2853,16 +2738,6 @@ shaderqt-preview_autogen/mocs_compilation.cpp:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsSynchronizerpluginAdditionalTargetInfo.cmake:
 
-/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:
-
-/usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake:
-
-/usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h:
-
-/usr/include/c++/16.1.1/exception:
-
-/usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets-relwithdebinfo.cmake:
 
 /usr/include/qt6/QtOpenGLWidgets/qopenglwidget.h:
@@ -2913,8 +2788,6 @@ shaderqt-preview_autogen/mocs_compilation.cpp:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsPlatformpluginConfig.cmake:
 
-/usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargets.cmake:
@@ -2924,6 +2797,8 @@ shaderqt-preview_autogen/mocs_compilation.cpp:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpinyinpluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginConfig.cmake:
+
+/usr/include/asm-generic/int-ll64.h:
 
 CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
@@ -3005,8 +2880,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/include/qt6/QtCore/qregularexpression.h:
 
-/usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginTargets.cmake:
 
 /usr/include/qt6/QtOpenGL/QOpenGLVersionProfile:
@@ -3025,11 +2898,19 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake:
 
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets.cmake:
+
+/usr/share/cmake/Modules/FindPackageMessage.cmake:
 
 /usr/lib32/libexpat.so.1:
 
 /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtWidgets/QMainWindow:
+
+/usr/bin/cmake:
 
 /usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsAdditionalTargetInfo.cmake:
 
@@ -3045,15 +2926,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginConfig.cmake:
 
-/usr/share/cmake/Modules/Linker/GNU.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6ShmServerBufferPluginTargetsPrecheck.cmake:
-
 /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsTargets.cmake:
-
-/usr/include/asm/posix_types.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6ShmServerBufferPluginConfig.cmake:
 
 /usr/include/qt6/QtCore/qsystemdetection.h:
 
@@ -3089,6 +2962,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginConfig.cmake:
 
+/usr/share/cmake/Modules/Platform/Linker/GNU.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake:
@@ -3100,6 +2975,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake:
+
+/usr/include/asm-generic/errno-base.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake:
 
@@ -3135,17 +3012,11 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandWlShellIntegrationPluginConfig.cmake:
 
-/usr/include/c++/16.1.1/tr1/bessel_function.tcc:
-
-/usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandQtShellIntegrationPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginTargets.cmake:
-
-/usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtCore/QObject:
 
@@ -3169,8 +3040,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionAdditionalTargetInfo.cmake:
 
-/usr/share/cmake/Modules/CMakeSystem.cmake.in:
-
 /usr/include/c++/16.1.1/bits/stl_algo.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandIviShellIntegrationPluginTargets-relwithdebinfo.cmake:
@@ -3181,13 +3050,17 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandIviShellIntegrationPluginConfig.cmake:
 
+/usr/lib/cmake/Qt6Gui/Qt6ShmServerBufferPluginTargetsPrecheck.cmake:
+
+/usr/share/cmake/Modules/Linker/GNU.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets-relwithdebinfo.cmake:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6VulkanServerBufferPluginConfig.cmake:
 
 /usr/include/qt6/QtOpenGL/QOpenGLFunctions_3_3_Core:
-
-/usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargetsPrecheck.cmake:
 
@@ -3204,10 +3077,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandXdgShellIntegrationPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginTargets-relwithdebinfo.cmake:
-
-/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandFullScreenShellV1IntegrationPluginAdditionalTargetInfo.cmake:
 
@@ -3261,6 +3130,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake:
 
+/usr/include/stdc-predef.h:
+
 /usr/lib/cmake/Qt6Gui/Qt6ShmServerBufferPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbstylespluginTargets-relwithdebinfo.cmake:
@@ -3308,6 +3179,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginConfig.cmake:
 
@@ -3393,10 +3266,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake:
 
-/usr/share/cmake/Modules/Platform/UnixPaths.cmake:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusTargetsPrecheck.cmake:
-
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevMousePluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6DrmEglServerBufferPluginTargets-relwithdebinfo.cmake:
@@ -3404,8 +3273,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/include/bits/types/__fpos64_t.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginConfig.cmake:
-
-/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake:
 
@@ -3447,8 +3314,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake:
 
-/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:
-
 /home/shaun/Projects/shaderqt/src/preview/main.cpp:
 
 /usr/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake:
@@ -3457,11 +3322,17 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargetsPrecheck.cmake:
 
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginConfig.cmake:
+
 /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsDependencies.cmake:
 
 /usr/include/qt6/QtWidgets/qtabwidget.h:
 
 /usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake:
+
+/usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginTargets.cmake:
 
@@ -3478,8 +3349,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake:
 
 /usr/include/c++/16.1.1/bits/stl_bvector.h:
-
-/usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets.cmake:
 
@@ -3501,8 +3370,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake:
 
-/usr/share/cmake/Modules/Compiler/Renesas-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginConfig.cmake:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o:
@@ -3513,6 +3380,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake:
 
+/usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargetsPrecheck.cmake:
@@ -3522,12 +3391,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/include/c++/16.1.1/bits/stl_raw_storage_iter.h:
 
 /usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake:
-
-/usr/include/qt6/QtCore/qcheckedint_impl.h:
-
-/usr/include/asm/errno.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionTargets-relwithdebinfo.cmake:
 
@@ -3562,6 +3425,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake:
+
+/usr/include/qt6/QtWidgets/qstyle.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginConfig.cmake:
 
@@ -3613,10 +3478,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/features-time64.h:
-
-/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in:
-
 /usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets-relwithdebinfo.cmake:
@@ -3630,10 +3491,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets-relwithdebinfo.cmake:
-
-/usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginTargets-relwithdebinfo.cmake:
 
@@ -3671,9 +3528,15 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Quick/Qt6QuickAdditionalTargetInfo.cmake:
 
+/usr/include/bits/stdlib-float.h:
+
+/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake:
+
 /usr/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaAdditionalTargetInfo.cmake:
+
+shaderqt-preview_autogen/mocs_compilation.cpp:
 
 /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake:
 
@@ -3686,8 +3549,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginTargets.cmake:
-
-/usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake:
 
@@ -3717,11 +3578,13 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginTargets.cmake:
 
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6DmaBufServerBufferPluginTargetsPrecheck.cmake:
 
 /usr/include/qt6/QtCore/qtaggedpointer.h:
-
-/usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginTargets.cmake:
 
@@ -3761,6 +3624,10 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6/QtPublicTestHelpers.cmake:
 
+/usr/include/qt6/QtCore/qurl.h:
+
+/usr/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
+
 /usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake:
@@ -3770,10 +3637,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/include/c++/16.1.1/concepts:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake:
-
-/usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicSbomHelpers.cmake:
 
@@ -3837,8 +3700,6 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginAdditionalTargetInfo.cmake:
 
-/usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowConfig.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets-relwithdebinfo.cmake:
@@ -3883,12 +3744,6 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 
 /usr/lib/cmake/Qt6/QtPublicToolHelpers.cmake:
 
-/usr/share/cmake/Modules/FindThreads.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargetsPrecheck.cmake:
-
 /usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake:
@@ -3896,8 +3751,6 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdint.h:
-
-/usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginTargetsPrecheck.cmake:
 
@@ -4015,6 +3868,8 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 
 /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake:
 
+/usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake:
+
 /usr/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginAdditionalTargetInfo.cmake:
@@ -4028,6 +3883,8 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 /usr/lib/cmake/Qt6Gui/Qt6QSvgPluginTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersionImpl.cmake:
+
+/usr/include/qt6/QtWidgets/qstyleoption.h:
 
 /usr/include/qt6/QtOpenGL/qopenglvertexarrayobject.h:
 
@@ -4050,6 +3907,8 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginAdditionalTargetInfo.cmake:
+
+/usr/include/asm/bitsperlong.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargetsPrecheck.cmake:
 
@@ -4096,8 +3955,6 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargets-relwithdebinfo.cmake:
-
-/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:
 
 /usr/include/qt6/QtGui/qkeysequence.h:
 
@@ -4323,17 +4180,11 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/include/c++/16.1.1/clocale:
 
-/usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake:
-
 /usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/libkrb5support.so.0:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake:
-
-/usr/include/c++/16.1.1/tr1/special_function_util.h:
-
-/usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake:
 
 /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/os_defines.h:
 
@@ -4358,12 +4209,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginConfig.cmake:
-
-/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:
 
 /usr/lib32/libkeyutils.so.1:
 
@@ -4400,12 +4245,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginTargets.cmake:
-
-/usr/include/qt6/QtWidgets/QMainWindow:
-
-/usr/bin/cmake:
-
-/usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
 
@@ -4490,6 +4329,10 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/include/c++/16.1.1/compare:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsTargets.cmake:
+
+/usr/include/bits/uio_lim.h:
+
+/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake:
 
 /usr/include/c++/16.1.1/stdexcept:
 
@@ -4681,9 +4524,11 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginTargetsPrecheck.cmake:
 
-/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginConfig.cmake:
+
+/usr/include/c++/16.1.1/bits/stream_iterator.h:
+
+/home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginTargets.cmake:
 
@@ -4761,14 +4606,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptAdditionalTargetInfo.cmake:
 
-/usr/include/c++/16.1.1/bits/stl_construct.h:
-
-/usr/share/cmake/Modules/MacroAddFileDependencies.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsTargetsPrecheck.cmake:
-
 /usr/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginTargetsPrecheck.cmake:
@@ -4778,6 +4615,12 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickshapesdesignhelperspluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargetsPrecheck.cmake:
+
+/usr/include/qt6/QtWidgets/qslider.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginTargetsPrecheck.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake:
 
@@ -4801,6 +4644,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginTargetsPrecheck.cmake:
 
+/usr/include/asm-generic/posix_types.h:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginAdditionalTargetInfo.cmake:
 
 /usr/share/cmake/Modules/CMakeGenericSystem.cmake:
@@ -4812,10 +4657,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtWidgets/qlayout.h:
-
-/usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake:
 
 /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++locale.h:
 
@@ -4840,12 +4681,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioAdditionalTargetInfo.cmake:
-
-/usr/lib/crtn.o:
-
-/usr/include/asm-generic/types.h:
-
-/usr/lib/cmake/Qt6Qml/Qt6QmlTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets-relwithdebinfo.cmake:
 
@@ -4935,8 +4770,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/lib/crti.o:
 
-/usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets.cmake:
@@ -4950,10 +4783,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake:
-
-/usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtWidgets/QPushButton:
 
@@ -4995,7 +4824,7 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginConfig.cmake:
 
-/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:
+/usr/include/GL/gl.h:
 
 /usr/include/qt6/QtGui/qopengl.h:
 
@@ -5021,7 +4850,13 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginTargetsPrecheck.cmake:
 
+/usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Core/Qt6CoreTargets.cmake:
 
@@ -5065,6 +4900,12 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginTargetsPrecheck.cmake:
 
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargetsPrecheck.cmake:
+
+/usr/share/cmake/Modules/FindThreads.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginTargetsPrecheck.cmake:
@@ -5084,6 +4925,10 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickpluginTargets.cmake:
+
+/usr/include/c++/16.1.1/string:
+
+/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:
 
 /usr/include/qt6/QtGui/qopenglcontext.h:
 
@@ -5285,15 +5130,7 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Qml/Qt6QmlFindQmlscInternal.cmake:
 
-/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:
-
 /usr/lib/cmake/Qt6Qml/Qt6QmlPlugins.cmake:
-
-/usr/include/qt6/QtCore/qtnoop.h:
-
-/usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginAdditionalTargetInfo.cmake:
 
@@ -5345,10 +5182,6 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsDependencies.cmake:
 
-/usr/include/c++/16.1.1/cstdint:
-
-/usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake:
-
 /usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsTargets.cmake:
@@ -5356,8 +5189,6 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsVersionlessAliasTargets.cmake:
 
 /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsTargets.cmake:
-
-/usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake:
 
 /usr/lib32/libnghttp3.so.9:
 
@@ -5403,6 +5234,14 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsConfig.cmake:
 
+/usr/include/asm/posix_types_64.h:
+
+/usr/share/cmake/Modules/GNUInstallDirs.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets-relwithdebinfo.cmake:
+
 /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets.cmake:
 
 /usr/lib/libgcc_s.so.1:
@@ -5433,10 +5272,6 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:
 
-/usr/include/qt6/QtGui/qpolygon.h:
-
-/usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake:
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake:
@@ -5457,43 +5292,19 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake:
 
-/usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake:
 
-/usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginTargets.cmake:
-
-/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp:
-
 /usr/lib/cmake/Qt6Qml/Qt6QQuickEventReplayServiceFactoryPluginAdditionalTargetInfo.cmake:
 
 /usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake:
-
-/usr/include/c++/16.1.1/initializer_list:
-
-/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets.cmake:
 
 /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake:
 
 /usr/share/cmake/Modules/CMakeLanguageInformation.cmake:
-
-/usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake:
-
-/usr/include/qt6/QtCore/qurl.h:
-
-/usr/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
-
-/usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake:
 
 /usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:
 
@@ -5505,28 +5316,52 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:
 
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets-relwithdebinfo.cmake:
-
-/usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake:
-
-/usr/include/sys/types.h:
-
-/usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake:
-
 /usr/include/qt6/QtCore/qbytearrayalgorithms.h:
 
 /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake:
 
-/usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake:
+/usr/share/cmake/Modules/FindOpenGL.cmake:
 
-/usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake:
+/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:
 
-/usr/include/qt6/QtWidgets/qslider.h:
+/usr/share/cmake/Modules/FindVulkan.cmake:
 
-/usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginTargetsPrecheck.cmake:
+/usr/share/cmake/Modules/Linker/GNU-CXX.cmake:
 
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginAdditionalTargetInfo.cmake:
+/usr/include/c++/16.1.1/bits/stl_construct.h:
 
-/usr/share/cmake/Modules/Compiler/Diab-DetermineCompiler.cmake:
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsTargetsPrecheck.cmake:
+
+/usr/share/cmake/Modules/MacroAddFileDependencies.cmake:
+
+/usr/share/cmake/Modules/Platform/Linux-GNU.cmake:
+
+/usr/share/cmake/Modules/Platform/Linux.cmake:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusTargetsPrecheck.cmake:
+
+/usr/share/cmake/Modules/Platform/UnixPaths.cmake:
+
+/usr/include/qt6/QtOpenGL/qtopenglglobal.h:
+
+/home/shaun/Projects/shaderqt/shaderqt_global.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/lib/crtn.o:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlTargets.cmake:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/qt6/QtCore/qcheckedint_impl.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake:
+
+/usr/include/asm/errno.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6ShmServerBufferPluginConfig.cmake:
+
+/usr/include/asm/posix_types.h:

@@ -1040,7 +1040,7 @@ QT_FEATURE_metal:INTERNAL=OFF
 //Qt feature: mimetype (from target Qt6::Core)
 QT_FEATURE_mimetype:INTERNAL=ON
 //Qt feature: mimetype_database (from target Qt6::Core)
-QT_FEATURE_mimetype_database:INTERNAL=ON
+QT_FEATURE_mimetype_database:INTERNAL=OFF
 //Qt feature: mips_dsp (from target Qt6::Core)
 QT_FEATURE_mips_dsp:INTERNAL=OFF
 //Qt feature: mips_dspr2 (from target Qt6::Core)

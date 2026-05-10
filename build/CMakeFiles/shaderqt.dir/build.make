@@ -78,6 +78,8 @@ shaderqt_autogen/timestamp: CMakeFiles/shaderqt.dir/compiler_depend.ts
 
 shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp: /home/shaun/Projects/shaderqt/shaders.qrc
 shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp: CMakeFiles/shaderqt_autogen.dir/AutoRcc_shaders_EWIEGA46WW_Info.json
+shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp: /home/shaun/Projects/shaderqt/shaders/sphere.vert
+shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp: /home/shaun/Projects/shaderqt/shaders/sphere.frag
 shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp: /home/shaun/Projects/shaderqt/shaders/waterplane.frag
 shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp: /home/shaun/Projects/shaderqt/shaders/waterplane.vert
 shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp: /usr/lib/qt6/rcc

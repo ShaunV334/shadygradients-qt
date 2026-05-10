@@ -48,9 +48,29 @@ ShaderGradientWidget::~ShaderGradientWidget()
 // Property setters
 // ────────────────────────────────────────────────
 
+void ShaderGradientWidget::setType(Type t) {
+    if (m_type == t) return;
+    m_type = t;
+    emit typeChanged(t);
+    makeCurrent();
+    setupShaders();
+    buildMesh();
+    update();
+    doneCurrent();
+}
+
 void ShaderGradientWidget::setSpeed(float v)        { if (m_speed == v) return; m_speed = v; emit speedChanged(v); }
-void ShaderGradientWidget::setNoiseDensity(float v) { if (m_noiseDensity == v) return; m_noiseDensity = v; emit noiseDensityChanged(v); }
-void ShaderGradientWidget::setNoiseStrength(float v){ if (m_noiseStrength == v) return; m_noiseStrength = v; emit noiseStrengthChanged(v); }
+void ShaderGradientWidget::setNoiseDensity(float v) { if (m_noiseDensity == v) return; m_noiseDensity = v; emit noiseDensityChanged(v); update(); }
+void ShaderGradientWidget::setNoiseStrength(float v){ if (m_noiseStrength == v) return; m_noiseStrength = v; emit noiseStrengthChanged(v); update(); }
+void ShaderGradientWidget::setSpiral(float v)       { if (m_spiral == v) return; m_spiral = v; emit spiralChanged(v); update(); }
+void ShaderGradientWidget::setPixelDensity(float v) {
+    if (m_pixelDensity == v) return;
+    m_pixelDensity = v;
+    emit pixelDensityChanged(v);
+    makeCurrent();
+    buildMesh();
+    doneCurrent();
+}
 void ShaderGradientWidget::setColor1(const QColor &c){ if (m_color1 == c) return; m_color1 = c; emit color1Changed(c); }
 void ShaderGradientWidget::setColor2(const QColor &c){ if (m_color2 == c) return; m_color2 = c; emit color2Changed(c); }
 void ShaderGradientWidget::setColor3(const QColor &c){ if (m_color3 == c) return; m_color3 = c; emit color3Changed(c); }
@@ -75,12 +95,24 @@ void ShaderGradientWidget::initializeGL()
 
 void ShaderGradientWidget::setupShaders()
 {
-    if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/waterplane.vert")) {
-        qWarning() << "Vertex shader compile error:" << m_program.log();
+    m_program.removeAllShaders();
+
+    if (m_type == Type::WaterPlane) {
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/waterplane.vert")) {
+            qWarning() << "Vertex shader compile error:" << m_program.log();
+        }
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/waterplane.frag")) {
+            qWarning() << "Fragment shader compile error:" << m_program.log();
+        }
+    } else {
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/sphere.vert")) {
+            qWarning() << "Vertex shader compile error:" << m_program.log();
+        }
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/sphere.frag")) {
+            qWarning() << "Fragment shader compile error:" << m_program.log();
+        }
     }
-    if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/waterplane.frag")) {
-        qWarning() << "Fragment shader compile error:" << m_program.log();
-    }
+
     if (!m_program.link()) {
         qWarning() << "Shader link error:" << m_program.log();
     }
@@ -94,6 +126,7 @@ void ShaderGradientWidget::setupShaders()
     m_locLoadingTime   = m_program.uniformLocation("uLoadingTime");
     m_locNoiseDensity  = m_program.uniformLocation("uNoiseDensity");
     m_locNoiseStrength = m_program.uniformLocation("uNoiseStrength");
+    m_locSpiral        = m_program.uniformLocation("uSpiral");
     m_locC1r = m_program.uniformLocation("uC1r");
     m_locC1g = m_program.uniformLocation("uC1g");
     m_locC1b = m_program.uniformLocation("uC1b");
@@ -112,33 +145,46 @@ void ShaderGradientWidget::setupShaders()
 
 void ShaderGradientWidget::buildMesh()
 {
-    const int   segsX = 64, segsY = 64;
-    const float sizeX = 10.0f, sizeY = 10.0f;
-    const int   vertsX = segsX + 1, vertsY = segsY + 1;
+    const int segsX = std::max(1, static_cast<int>(64 * m_pixelDensity));
+    const int segsY = std::max(1, static_cast<int>(64 * m_pixelDensity));
+    const int vertsX = segsX + 1, vertsY = segsY + 1;
 
-    // Interleaved: position(3) + normal(3) + uv(2) = 8 floats per vertex
     std::vector<float> vdata;
     vdata.reserve(vertsX * vertsY * 8);
 
-    for (int iy = 0; iy < vertsY; ++iy) {
-        float v = static_cast<float>(iy) / segsY;
-        float y = (v - 0.5f) * sizeY;
+    if (m_type == Type::WaterPlane) {
+        const float sizeX = 10.0f, sizeY = 10.0f;
+        for (int iy = 0; iy < vertsY; ++iy) {
+            float v = static_cast<float>(iy) / segsY;
+            float y = (v - 0.5f) * sizeY;
 
-        for (int ix = 0; ix < vertsX; ++ix) {
-            float u = static_cast<float>(ix) / segsX;
-            float x = (u - 0.5f) * sizeX;
+            for (int ix = 0; ix < vertsX; ++ix) {
+                float u = static_cast<float>(ix) / segsX;
+                float x = (u - 0.5f) * sizeX;
 
-            // position
-            vdata.push_back(x);
-            vdata.push_back(y);
-            vdata.push_back(0.0f);
-            // normal (flat plane points +Z)
-            vdata.push_back(0.0f);
-            vdata.push_back(0.0f);
-            vdata.push_back(1.0f);
-            // uv
-            vdata.push_back(u);
-            vdata.push_back(v);
+                vdata.push_back(x); vdata.push_back(y); vdata.push_back(0.0f);
+                vdata.push_back(0.0f); vdata.push_back(0.0f); vdata.push_back(1.0f);
+                vdata.push_back(u); vdata.push_back(v);
+            }
+        }
+    } else {
+        const float radius = 5.0f;
+        for (int iy = 0; iy <= segsY; ++iy) {
+            float v = static_cast<float>(iy) / segsY;
+            float theta = v * M_PI;
+            for (int ix = 0; ix <= segsX; ++ix) {
+                float u = static_cast<float>(ix) / segsX;
+                float phi = u * 2.0f * M_PI;
+
+                float x = -radius * std::cos(phi) * std::sin(theta);
+                float y = radius * std::cos(theta);
+                float z = radius * std::sin(phi) * std::sin(theta);
+
+                vdata.push_back(x); vdata.push_back(y); vdata.push_back(z);
+                float nx = x / radius, ny = y / radius, nz = z / radius;
+                vdata.push_back(nx); vdata.push_back(ny); vdata.push_back(nz);
+                vdata.push_back(u); vdata.push_back(v);
+            }
         }
     }
 
@@ -158,6 +204,10 @@ void ShaderGradientWidget::buildMesh()
     m_indexCount = static_cast<int>(idata.size());
 
     // Upload to GPU
+    if (m_vao.isCreated()) m_vao.destroy();
+    if (m_vbo.isCreated()) m_vbo.destroy();
+    if (m_ibo.isCreated()) m_ibo.destroy();
+
     m_vao.create();
     m_vao.bind();
 
@@ -212,16 +262,22 @@ void ShaderGradientWidget::paintGL()
     proj.perspective(45.0f, aspect, 0.1f, 100.0f);
 
     QMatrix4x4 view;
-    // Distance = 3.9, polar angle = 115 deg, azimuth angle = 180 deg
-    // We can simulate the camera orbit by keeping lookAt simple and rotating the model.
-    view.lookAt({0.0f, 0.0f, 3.9f},  // eye
-                {0.0f, 0.0f, 0.0f},  // center
-                {0.0f, 1.0f, 0.0f}); // up
+    if (m_type == Type::WaterPlane) {
+        view.lookAt({0.0f, 0.0f, 3.9f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
+    } else {
+        view.lookAt({0.0f, 0.0f, 12.5f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f}); // User settings cameraZoom=12.5
+    }
 
     QMatrix4x4 model;
-    model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle
-    model.rotate(180.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle
-    model.rotate(235.0f, 0.0f, 0.0f, 1.0f);         // rotationZ
+    if (m_type == Type::WaterPlane) {
+        model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle
+        model.rotate(180.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle
+        model.rotate(235.0f, 0.0f, 0.0f, 1.0f);         // rotationZ
+    } else {
+        model.rotate(140.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle=140
+        model.rotate(250.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle=250
+        model.rotate(140.0f, 0.0f, 0.0f, 1.0f);         // rotationZ=140
+    }
 
     const QMatrix4x4 mv = view * model;
     const QMatrix3x3 normalMat = mv.normalMatrix();
@@ -239,6 +295,7 @@ void ShaderGradientWidget::paintGL()
     m_program.setUniformValue(m_locLoadingTime,   m_loadingTime);
     m_program.setUniformValue(m_locNoiseDensity,  m_noiseDensity);
     m_program.setUniformValue(m_locNoiseStrength, m_noiseStrength);
+    m_program.setUniformValue(m_locSpiral,        m_spiral);
 
     // Colors — normalise QColor (0–255) → float (0.0–1.0)
     auto set3 = [&](int r, int g, int b, const QColor &c) {

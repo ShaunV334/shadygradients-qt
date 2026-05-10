@@ -41,11 +41,12 @@ private:
     QOpenGLBuffer            m_vbo;
     QOpenGLBuffer            m_ibo;
     int                      m_indexCount = 0;
+    float                    m_pixelDensity = 1.0f;
 
     // Cached uniforms
     int m_locMV = -1, m_locProj = -1, m_locNM = -1;
     int m_locTime = -1, m_locSpeed = -1, m_locLoading = -1;
-    int m_locND = -1, m_locNS = -1;
+    int m_locND = -1, m_locNS = -1, m_locSpiral = -1;
     int m_locC1r=-1,m_locC1g=-1,m_locC1b=-1;
     int m_locC2r=-1,m_locC2g=-1,m_locC2b=-1;
     int m_locC3r=-1,m_locC3g=-1,m_locC3b=-1;
@@ -82,15 +83,18 @@ QQuickFramebufferObject::Renderer *ShaderGradientEffect::createRenderer() const
 ShaderGradientEffect::RenderState ShaderGradientEffect::renderState() const
 {
     return {
-        m_speed, m_noiseDensity, m_noiseStrength,
+        m_type, m_speed, m_noiseDensity, m_noiseStrength, m_spiral,
         static_cast<float>(m_elapsed.elapsed()) / 1000.0f,
         m_color1, m_color2, m_color3
     };
 }
 
-void ShaderGradientEffect::setSpeed(float v)         { if (m_speed == v) return; m_speed = v; emit speedChanged(v); update(); }
-void ShaderGradientEffect::setNoiseDensity(float v)  { if (m_noiseDensity == v) return; m_noiseDensity = v; emit noiseDensityChanged(v); update(); }
-void ShaderGradientEffect::setNoiseStrength(float v) { if (m_noiseStrength == v) return; m_noiseStrength = v; emit noiseStrengthChanged(v); update(); }
+void ShaderGradientEffect::setType(Type t)          { if (m_type == t) return; m_type = t; emit typeChanged(t); update(); }
+void ShaderGradientEffect::setSpeed(float v)        { if (m_speed == v) return; m_speed = v; emit speedChanged(v); update(); }
+void ShaderGradientEffect::setNoiseDensity(float v) { if (m_noiseDensity == v) return; m_noiseDensity = v; emit noiseDensityChanged(v); update(); }
+void ShaderGradientEffect::setNoiseStrength(float v){ if (m_noiseStrength == v) return; m_noiseStrength = v; emit noiseStrengthChanged(v); update(); }
+void ShaderGradientEffect::setSpiral(float v)       { if (m_spiral == v) return; m_spiral = v; emit spiralChanged(v); update(); }
+void ShaderGradientEffect::setPixelDensity(float v) { if (m_pixelDensity == v) return; m_pixelDensity = v; emit pixelDensityChanged(v); update(); }
 void ShaderGradientEffect::setColor1(const QColor &c){ if (m_color1 == c) return; m_color1 = c; emit color1Changed(c); update(); }
 void ShaderGradientEffect::setColor2(const QColor &c){ if (m_color2 == c) return; m_color2 = c; emit color2Changed(c); update(); }
 void ShaderGradientEffect::setColor3(const QColor &c){ if (m_color3 == c) return; m_color3 = c; emit color3Changed(c); update(); }
@@ -111,7 +115,17 @@ QOpenGLFramebufferObject *ShaderGradientRenderer::createFramebufferObject(const 
 void ShaderGradientRenderer::synchronize(QQuickFramebufferObject *item)
 {
     auto *effect = static_cast<ShaderGradientEffect *>(item);
-    m_state = effect->renderState();
+    auto newState = effect->renderState();
+    bool typeChanged = (m_state.type != newState.type);
+    m_state = newState;
+    if (m_pixelDensity != effect->pixelDensity() || typeChanged) {
+        m_pixelDensity = effect->pixelDensity();
+        if (typeChanged && m_initialised) {
+            init();
+        } else if (m_initialised) {
+            buildMesh();
+        }
+    }
 }
 
 void ShaderGradientRenderer::render()
@@ -133,12 +147,22 @@ void ShaderGradientRenderer::render()
     proj.perspective(45.0f, aspect, 0.1f, 100.0f);
 
     QMatrix4x4 view;
-    view.lookAt({0.0f, 0.0f, 3.9f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
+    if (m_state.type == ShaderGradientEffect::Type::WaterPlane) {
+        view.lookAt({0.0f, 0.0f, 3.9f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
+    } else {
+        view.lookAt({0.0f, 0.0f, 12.5f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
+    }
 
     QMatrix4x4 model;
-    model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f);
-    model.rotate(180.0f, 0.0f, 1.0f, 0.0f);
-    model.rotate(235.0f, 0.0f, 0.0f, 1.0f);
+    if (m_state.type == ShaderGradientEffect::Type::WaterPlane) {
+        model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f);
+        model.rotate(180.0f, 0.0f, 1.0f, 0.0f);
+        model.rotate(235.0f, 0.0f, 0.0f, 1.0f);
+    } else {
+        model.rotate(140.0f - 90.0f, 1.0f, 0.0f, 0.0f);
+        model.rotate(250.0f, 0.0f, 1.0f, 0.0f);
+        model.rotate(140.0f, 0.0f, 0.0f, 1.0f);
+    }
 
     const QMatrix4x4 mv = view * model;
     const QMatrix3x3 nm = mv.normalMatrix();
@@ -152,6 +176,7 @@ void ShaderGradientRenderer::render()
     m_program.setUniformValue(m_locLoading, 1.0f);
     m_program.setUniformValue(m_locND,      m_state.noiseDensity);
     m_program.setUniformValue(m_locNS,      m_state.noiseStrength);
+    m_program.setUniformValue(m_locSpiral,  m_state.spiral);
 
     auto set3 = [&](int r, int g, int b, const QColor &c) {
         m_program.setUniformValue(r, static_cast<float>(c.redF()));
@@ -175,10 +200,20 @@ void ShaderGradientRenderer::init()
 {
     initializeOpenGLFunctions();
 
-    if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/waterplane.vert"))
-        qWarning() << "SGEffect vertex:" << m_program.log();
-    if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/waterplane.frag"))
-        qWarning() << "SGEffect fragment:" << m_program.log();
+    m_program.removeAllShaders();
+
+    if (m_state.type == ShaderGradientEffect::Type::WaterPlane) {
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/waterplane.vert"))
+            qWarning() << "SGEffect vertex:" << m_program.log();
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/waterplane.frag"))
+            qWarning() << "SGEffect fragment:" << m_program.log();
+    } else {
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/sphere.vert"))
+            qWarning() << "SGEffect vertex:" << m_program.log();
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/sphere.frag"))
+            qWarning() << "SGEffect fragment:" << m_program.log();
+    }
+
     if (!m_program.link())
         qWarning() << "SGEffect link:" << m_program.log();
 
@@ -190,6 +225,7 @@ void ShaderGradientRenderer::init()
     m_locLoading = m_program.uniformLocation("uLoadingTime");
     m_locND   = m_program.uniformLocation("uNoiseDensity");
     m_locNS   = m_program.uniformLocation("uNoiseStrength");
+    m_locSpiral = m_program.uniformLocation("uSpiral");
     m_locC1r  = m_program.uniformLocation("uC1r");
     m_locC1g  = m_program.uniformLocation("uC1g");
     m_locC1b  = m_program.uniformLocation("uC1b");
@@ -205,20 +241,39 @@ void ShaderGradientRenderer::init()
 
 void ShaderGradientRenderer::buildMesh()
 {
-    const int   segsX = 64, segsY = 64;
-    const float sizeX = 10.0f, sizeY = 10.0f;
+    const int   segsX = std::max(1, static_cast<int>(64 * m_pixelDensity));
+    const int   segsY = std::max(1, static_cast<int>(64 * m_pixelDensity));
     const int   vertsX = segsX + 1, vertsY = segsY + 1;
 
     std::vector<float> vdata;
     vdata.reserve(vertsX * vertsY * 8);
 
-    for (int iy = 0; iy < vertsY; ++iy) {
-        float v = static_cast<float>(iy) / segsY;
-        float y = (v - 0.5f) * sizeY;
-        for (int ix = 0; ix < vertsX; ++ix) {
-            float u = static_cast<float>(ix) / segsX;
-            float x = (u - 0.5f) * sizeX;
-            vdata.insert(vdata.end(), {x, y, 0.0f, 0.0f, 0.0f, 1.0f, u, v});
+    if (m_state.type == ShaderGradientEffect::Type::WaterPlane) {
+        const float sizeX = 10.0f, sizeY = 10.0f;
+        for (int iy = 0; iy < vertsY; ++iy) {
+            float v = static_cast<float>(iy) / segsY;
+            float y = (v - 0.5f) * sizeY;
+            for (int ix = 0; ix < vertsX; ++ix) {
+                float u = static_cast<float>(ix) / segsX;
+                float x = (u - 0.5f) * sizeX;
+                vdata.insert(vdata.end(), {x, y, 0.0f, 0.0f, 0.0f, 1.0f, u, v});
+            }
+        }
+    } else {
+        const float radius = 5.0f;
+        for (int iy = 0; iy <= segsY; ++iy) {
+            float v = static_cast<float>(iy) / segsY;
+            float theta = v * M_PI;
+            for (int ix = 0; ix <= segsX; ++ix) {
+                float u = static_cast<float>(ix) / segsX;
+                float phi = u * 2.0f * M_PI;
+
+                float x = -radius * std::cos(phi) * std::sin(theta);
+                float y = radius * std::cos(theta);
+                float z = radius * std::sin(phi) * std::sin(theta);
+
+                vdata.insert(vdata.end(), {x, y, z, x/radius, y/radius, z/radius, u, v});
+            }
         }
     }
 
@@ -233,6 +288,10 @@ void ShaderGradientRenderer::buildMesh()
         }
     }
     m_indexCount = static_cast<int>(idata.size());
+
+    if (m_vao.isCreated()) m_vao.destroy();
+    if (m_vbo.isCreated()) m_vbo.destroy();
+    if (m_ibo.isCreated()) m_ibo.destroy();
 
     m_vao.create(); m_vao.bind();
     m_vbo.create(); m_vbo.bind();
