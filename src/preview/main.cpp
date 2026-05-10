@@ -219,17 +219,17 @@ int main(int argc, char *argv[])
         auto *grp = new QGroupBox("Surface");
         auto *gl  = new QVBoxLayout(grp);
 
-        // Noise Density — 10..400 → 0.1..4.0
-        addSlider(gl, "Noise Density", 10, 400, 150, [sg](int v) {
+        // Noise Density — 0..700 → 0.0..7.0
+        addSlider(gl, "Noise Density", 0, 700, 150, [sg](int v) {
             sg->setNoiseDensity(v / 100.0f);
         });
 
-        // Noise Strength — 0..200 → 0.0..2.0
-        addSlider(gl, "Noise Strength", 0, 200, 80, [sg](int v) {
+        // Noise Strength — 0..1000 → 0.0..10.0
+        addSlider(gl, "Noise Strength", 0, 1000, 80, [sg](int v) {
             sg->setNoiseStrength(v / 100.0f);
         });
 
-        // Spiral — 0..100 → 0.0..10.0
+        // Spiral — 0..700 → 0.0..7.0
         addSlider(gl, "Spiral", 0, 100, 20, [sg](int v) {
             sg->setSpiral(v / 10.0f);
         });
@@ -245,7 +245,7 @@ int main(int argc, char *argv[])
 
         struct ColorEntry { QString label; QColor *prop; void (ShaderGradientWidget::*setter)(const QColor&); };
 
-        addSlider(gl, "Pixel Density", 1, 40, 10, [sg](int v) {
+        addSlider(gl, "Pixel Density", 1, 100, 10, [sg](int v) {
             sg->setPixelDensity(v / 10.0f);
         });
 
