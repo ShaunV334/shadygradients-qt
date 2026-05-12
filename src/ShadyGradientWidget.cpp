@@ -1,4 +1,4 @@
-#include "ShadyGradientWidget.h"
+#include <shaderqt/ShadyGradientWidget.h>
 
 #include <QOpenGLContext>
 #include <QMatrix4x4>

@@ -1,3 +1,3 @@
-#include "shaderqt.h"
+#include <shaderqt/shaderqt.h>
 
 Shaderqt::Shaderqt() {}

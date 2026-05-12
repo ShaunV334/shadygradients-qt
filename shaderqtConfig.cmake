@@ -1,0 +1,7 @@
+include(CMakeFindDependencyMacro)
+if(QT_VERSION_MAJOR EQUAL 6)
+    find_dependency(Qt6 COMPONENTS Core Widgets Quick OpenGLWidgets REQUIRED)
+else()
+    find_dependency(Qt5 COMPONENTS Core Widgets Quick OpenGL REQUIRED)
+endif()
+include("${CMAKE_CURRENT_LIST_DIR}/shaderqtTargets.cmake")

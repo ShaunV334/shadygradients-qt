@@ -14,29 +14,42 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED
     COMPONENTS Core Widgets OpenGL Quick Gui)
 
-# Qt6 has OpenGLWidgets as a separate module; Qt5 bundles it in Widgets
 if(QT_VERSION_MAJOR EQUAL 6)
-    find_package(Qt6 REQUIRED COMPONENTS OpenGLWidgets QuickWidgets)
+    find_package(Qt6 REQUIRED COMPONENTS OpenGLWidgets QuickWidgets Qml)
 endif()
 
 # ── Shared library: shaderqt ──────────────────────────────────────────────────
 set(SHADERQT_LIB_SOURCES
-    shaderqt_global.h
+    include/shaderqt/shaderqt_global.h
+    include/shaderqt/shaderqt.h
+    include/shaderqt/ShadyGradientWidget.h
+    include/shaderqt/ShadyGradientEffect.h
     shaderqt.cpp
-    shaderqt.h
-    src/ShadyGradientWidget.h
     src/ShadyGradientWidget.cpp
-    src/ShadyGradientEffect.h
     src/ShadyGradientEffect.cpp
-    shaders.qrc          # embeds the GLSL files as Qt resources
+    shaders.qrc
 )
 
-add_library(shaderqt SHARED ${SHADERQT_LIB_SOURCES})
+if(QT_VERSION_MAJOR EQUAL 6)
+    qt6_add_qml_module(shaderqt
+        URI ShaderQt
+        VERSION 1.0
+        RESOURCE_PREFIX /qt/qml
+        QML_FILES
+            qml/ShadyGradientItem.qml
+        SOURCES
+            ${SHADERQT_LIB_SOURCES}
+    )
+else()
+    add_library(shaderqt SHARED ${SHADERQT_LIB_SOURCES})
+endif()
 
 target_include_directories(shaderqt
     PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/shaderqt>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+        $<INSTALL_INTERFACE:include>
 )
 
 target_compile_definitions(shaderqt PRIVATE SHADERQT_LIBRARY)
@@ -51,6 +64,7 @@ if(QT_VERSION_MAJOR EQUAL 6)
             Qt6::OpenGLWidgets
             Qt6::Quick
             Qt6::QuickWidgets
+            Qt6::Qml
     )
 else()
     target_link_libraries(shaderqt
@@ -63,35 +77,62 @@ else()
     )
 endif()
 
+set_target_properties(shaderqt PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION 1)
+
 # ── Preview executable ────────────────────────────────────────────────────────
-add_executable(shaderqt-preview
-    src/preview/main.cpp
+option(SHADERQT_BUILD_PREVIEW "Build the preview application" ON)
+
+if(SHADERQT_BUILD_PREVIEW)
+    add_executable(shaderqt-preview examples/preview/main.cpp)
+    target_include_directories(shaderqt-preview PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/examples/preview)
+    target_link_libraries(shaderqt-preview PRIVATE shaderqt)
+endif()
+
+# ── Install rules ─────────────────────────────────────────────────────────────
+include(CMakePackageConfigHelpers)
+
+write_basic_package_version_file(
+    "shaderqtConfigVersion.cmake"
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY SameMajorVersion
 )
 
-target_include_directories(shaderqt-preview PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
-)
-
-target_link_libraries(shaderqt-preview PRIVATE shaderqt)
-
-# ── Install rules (optional) ──────────────────────────────────────────────────
-install(TARGETS shaderqt shaderqt-preview
+install(TARGETS shaderqt
+    EXPORT shaderqtTargets
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
     ARCHIVE DESTINATION lib
+    INCLUDES DESTINATION include
 )
-install(FILES
-    src/ShadyGradientWidget.h
-    src/ShadyGradientEffect.h
-    shaderqt.h
-    shaderqt_global.h
-    DESTINATION include/shaderqt
+
+if(SHADERQT_BUILD_PREVIEW)
+    install(TARGETS shaderqt-preview
+        RUNTIME DESTINATION bin
+    )
+endif()
+
+install(EXPORT shaderqtTargets
+    FILE shaderqtTargets.cmake
+    NAMESPACE ShaderQt::
+    DESTINATION lib/cmake/shaderqt
 )
+
+install(FILES 
+    "${CMAKE_CURRENT_SOURCE_DIR}/shaderqtConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/shaderqtConfigVersion.cmake"
+    DESTINATION lib/cmake/shaderqt
+)
+
+install(DIRECTORY include/shaderqt
+    DESTINATION include
+)
+
 install(FILES
     shaders/waterplane.vert
     shaders/waterplane.frag
     DESTINATION share/shaderqt/shaders
 )
+
 install(FILES
     qml/ShadyGradientItem.qml
     DESTINATION share/shaderqt/qml

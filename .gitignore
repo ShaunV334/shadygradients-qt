@@ -1,0 +1,45 @@
+# CMake artifacts
+build/
+build-*/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# Qt & QML generation artifacts (Qt 6 QML Modules)
+.qt/
+.rcc/
+meta_types/
+qmltypes/
+*.qmltypes
+*_autogen/
+*_qml_module_dir_map.qrc
+*_qmltyperegistrations.cpp
+*Plugin.cpp
+*Plugin_in.cpp
+*.qmlls.build.ini*
+
+# Compiled Object files, Executables, and Shared Libraries
+*.o
+*.obj
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+shaderqt-preview
+
+# Temporary test folders
+install_test/
+
+# IDEs
+.vscode/
+.idea/
+*.user
+*.pro.user

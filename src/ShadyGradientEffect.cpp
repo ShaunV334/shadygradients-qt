@@ -1,4 +1,4 @@
-#include "ShadyGradientEffect.h"
+#include <shaderqt/ShadyGradientEffect.h>
 
 #include <QOpenGLFunctions_3_3_Core>
 #include <QOpenGLShaderProgram>
