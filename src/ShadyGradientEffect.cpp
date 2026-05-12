@@ -68,7 +68,7 @@ ShadyGradientEffect::ShadyGradientEffect(QQuickItem *parent)
     : QQuickFramebufferObject(parent)
 {
     // Load default preset if it exists
-    QFile presetFile(QDir::currentPath() + "/shady_gradient_preset.json");
+    QFile presetFile(":/shaders/shady_gradient_preset.json");
     if (presetFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QJsonDocument doc = QJsonDocument::fromJson(presetFile.readAll());
         if (!doc.isNull() && doc.isObject()) {

@@ -4,5 +4,6 @@
         <file alias="waterplane.frag">shaders/waterplane.frag</file>
         <file alias="sphere.vert">shaders/sphere.vert</file>
         <file alias="sphere.frag">shaders/sphere.frag</file>
+        <file alias="shady_gradient_preset.json">shady_gradient_preset.json</file>
     </qresource>
 </RCC>
