@@ -23,7 +23,16 @@ ShadyGradientWidget::ShadyGradientWidget(QWidget *parent)
     , m_ibo(QOpenGLBuffer::IndexBuffer)
 {
     // Load default preset if it exists
-    QFile presetFile(":/shaders/shady_gradient_preset.json");
+    QFile presetFile;
+    // 1. Prioritize reading from the local directory (allows rapid previewing / tweaking)
+    if (QFile::exists(QDir::currentPath() + "/shady_gradient_preset.json")) {
+        presetFile.setFileName(QDir::currentPath() + "/shady_gradient_preset.json");
+    } 
+    // 2. Fall back to the built-in default library preset if no local config exists
+    else {
+        presetFile.setFileName(":/shaders/shady_gradient_preset.json");
+    }
+
     if (presetFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QJsonDocument doc = QJsonDocument::fromJson(presetFile.readAll());
         if (!doc.isNull() && doc.isObject()) {

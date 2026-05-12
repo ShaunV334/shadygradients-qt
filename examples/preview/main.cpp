@@ -6,7 +6,6 @@
  */
 
 #include <shaderqt/ShadyGradientWidget.h>
-
 #include <QApplication>
 #include <QMainWindow>
 #include <QWidget>
@@ -346,8 +345,9 @@ int main(int argc, char *argv[])
         // Save Custom Preset Button
         auto *saveBtn = new QPushButton("Save Custom Preset...");
         saveBtn->setStyleSheet("QPushButton { background: #3a2a60; border: 1px solid #7c5af0; "
-                               "border-radius: 6px; padding: 6px; text-align: center; font-weight: bold; margin-top: 10px; }"
+                               "border-radius: 6px; padding: 6px; text-align: center; font-weight: bold; }"
                                "QPushButton:hover { background: #4a3a70; border-color: #9c7af0; }");
+        saveBtn->setMinimumHeight(30);
         QObject::connect(saveBtn, &QPushButton::clicked, [sg, typeCombo, &win]() {
             // Save as predetermined file name for auto-loading
             QString defaultFileName = QDir::currentPath() + "/shady_gradient_preset.json";

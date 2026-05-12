@@ -1,0 +1,11 @@
+{
+    "color1": "#ff3200",
+    "color2": "#c800ff",
+    "color3": "#280000",
+    "noiseDensity": 2,
+    "noiseStrength": 1.2000000476837158,
+    "pixelDensity": 1,
+    "speed": 0.5,
+    "spiral": 2,
+    "type": "WaterPlane"
+}
