@@ -1,9 +1,15 @@
-#include "ShaderGradientWidget.h"
+#include "ShadyGradientWidget.h"
 
 #include <QOpenGLContext>
 #include <QMatrix4x4>
 #include <QMatrix3x3>
 #include <QDebug>
+#include <QMouseEvent>
+#include <QWheelEvent>
+#include <QFile>
+#include <QDir>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <cmath>
 #include <vector>
 
@@ -11,11 +17,32 @@
 // Constructor / Destructor
 // ────────────────────────────────────────────────
 
-ShaderGradientWidget::ShaderGradientWidget(QWidget *parent)
+ShadyGradientWidget::ShadyGradientWidget(QWidget *parent)
     : QOpenGLWidget(parent)
     , m_vbo(QOpenGLBuffer::VertexBuffer)
     , m_ibo(QOpenGLBuffer::IndexBuffer)
 {
+    // Load default preset if it exists
+    QFile presetFile(QDir::currentPath() + "/shady_gradient_preset.json");
+    if (presetFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QJsonDocument doc = QJsonDocument::fromJson(presetFile.readAll());
+        if (!doc.isNull() && doc.isObject()) {
+            QJsonObject obj = doc.object();
+            if (obj.contains("type")) {
+                m_type = obj["type"].toString() == "WaterPlane" ? Type::WaterPlane : Type::Sphere;
+            }
+            if (obj.contains("speed")) m_speed = obj["speed"].toDouble();
+            if (obj.contains("noiseDensity")) m_noiseDensity = obj["noiseDensity"].toDouble();
+            if (obj.contains("noiseStrength")) m_noiseStrength = obj["noiseStrength"].toDouble();
+            if (obj.contains("spiral")) m_spiral = obj["spiral"].toDouble();
+            if (obj.contains("pixelDensity")) m_pixelDensity = obj["pixelDensity"].toDouble();
+            if (obj.contains("color1")) m_color1 = QColor(obj["color1"].toString());
+            if (obj.contains("color2")) m_color2 = QColor(obj["color2"].toString());
+            if (obj.contains("color3")) m_color3 = QColor(obj["color3"].toString());
+        }
+        presetFile.close();
+    }
+
     // Request OpenGL 3.3 Core
     QSurfaceFormat fmt;
     fmt.setVersion(3, 3);
@@ -23,6 +50,8 @@ ShaderGradientWidget::ShaderGradientWidget(QWidget *parent)
     fmt.setDepthBufferSize(24);
     fmt.setSamples(4);   // MSAA x4
     setFormat(fmt);
+    setMouseTracking(true);
+    setFocusPolicy(Qt::StrongFocus);
 
     // Drive animation at ~60 fps
     connect(&m_timer, &QTimer::timeout, this, [this]() {
@@ -35,7 +64,7 @@ ShaderGradientWidget::ShaderGradientWidget(QWidget *parent)
     m_timer.start(16); // ~62.5 fps
 }
 
-ShaderGradientWidget::~ShaderGradientWidget()
+ShadyGradientWidget::~ShadyGradientWidget()
 {
     makeCurrent();
     m_vao.destroy();
@@ -48,7 +77,7 @@ ShaderGradientWidget::~ShaderGradientWidget()
 // Property setters
 // ────────────────────────────────────────────────
 
-void ShaderGradientWidget::setType(Type t) {
+void ShadyGradientWidget::setType(Type t) {
     if (m_type == t) return;
     m_type = t;
     emit typeChanged(t);
@@ -59,11 +88,11 @@ void ShaderGradientWidget::setType(Type t) {
     doneCurrent();
 }
 
-void ShaderGradientWidget::setSpeed(float v)        { if (m_speed == v) return; m_speed = v; emit speedChanged(v); }
-void ShaderGradientWidget::setNoiseDensity(float v) { if (m_noiseDensity == v) return; m_noiseDensity = v; emit noiseDensityChanged(v); update(); }
-void ShaderGradientWidget::setNoiseStrength(float v){ if (m_noiseStrength == v) return; m_noiseStrength = v; emit noiseStrengthChanged(v); update(); }
-void ShaderGradientWidget::setSpiral(float v)       { if (m_spiral == v) return; m_spiral = v; emit spiralChanged(v); update(); }
-void ShaderGradientWidget::setPixelDensity(float v) {
+void ShadyGradientWidget::setSpeed(float v)        { if (m_speed == v) return; m_speed = v; emit speedChanged(v); }
+void ShadyGradientWidget::setNoiseDensity(float v) { if (m_noiseDensity == v) return; m_noiseDensity = v; emit noiseDensityChanged(v); update(); }
+void ShadyGradientWidget::setNoiseStrength(float v){ if (m_noiseStrength == v) return; m_noiseStrength = v; emit noiseStrengthChanged(v); update(); }
+void ShadyGradientWidget::setSpiral(float v)       { if (m_spiral == v) return; m_spiral = v; emit spiralChanged(v); update(); }
+void ShadyGradientWidget::setPixelDensity(float v) {
     if (m_pixelDensity == v) return;
     m_pixelDensity = v;
     emit pixelDensityChanged(v);
@@ -71,15 +100,15 @@ void ShaderGradientWidget::setPixelDensity(float v) {
     buildMesh();
     doneCurrent();
 }
-void ShaderGradientWidget::setColor1(const QColor &c){ if (m_color1 == c) return; m_color1 = c; emit color1Changed(c); }
-void ShaderGradientWidget::setColor2(const QColor &c){ if (m_color2 == c) return; m_color2 = c; emit color2Changed(c); }
-void ShaderGradientWidget::setColor3(const QColor &c){ if (m_color3 == c) return; m_color3 = c; emit color3Changed(c); }
+void ShadyGradientWidget::setColor1(const QColor &c){ if (m_color1 == c) return; m_color1 = c; emit color1Changed(c); }
+void ShadyGradientWidget::setColor2(const QColor &c){ if (m_color2 == c) return; m_color2 = c; emit color2Changed(c); }
+void ShadyGradientWidget::setColor3(const QColor &c){ if (m_color3 == c) return; m_color3 = c; emit color3Changed(c); }
 
 // ────────────────────────────────────────────────
 // GL Initialisation
 // ────────────────────────────────────────────────
 
-void ShaderGradientWidget::initializeGL()
+void ShadyGradientWidget::initializeGL()
 {
     if (!initializeOpenGLFunctions()) {
         qFatal("Failed to initialize OpenGL 3.3 Core functions");
@@ -93,7 +122,7 @@ void ShaderGradientWidget::initializeGL()
     buildMesh();
 }
 
-void ShaderGradientWidget::setupShaders()
+void ShadyGradientWidget::setupShaders()
 {
     m_program.removeAllShaders();
 
@@ -143,7 +172,7 @@ void ShaderGradientWidget::setupShaders()
 //   Matches Three.js PlaneGeometry(10, 10, 64, 64)
 // ────────────────────────────────────────────────
 
-void ShaderGradientWidget::buildMesh()
+void ShadyGradientWidget::buildMesh()
 {
     const int segsX = std::max(1, static_cast<int>(64 * m_pixelDensity));
     const int segsY = std::max(1, static_cast<int>(64 * m_pixelDensity));
@@ -239,16 +268,71 @@ void ShaderGradientWidget::buildMesh()
 // Resize
 // ────────────────────────────────────────────────
 
-void ShaderGradientWidget::resizeGL(int w, int h)
+void ShadyGradientWidget::resizeGL(int w, int h)
 {
     glViewport(0, 0, w, h);
+}
+
+void ShadyGradientWidget::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton) {
+        m_dragging = true;
+        m_lastMousePos = event->pos();
+        setCursor(Qt::ClosedHandCursor);
+        event->accept();
+        return;
+    }
+
+    QOpenGLWidget::mousePressEvent(event);
+}
+
+void ShadyGradientWidget::mouseMoveEvent(QMouseEvent *event)
+{
+    if (m_dragging && (event->buttons() & Qt::LeftButton)) {
+        const QPoint delta = event->pos() - m_lastMousePos;
+        m_lastMousePos = event->pos();
+
+        m_orbitYaw += static_cast<float>(delta.x()) * 0.5f;
+        m_orbitPitch = std::clamp(m_orbitPitch + static_cast<float>(delta.y()) * 0.5f, -80.0f, 80.0f);
+
+        update();
+        event->accept();
+        return;
+    }
+
+    QOpenGLWidget::mouseMoveEvent(event);
+}
+
+void ShadyGradientWidget::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton && m_dragging) {
+        m_dragging = false;
+        unsetCursor();
+        event->accept();
+        return;
+    }
+
+    QOpenGLWidget::mouseReleaseEvent(event);
+}
+
+void ShadyGradientWidget::wheelEvent(QWheelEvent *event)
+{
+    const float steps = event->angleDelta().y() / 120.0f;
+    if (steps != 0.0f) {
+        m_cameraDistance = std::clamp(m_cameraDistance - steps * 0.6f, -8.0f, 16.0f);
+        update();
+        event->accept();
+        return;
+    }
+
+    QOpenGLWidget::wheelEvent(event);
 }
 
 // ────────────────────────────────────────────────
 // Paint
 // ────────────────────────────────────────────────
 
-void ShaderGradientWidget::paintGL()
+void ShadyGradientWidget::paintGL()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -262,24 +346,30 @@ void ShaderGradientWidget::paintGL()
     proj.perspective(45.0f, aspect, 0.1f, 100.0f);
 
     QMatrix4x4 view;
+    const float baseDistance = (m_type == Type::WaterPlane) ? 3.9f : 12.5f;
+    const float cameraDistance = std::max(0.5f, baseDistance + m_cameraDistance);
     if (m_type == Type::WaterPlane) {
-        view.lookAt({0.0f, 0.0f, 3.9f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
+        view.lookAt({0.0f, 0.0f, cameraDistance}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
     } else {
-        view.lookAt({0.0f, 0.0f, 12.5f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f}); // User settings cameraZoom=12.5
+        view.lookAt({0.0f, 0.0f, cameraDistance}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
     }
 
-    QMatrix4x4 model;
+    QMatrix4x4 baseModel;
     if (m_type == Type::WaterPlane) {
-        model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle
-        model.rotate(180.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle
-        model.rotate(235.0f, 0.0f, 0.0f, 1.0f);         // rotationZ
+        baseModel.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle
+        baseModel.rotate(180.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle
+        baseModel.rotate(235.0f, 0.0f, 0.0f, 1.0f);         // rotationZ
     } else {
-        model.rotate(140.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle=140
-        model.rotate(250.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle=250
-        model.rotate(140.0f, 0.0f, 0.0f, 1.0f);         // rotationZ=140
+        baseModel.rotate(140.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle=140
+        baseModel.rotate(250.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle=250
+        baseModel.rotate(140.0f, 0.0f, 0.0f, 1.0f);         // rotationZ=140
     }
 
-    const QMatrix4x4 mv = view * model;
+    QMatrix4x4 orbit;
+    orbit.rotate(m_orbitYaw, 0.0f, 1.0f, 0.0f);
+    orbit.rotate(m_orbitPitch, 1.0f, 0.0f, 0.0f);
+
+    const QMatrix4x4 mv = view * orbit * baseModel;
     const QMatrix3x3 normalMat = mv.normalMatrix();
 
     // ---- Set uniforms ----

@@ -10,10 +10,10 @@
  /home/shaun/Projects/shaderqt/shaderqt.h
  /home/shaun/Projects/shaderqt/shaderqt_global.h
  /home/shaun/Projects/shaderqt/shaders.qrc
- /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp
- /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.h
- /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp
- /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h
+ /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp
+ /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.h
+ /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp
+ /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h
  /usr/bin/cmake
  /usr/include/GL/gl.h
  /usr/include/alloca.h
@@ -291,6 +291,7 @@
  /usr/include/qt6/QtCore/QElapsedTimer
  /usr/include/qt6/QtCore/QList
  /usr/include/qt6/QtCore/QObject
+ /usr/include/qt6/QtCore/QPoint
  /usr/include/qt6/QtCore/QRect
  /usr/include/qt6/QtCore/QSize
  /usr/include/qt6/QtCore/QSizeF
@@ -1855,10 +1856,10 @@ CMakeFiles/shaderqt.dir/shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp.o
 
 CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o
  /home/shaun/Projects/shaderqt/build/shaderqt_autogen/mocs_compilation.cpp
- /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.h
- /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h
- /home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/moc_ShaderGradientEffect.cpp
- /home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/moc_ShaderGradientWidget.cpp
+ /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.h
+ /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h
+ /home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/moc_ShadyGradientEffect.cpp
+ /home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/moc_ShadyGradientWidget.cpp
  /home/shaun/Projects/shaderqt/shaderqt_global.h
  /usr/include/GL/gl.h
  /usr/include/alloca.h
@@ -2151,6 +2152,7 @@ CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o
  /usr/include/qt6/QtCore/QElapsedTimer
  /usr/include/qt6/QtCore/QList
  /usr/include/qt6/QtCore/QObject
+ /usr/include/qt6/QtCore/QPoint
  /usr/include/qt6/QtCore/QRect
  /usr/include/qt6/QtCore/QSize
  /usr/include/qt6/QtCore/QSizeF
@@ -2428,10 +2430,10 @@ CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdint.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/syslimits.h
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
- /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp
+CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o
+ /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp
  /home/shaun/Projects/shaderqt/shaderqt_global.h
- /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.h
+ /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.h
  /usr/include/GL/gl.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
@@ -2519,6 +2521,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/bits/waitflags.h
  /usr/include/bits/waitstatus.h
  /usr/include/bits/wchar.h
+ /usr/include/bits/wctype-wchar.h
  /usr/include/bits/wordsize.h
  /usr/include/bits/xopen_lim.h
  /usr/include/c++/16.1.1/algorithm
@@ -2534,11 +2537,14 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/bits/allocator.h
  /usr/include/c++/16.1.1/bits/atomic_base.h
  /usr/include/c++/16.1.1/bits/atomic_lockfree_defines.h
+ /usr/include/c++/16.1.1/bits/basic_ios.h
+ /usr/include/c++/16.1.1/bits/basic_ios.tcc
  /usr/include/c++/16.1.1/bits/basic_string.h
  /usr/include/c++/16.1.1/bits/basic_string.tcc
  /usr/include/c++/16.1.1/bits/char_traits.h
  /usr/include/c++/16.1.1/bits/charconv.h
  /usr/include/c++/16.1.1/bits/chrono.h
+ /usr/include/c++/16.1.1/bits/codecvt.h
  /usr/include/c++/16.1.1/bits/concept_check.h
  /usr/include/c++/16.1.1/bits/cpp_type_traits.h
  /usr/include/c++/16.1.1/bits/cxxabi_forced.h
@@ -2548,6 +2554,10 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/bits/exception.h
  /usr/include/c++/16.1.1/bits/exception_defines.h
  /usr/include/c++/16.1.1/bits/exception_ptr.h
+ /usr/include/c++/16.1.1/bits/fs_dir.h
+ /usr/include/c++/16.1.1/bits/fs_fwd.h
+ /usr/include/c++/16.1.1/bits/fs_ops.h
+ /usr/include/c++/16.1.1/bits/fs_path.h
  /usr/include/c++/16.1.1/bits/functexcept.h
  /usr/include/c++/16.1.1/bits/functional_hash.h
  /usr/include/c++/16.1.1/bits/hash_bytes.h
@@ -2555,9 +2565,15 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/bits/hashtable_policy.h
  /usr/include/c++/16.1.1/bits/invoke.h
  /usr/include/c++/16.1.1/bits/ios_base.h
+ /usr/include/c++/16.1.1/bits/istream.tcc
  /usr/include/c++/16.1.1/bits/list.tcc
  /usr/include/c++/16.1.1/bits/locale_classes.h
  /usr/include/c++/16.1.1/bits/locale_classes.tcc
+ /usr/include/c++/16.1.1/bits/locale_conv.h
+ /usr/include/c++/16.1.1/bits/locale_facets.h
+ /usr/include/c++/16.1.1/bits/locale_facets.tcc
+ /usr/include/c++/16.1.1/bits/locale_facets_nonio.h
+ /usr/include/c++/16.1.1/bits/locale_facets_nonio.tcc
  /usr/include/c++/16.1.1/bits/localefwd.h
  /usr/include/c++/16.1.1/bits/memory_resource.h
  /usr/include/c++/16.1.1/bits/memoryfwd.h
@@ -2568,11 +2584,15 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/bits/new_except.h
  /usr/include/c++/16.1.1/bits/new_throw.h
  /usr/include/c++/16.1.1/bits/node_handle.h
+ /usr/include/c++/16.1.1/bits/ostream.h
+ /usr/include/c++/16.1.1/bits/ostream.tcc
  /usr/include/c++/16.1.1/bits/ostream_insert.h
+ /usr/include/c++/16.1.1/bits/ostream_print.h
  /usr/include/c++/16.1.1/bits/parse_numbers.h
  /usr/include/c++/16.1.1/bits/postypes.h
  /usr/include/c++/16.1.1/bits/predefined_ops.h
  /usr/include/c++/16.1.1/bits/ptr_traits.h
+ /usr/include/c++/16.1.1/bits/quoted_string.h
  /usr/include/c++/16.1.1/bits/range_access.h
  /usr/include/c++/16.1.1/bits/refwrap.h
  /usr/include/c++/16.1.1/bits/requires_hosted.h
@@ -2580,6 +2600,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/bits/shared_ptr_atomic.h
  /usr/include/c++/16.1.1/bits/shared_ptr_base.h
  /usr/include/c++/16.1.1/bits/specfun.h
+ /usr/include/c++/16.1.1/bits/sstream.tcc
  /usr/include/c++/16.1.1/bits/std_abs.h
  /usr/include/c++/16.1.1/bits/std_function.h
  /usr/include/c++/16.1.1/bits/stdexcept_except.h
@@ -2628,6 +2649,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/climits
  /usr/include/c++/16.1.1/clocale
  /usr/include/c++/16.1.1/cmath
+ /usr/include/c++/16.1.1/codecvt
  /usr/include/c++/16.1.1/compare
  /usr/include/c++/16.1.1/concepts
  /usr/include/c++/16.1.1/cstddef
@@ -2637,6 +2659,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/cstring
  /usr/include/c++/16.1.1/ctime
  /usr/include/c++/16.1.1/cwchar
+ /usr/include/c++/16.1.1/cwctype
  /usr/include/c++/16.1.1/debug/assertions.h
  /usr/include/c++/16.1.1/debug/debug.h
  /usr/include/c++/16.1.1/exception
@@ -2648,17 +2671,23 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/ext/numeric_traits.h
  /usr/include/c++/16.1.1/ext/string_conversions.h
  /usr/include/c++/16.1.1/ext/type_traits.h
+ /usr/include/c++/16.1.1/filesystem
  /usr/include/c++/16.1.1/functional
  /usr/include/c++/16.1.1/initializer_list
+ /usr/include/c++/16.1.1/iomanip
+ /usr/include/c++/16.1.1/ios
  /usr/include/c++/16.1.1/iosfwd
+ /usr/include/c++/16.1.1/istream
  /usr/include/c++/16.1.1/iterator
  /usr/include/c++/16.1.1/limits
  /usr/include/c++/16.1.1/list
+ /usr/include/c++/16.1.1/locale
  /usr/include/c++/16.1.1/map
  /usr/include/c++/16.1.1/memory
  /usr/include/c++/16.1.1/new
  /usr/include/c++/16.1.1/numeric
  /usr/include/c++/16.1.1/optional
+ /usr/include/c++/16.1.1/ostream
  /usr/include/c++/16.1.1/pstl/execution_defs.h
  /usr/include/c++/16.1.1/pstl/glue_algorithm_defs.h
  /usr/include/c++/16.1.1/pstl/glue_memory_defs.h
@@ -2666,6 +2695,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/pstl/pstl_config.h
  /usr/include/c++/16.1.1/ratio
  /usr/include/c++/16.1.1/set
+ /usr/include/c++/16.1.1/sstream
  /usr/include/c++/16.1.1/stdexcept
  /usr/include/c++/16.1.1/stdlib.h
  /usr/include/c++/16.1.1/streambuf
@@ -2698,10 +2728,14 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++config.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++locale.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/cpu_defines.h
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/error_constants.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/gthr.h
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/messages_members.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/os_defines.h
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/time_members.h
  /usr/include/ctype.h
  /usr/include/endian.h
  /usr/include/errno.h
@@ -2710,6 +2744,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/gnu/stubs-64.h
  /usr/include/gnu/stubs.h
  /usr/include/inttypes.h
+ /usr/include/libintl.h
  /usr/include/limits.h
  /usr/include/linux/errno.h
  /usr/include/linux/limits.h
@@ -2721,8 +2756,12 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/math.h
  /usr/include/pthread.h
  /usr/include/qt6/QtCore/QDebug
+ /usr/include/qt6/QtCore/QDir
  /usr/include/qt6/QtCore/QElapsedTimer
  /usr/include/qt6/QtCore/QEvent
+ /usr/include/qt6/QtCore/QFile
+ /usr/include/qt6/QtCore/QJsonDocument
+ /usr/include/qt6/QtCore/QJsonObject
  /usr/include/qt6/QtCore/QList
  /usr/include/qt6/QtCore/QMargins
  /usr/include/qt6/QtCore/QObject
@@ -2757,6 +2796,8 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/qt6/QtCore/qbytearraylist.h
  /usr/include/qt6/QtCore/qbytearrayview.h
  /usr/include/qt6/QtCore/qcalendar.h
+ /usr/include/qt6/QtCore/qcborcommon.h
+ /usr/include/qt6/QtCore/qcborvalue.h
  /usr/include/qt6/QtCore/qchar.h
  /usr/include/qt6/QtCore/qcheckedint_impl.h
  /usr/include/qt6/QtCore/qcompare.h
@@ -2777,10 +2818,15 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/qt6/QtCore/qdatetime.h
  /usr/include/qt6/QtCore/qdeadlinetimer.h
  /usr/include/qt6/QtCore/qdebug.h
+ /usr/include/qt6/QtCore/qdir.h
+ /usr/include/qt6/QtCore/qdirlisting.h
  /usr/include/qt6/QtCore/qelapsedtimer.h
  /usr/include/qt6/QtCore/qendian.h
  /usr/include/qt6/QtCore/qeventloop.h
  /usr/include/qt6/QtCore/qexceptionhandling.h
+ /usr/include/qt6/QtCore/qfile.h
+ /usr/include/qt6/QtCore/qfiledevice.h
+ /usr/include/qt6/QtCore/qfileinfo.h
  /usr/include/qt6/QtCore/qflags.h
  /usr/include/qt6/QtCore/qfloat16.h
  /usr/include/qt6/QtCore/qforeach.h
@@ -2796,6 +2842,10 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/qt6/QtCore/qiterable.h
  /usr/include/qt6/QtCore/qiterable_impl.h
  /usr/include/qt6/QtCore/qiterator.h
+ /usr/include/qt6/QtCore/qjsondocument.h
+ /usr/include/qt6/QtCore/qjsonobject.h
+ /usr/include/qt6/QtCore/qjsonparseerror.h
+ /usr/include/qt6/QtCore/qjsonvalue.h
  /usr/include/qt6/QtCore/qlatin1stringview.h
  /usr/include/qt6/QtCore/qline.h
  /usr/include/qt6/QtCore/qlist.h
@@ -2826,6 +2876,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/qt6/QtCore/qpropertyprivate.h
  /usr/include/qt6/QtCore/qrect.h
  /usr/include/qt6/QtCore/qrefcount.h
+ /usr/include/qt6/QtCore/qregularexpression.h
  /usr/include/qt6/QtCore/qscopedpointer.h
  /usr/include/qt6/QtCore/qscopeguard.h
  /usr/include/qt6/QtCore/qset.h
@@ -2861,6 +2912,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/qt6/QtCore/qtenvironmentvariables.h
  /usr/include/qt6/QtCore/qtextstream.h
  /usr/include/qt6/QtCore/qtformat_impl.h
+ /usr/include/qt6/QtCore/qtimezone.h
  /usr/include/qt6/QtCore/qtmetamacros.h
  /usr/include/qt6/QtCore/qtnoop.h
  /usr/include/qt6/QtCore/qtpreprocessorsupport.h
@@ -2874,6 +2926,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/qt6/QtCore/qtypes.h
  /usr/include/qt6/QtCore/qurl.h
  /usr/include/qt6/QtCore/qutf8stringview.h
+ /usr/include/qt6/QtCore/quuid.h
  /usr/include/qt6/QtCore/qvariant.h
  /usr/include/qt6/QtCore/qvarlengtharray.h
  /usr/include/qt6/QtCore/qversionnumber.h
@@ -2989,6 +3042,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/include/sys/types.h
  /usr/include/time.h
  /usr/include/wchar.h
+ /usr/include/wctype.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/float.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/limits.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdarg.h
@@ -2997,10 +3051,10 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdint.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/syslimits.h
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
- /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp
+CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o
+ /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp
  /home/shaun/Projects/shaderqt/shaderqt_global.h
- /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h
+ /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h
  /usr/include/GL/gl.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
@@ -3088,6 +3142,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/bits/waitflags.h
  /usr/include/bits/waitstatus.h
  /usr/include/bits/wchar.h
+ /usr/include/bits/wctype-wchar.h
  /usr/include/bits/wordsize.h
  /usr/include/bits/xopen_lim.h
  /usr/include/c++/16.1.1/algorithm
@@ -3103,11 +3158,14 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/bits/allocator.h
  /usr/include/c++/16.1.1/bits/atomic_base.h
  /usr/include/c++/16.1.1/bits/atomic_lockfree_defines.h
+ /usr/include/c++/16.1.1/bits/basic_ios.h
+ /usr/include/c++/16.1.1/bits/basic_ios.tcc
  /usr/include/c++/16.1.1/bits/basic_string.h
  /usr/include/c++/16.1.1/bits/basic_string.tcc
  /usr/include/c++/16.1.1/bits/char_traits.h
  /usr/include/c++/16.1.1/bits/charconv.h
  /usr/include/c++/16.1.1/bits/chrono.h
+ /usr/include/c++/16.1.1/bits/codecvt.h
  /usr/include/c++/16.1.1/bits/concept_check.h
  /usr/include/c++/16.1.1/bits/cpp_type_traits.h
  /usr/include/c++/16.1.1/bits/cxxabi_forced.h
@@ -3117,6 +3175,10 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/bits/exception.h
  /usr/include/c++/16.1.1/bits/exception_defines.h
  /usr/include/c++/16.1.1/bits/exception_ptr.h
+ /usr/include/c++/16.1.1/bits/fs_dir.h
+ /usr/include/c++/16.1.1/bits/fs_fwd.h
+ /usr/include/c++/16.1.1/bits/fs_ops.h
+ /usr/include/c++/16.1.1/bits/fs_path.h
  /usr/include/c++/16.1.1/bits/functexcept.h
  /usr/include/c++/16.1.1/bits/functional_hash.h
  /usr/include/c++/16.1.1/bits/hash_bytes.h
@@ -3124,9 +3186,15 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/bits/hashtable_policy.h
  /usr/include/c++/16.1.1/bits/invoke.h
  /usr/include/c++/16.1.1/bits/ios_base.h
+ /usr/include/c++/16.1.1/bits/istream.tcc
  /usr/include/c++/16.1.1/bits/list.tcc
  /usr/include/c++/16.1.1/bits/locale_classes.h
  /usr/include/c++/16.1.1/bits/locale_classes.tcc
+ /usr/include/c++/16.1.1/bits/locale_conv.h
+ /usr/include/c++/16.1.1/bits/locale_facets.h
+ /usr/include/c++/16.1.1/bits/locale_facets.tcc
+ /usr/include/c++/16.1.1/bits/locale_facets_nonio.h
+ /usr/include/c++/16.1.1/bits/locale_facets_nonio.tcc
  /usr/include/c++/16.1.1/bits/localefwd.h
  /usr/include/c++/16.1.1/bits/memory_resource.h
  /usr/include/c++/16.1.1/bits/memoryfwd.h
@@ -3137,11 +3205,15 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/bits/new_except.h
  /usr/include/c++/16.1.1/bits/new_throw.h
  /usr/include/c++/16.1.1/bits/node_handle.h
+ /usr/include/c++/16.1.1/bits/ostream.h
+ /usr/include/c++/16.1.1/bits/ostream.tcc
  /usr/include/c++/16.1.1/bits/ostream_insert.h
+ /usr/include/c++/16.1.1/bits/ostream_print.h
  /usr/include/c++/16.1.1/bits/parse_numbers.h
  /usr/include/c++/16.1.1/bits/postypes.h
  /usr/include/c++/16.1.1/bits/predefined_ops.h
  /usr/include/c++/16.1.1/bits/ptr_traits.h
+ /usr/include/c++/16.1.1/bits/quoted_string.h
  /usr/include/c++/16.1.1/bits/range_access.h
  /usr/include/c++/16.1.1/bits/refwrap.h
  /usr/include/c++/16.1.1/bits/requires_hosted.h
@@ -3149,6 +3221,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/bits/shared_ptr_atomic.h
  /usr/include/c++/16.1.1/bits/shared_ptr_base.h
  /usr/include/c++/16.1.1/bits/specfun.h
+ /usr/include/c++/16.1.1/bits/sstream.tcc
  /usr/include/c++/16.1.1/bits/std_abs.h
  /usr/include/c++/16.1.1/bits/std_function.h
  /usr/include/c++/16.1.1/bits/stdexcept_except.h
@@ -3197,6 +3270,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/climits
  /usr/include/c++/16.1.1/clocale
  /usr/include/c++/16.1.1/cmath
+ /usr/include/c++/16.1.1/codecvt
  /usr/include/c++/16.1.1/compare
  /usr/include/c++/16.1.1/concepts
  /usr/include/c++/16.1.1/cstddef
@@ -3206,6 +3280,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/cstring
  /usr/include/c++/16.1.1/ctime
  /usr/include/c++/16.1.1/cwchar
+ /usr/include/c++/16.1.1/cwctype
  /usr/include/c++/16.1.1/debug/assertions.h
  /usr/include/c++/16.1.1/debug/debug.h
  /usr/include/c++/16.1.1/exception
@@ -3216,17 +3291,23 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/ext/numeric_traits.h
  /usr/include/c++/16.1.1/ext/string_conversions.h
  /usr/include/c++/16.1.1/ext/type_traits.h
+ /usr/include/c++/16.1.1/filesystem
  /usr/include/c++/16.1.1/functional
  /usr/include/c++/16.1.1/initializer_list
+ /usr/include/c++/16.1.1/iomanip
+ /usr/include/c++/16.1.1/ios
  /usr/include/c++/16.1.1/iosfwd
+ /usr/include/c++/16.1.1/istream
  /usr/include/c++/16.1.1/iterator
  /usr/include/c++/16.1.1/limits
  /usr/include/c++/16.1.1/list
+ /usr/include/c++/16.1.1/locale
  /usr/include/c++/16.1.1/map
  /usr/include/c++/16.1.1/memory
  /usr/include/c++/16.1.1/new
  /usr/include/c++/16.1.1/numeric
  /usr/include/c++/16.1.1/optional
+ /usr/include/c++/16.1.1/ostream
  /usr/include/c++/16.1.1/pstl/execution_defs.h
  /usr/include/c++/16.1.1/pstl/glue_algorithm_defs.h
  /usr/include/c++/16.1.1/pstl/glue_memory_defs.h
@@ -3234,6 +3315,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/pstl/pstl_config.h
  /usr/include/c++/16.1.1/ratio
  /usr/include/c++/16.1.1/set
+ /usr/include/c++/16.1.1/sstream
  /usr/include/c++/16.1.1/stdexcept
  /usr/include/c++/16.1.1/stdlib.h
  /usr/include/c++/16.1.1/streambuf
@@ -3266,10 +3348,14 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++config.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++locale.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/cpu_defines.h
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/error_constants.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/gthr.h
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/messages_members.h
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/os_defines.h
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/time_members.h
  /usr/include/ctype.h
  /usr/include/endian.h
  /usr/include/errno.h
@@ -3278,6 +3364,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/gnu/stubs-64.h
  /usr/include/gnu/stubs.h
  /usr/include/inttypes.h
+ /usr/include/libintl.h
  /usr/include/limits.h
  /usr/include/linux/errno.h
  /usr/include/linux/limits.h
@@ -3289,8 +3376,17 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/math.h
  /usr/include/pthread.h
  /usr/include/qt6/QtCore/QDebug
+ /usr/include/qt6/QtCore/QDir
  /usr/include/qt6/QtCore/QElapsedTimer
+ /usr/include/qt6/QtCore/QFile
+ /usr/include/qt6/QtCore/QJsonDocument
+ /usr/include/qt6/QtCore/QJsonObject
+ /usr/include/qt6/QtCore/QList
  /usr/include/qt6/QtCore/QObject
+ /usr/include/qt6/QtCore/QPoint
+ /usr/include/qt6/QtCore/QRect
+ /usr/include/qt6/QtCore/QSize
+ /usr/include/qt6/QtCore/QSizeF
  /usr/include/qt6/QtCore/QTimer
  /usr/include/qt6/QtCore/q17memory.h
  /usr/include/qt6/QtCore/q20bit.h
@@ -3318,6 +3414,9 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/qt6/QtCore/qbytearrayalgorithms.h
  /usr/include/qt6/QtCore/qbytearraylist.h
  /usr/include/qt6/QtCore/qbytearrayview.h
+ /usr/include/qt6/QtCore/qcalendar.h
+ /usr/include/qt6/QtCore/qcborcommon.h
+ /usr/include/qt6/QtCore/qcborvalue.h
  /usr/include/qt6/QtCore/qchar.h
  /usr/include/qt6/QtCore/qcheckedint_impl.h
  /usr/include/qt6/QtCore/qcompare.h
@@ -3330,14 +3429,23 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/qt6/QtCore/qcontainerinfo.h
  /usr/include/qt6/QtCore/qcontainertools_impl.h
  /usr/include/qt6/QtCore/qcontiguouscache.h
+ /usr/include/qt6/QtCore/qcoreapplication.h
+ /usr/include/qt6/QtCore/qcoreapplication_platform.h
+ /usr/include/qt6/QtCore/qcoreevent.h
  /usr/include/qt6/QtCore/qdarwinhelpers.h
  /usr/include/qt6/QtCore/qdatastream.h
+ /usr/include/qt6/QtCore/qdatetime.h
  /usr/include/qt6/QtCore/qdeadlinetimer.h
  /usr/include/qt6/QtCore/qdebug.h
+ /usr/include/qt6/QtCore/qdir.h
+ /usr/include/qt6/QtCore/qdirlisting.h
  /usr/include/qt6/QtCore/qelapsedtimer.h
  /usr/include/qt6/QtCore/qendian.h
  /usr/include/qt6/QtCore/qeventloop.h
  /usr/include/qt6/QtCore/qexceptionhandling.h
+ /usr/include/qt6/QtCore/qfile.h
+ /usr/include/qt6/QtCore/qfiledevice.h
+ /usr/include/qt6/QtCore/qfileinfo.h
  /usr/include/qt6/QtCore/qflags.h
  /usr/include/qt6/QtCore/qfloat16.h
  /usr/include/qt6/QtCore/qforeach.h
@@ -3348,12 +3456,18 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/qt6/QtCore/qglobalstatic.h
  /usr/include/qt6/QtCore/qhash.h
  /usr/include/qt6/QtCore/qhashfunctions.h
+ /usr/include/qt6/QtCore/qiodevice.h
  /usr/include/qt6/QtCore/qiodevicebase.h
  /usr/include/qt6/QtCore/qiterable.h
  /usr/include/qt6/QtCore/qiterator.h
+ /usr/include/qt6/QtCore/qjsondocument.h
+ /usr/include/qt6/QtCore/qjsonobject.h
+ /usr/include/qt6/QtCore/qjsonparseerror.h
+ /usr/include/qt6/QtCore/qjsonvalue.h
  /usr/include/qt6/QtCore/qlatin1stringview.h
  /usr/include/qt6/QtCore/qline.h
  /usr/include/qt6/QtCore/qlist.h
+ /usr/include/qt6/QtCore/qlocale.h
  /usr/include/qt6/QtCore/qlogging.h
  /usr/include/qt6/QtCore/qmalloc.h
  /usr/include/qt6/QtCore/qmap.h
@@ -3375,6 +3489,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/qt6/QtCore/qprocessordetection.h
  /usr/include/qt6/QtCore/qrect.h
  /usr/include/qt6/QtCore/qrefcount.h
+ /usr/include/qt6/QtCore/qregularexpression.h
  /usr/include/qt6/QtCore/qscopedpointer.h
  /usr/include/qt6/QtCore/qscopeguard.h
  /usr/include/qt6/QtCore/qset.h
@@ -3411,6 +3526,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/qt6/QtCore/qtextstream.h
  /usr/include/qt6/QtCore/qtformat_impl.h
  /usr/include/qt6/QtCore/qtimer.h
+ /usr/include/qt6/QtCore/qtimezone.h
  /usr/include/qt6/QtCore/qtmetamacros.h
  /usr/include/qt6/QtCore/qtnoop.h
  /usr/include/qt6/QtCore/qtpreprocessorsupport.h
@@ -3421,7 +3537,9 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/qt6/QtCore/qtversionchecks.h
  /usr/include/qt6/QtCore/qtypeinfo.h
  /usr/include/qt6/QtCore/qtypes.h
+ /usr/include/qt6/QtCore/qurl.h
  /usr/include/qt6/QtCore/qutf8stringview.h
+ /usr/include/qt6/QtCore/quuid.h
  /usr/include/qt6/QtCore/qvariant.h
  /usr/include/qt6/QtCore/qvarlengtharray.h
  /usr/include/qt6/QtCore/qversiontagging.h
@@ -3430,20 +3548,29 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/qt6/QtGui/QColor
  /usr/include/qt6/QtGui/QMatrix3x3
  /usr/include/qt6/QtGui/QMatrix4x4
+ /usr/include/qt6/QtGui/QMouseEvent
  /usr/include/qt6/QtGui/QOpenGLContext
  /usr/include/qt6/QtGui/QSurfaceFormat
+ /usr/include/qt6/QtGui/QTransform
+ /usr/include/qt6/QtGui/QWheelEvent
  /usr/include/qt6/QtGui/qaction.h
  /usr/include/qt6/QtGui/qbitmap.h
  /usr/include/qt6/QtGui/qbrush.h
  /usr/include/qt6/QtGui/qcolor.h
  /usr/include/qt6/QtGui/qcursor.h
+ /usr/include/qt6/QtGui/qevent.h
+ /usr/include/qt6/QtGui/qeventpoint.h
  /usr/include/qt6/QtGui/qfont.h
  /usr/include/qt6/QtGui/qfontinfo.h
  /usr/include/qt6/QtGui/qfontmetrics.h
  /usr/include/qt6/QtGui/qfontvariableaxis.h
  /usr/include/qt6/QtGui/qgenericmatrix.h
+ /usr/include/qt6/QtGui/qguiapplication.h
+ /usr/include/qt6/QtGui/qguiapplication_platform.h
  /usr/include/qt6/QtGui/qicon.h
  /usr/include/qt6/QtGui/qimage.h
+ /usr/include/qt6/QtGui/qinputdevice.h
+ /usr/include/qt6/QtGui/qinputmethod.h
  /usr/include/qt6/QtGui/qkeysequence.h
  /usr/include/qt6/QtGui/qmatrix4x4.h
  /usr/include/qt6/QtGui/qopengl.h
@@ -3454,10 +3581,13 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/qt6/QtGui/qpalette.h
  /usr/include/qt6/QtGui/qpixelformat.h
  /usr/include/qt6/QtGui/qpixmap.h
+ /usr/include/qt6/QtGui/qpointingdevice.h
  /usr/include/qt6/QtGui/qpolygon.h
  /usr/include/qt6/QtGui/qregion.h
  /usr/include/qt6/QtGui/qrgb.h
  /usr/include/qt6/QtGui/qrgba64.h
+ /usr/include/qt6/QtGui/qscreen.h
+ /usr/include/qt6/QtGui/qscreen_platform.h
  /usr/include/qt6/QtGui/qsurfaceformat.h
  /usr/include/qt6/QtGui/qtgui-config.h
  /usr/include/qt6/QtGui/qtguiexports.h
@@ -3505,6 +3635,7 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
  /usr/include/sys/types.h
  /usr/include/time.h
  /usr/include/wchar.h
+ /usr/include/wctype.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/limits.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdarg.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdbool.h
@@ -3544,6 +3675,6 @@ libshaderqt.so
  /home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt.dir/shaderqt.cpp.o
  /home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt.dir/shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp.o
  /home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o
- /home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
- /home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
+ /home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o
+ /home/shaun/Projects/shaderqt/build/CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o
 

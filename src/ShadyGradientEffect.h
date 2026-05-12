@@ -11,7 +11,7 @@
 #include <QColor>
 
 /**
- * @brief ShaderGradientEffect
+ * @brief ShadyGradientEffect
  *
  * A QQuickFramebufferObject that renders the shadergradient "waterPlane"
  * cosmic aurora shader for use inside QML.
@@ -20,7 +20,7 @@
  * @code
  *   import ShaderQt 1.0
  *
- *   ShaderGradientEffect {
+ *   ShadyGradientEffect {
  *       anchors.fill: parent
  *       speed: 0.3
  *       noiseDensity: 1.5
@@ -31,7 +31,7 @@
  *   }
  * @endcode
  */
-class SHADERQT_EXPORT ShaderGradientEffect : public QQuickFramebufferObject
+class SHADERQT_EXPORT ShadyGradientEffect : public QQuickFramebufferObject
 {
     Q_OBJECT
     QML_ELEMENT
@@ -53,7 +53,7 @@ public:
     };
     Q_ENUM(Type)
 
-    explicit ShaderGradientEffect(QQuickItem *parent = nullptr);
+    explicit ShadyGradientEffect(QQuickItem *parent = nullptr);
 
     // QQuickFramebufferObject interface
     Renderer *createRenderer() const override;

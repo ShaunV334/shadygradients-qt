@@ -1101,7 +1101,7 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 
 CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/shaderqt/src/preview/main.cpp \
   /home/shaun/Projects/shaderqt/shaderqt_global.h \
-  /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h \
+  /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h \
   /usr/include/GL/gl.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -1189,6 +1189,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
+  /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
   /usr/include/bits/xopen_lim.h \
   /usr/include/c++/16.1.1/algorithm \
@@ -1204,11 +1205,14 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/bits/allocator.h \
   /usr/include/c++/16.1.1/bits/atomic_base.h \
   /usr/include/c++/16.1.1/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/16.1.1/bits/basic_ios.h \
+  /usr/include/c++/16.1.1/bits/basic_ios.tcc \
   /usr/include/c++/16.1.1/bits/basic_string.h \
   /usr/include/c++/16.1.1/bits/basic_string.tcc \
   /usr/include/c++/16.1.1/bits/char_traits.h \
   /usr/include/c++/16.1.1/bits/charconv.h \
   /usr/include/c++/16.1.1/bits/chrono.h \
+  /usr/include/c++/16.1.1/bits/codecvt.h \
   /usr/include/c++/16.1.1/bits/concept_check.h \
   /usr/include/c++/16.1.1/bits/cpp_type_traits.h \
   /usr/include/c++/16.1.1/bits/cxxabi_forced.h \
@@ -1218,6 +1222,10 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/bits/exception.h \
   /usr/include/c++/16.1.1/bits/exception_defines.h \
   /usr/include/c++/16.1.1/bits/exception_ptr.h \
+  /usr/include/c++/16.1.1/bits/fs_dir.h \
+  /usr/include/c++/16.1.1/bits/fs_fwd.h \
+  /usr/include/c++/16.1.1/bits/fs_ops.h \
+  /usr/include/c++/16.1.1/bits/fs_path.h \
   /usr/include/c++/16.1.1/bits/functexcept.h \
   /usr/include/c++/16.1.1/bits/functional_hash.h \
   /usr/include/c++/16.1.1/bits/hash_bytes.h \
@@ -1225,9 +1233,15 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/bits/hashtable_policy.h \
   /usr/include/c++/16.1.1/bits/invoke.h \
   /usr/include/c++/16.1.1/bits/ios_base.h \
+  /usr/include/c++/16.1.1/bits/istream.tcc \
   /usr/include/c++/16.1.1/bits/list.tcc \
   /usr/include/c++/16.1.1/bits/locale_classes.h \
   /usr/include/c++/16.1.1/bits/locale_classes.tcc \
+  /usr/include/c++/16.1.1/bits/locale_conv.h \
+  /usr/include/c++/16.1.1/bits/locale_facets.h \
+  /usr/include/c++/16.1.1/bits/locale_facets.tcc \
+  /usr/include/c++/16.1.1/bits/locale_facets_nonio.h \
+  /usr/include/c++/16.1.1/bits/locale_facets_nonio.tcc \
   /usr/include/c++/16.1.1/bits/localefwd.h \
   /usr/include/c++/16.1.1/bits/memory_resource.h \
   /usr/include/c++/16.1.1/bits/memoryfwd.h \
@@ -1238,11 +1252,15 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/bits/new_except.h \
   /usr/include/c++/16.1.1/bits/new_throw.h \
   /usr/include/c++/16.1.1/bits/node_handle.h \
+  /usr/include/c++/16.1.1/bits/ostream.h \
+  /usr/include/c++/16.1.1/bits/ostream.tcc \
   /usr/include/c++/16.1.1/bits/ostream_insert.h \
+  /usr/include/c++/16.1.1/bits/ostream_print.h \
   /usr/include/c++/16.1.1/bits/parse_numbers.h \
   /usr/include/c++/16.1.1/bits/postypes.h \
   /usr/include/c++/16.1.1/bits/predefined_ops.h \
   /usr/include/c++/16.1.1/bits/ptr_traits.h \
+  /usr/include/c++/16.1.1/bits/quoted_string.h \
   /usr/include/c++/16.1.1/bits/range_access.h \
   /usr/include/c++/16.1.1/bits/refwrap.h \
   /usr/include/c++/16.1.1/bits/requires_hosted.h \
@@ -1250,6 +1268,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/bits/shared_ptr_atomic.h \
   /usr/include/c++/16.1.1/bits/shared_ptr_base.h \
   /usr/include/c++/16.1.1/bits/specfun.h \
+  /usr/include/c++/16.1.1/bits/sstream.tcc \
   /usr/include/c++/16.1.1/bits/std_abs.h \
   /usr/include/c++/16.1.1/bits/std_function.h \
   /usr/include/c++/16.1.1/bits/stdexcept_except.h \
@@ -1298,6 +1317,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/climits \
   /usr/include/c++/16.1.1/clocale \
   /usr/include/c++/16.1.1/cmath \
+  /usr/include/c++/16.1.1/codecvt \
   /usr/include/c++/16.1.1/compare \
   /usr/include/c++/16.1.1/concepts \
   /usr/include/c++/16.1.1/cstddef \
@@ -1307,6 +1327,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/cstring \
   /usr/include/c++/16.1.1/ctime \
   /usr/include/c++/16.1.1/cwchar \
+  /usr/include/c++/16.1.1/cwctype \
   /usr/include/c++/16.1.1/debug/assertions.h \
   /usr/include/c++/16.1.1/debug/debug.h \
   /usr/include/c++/16.1.1/exception \
@@ -1317,17 +1338,23 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/ext/numeric_traits.h \
   /usr/include/c++/16.1.1/ext/string_conversions.h \
   /usr/include/c++/16.1.1/ext/type_traits.h \
+  /usr/include/c++/16.1.1/filesystem \
   /usr/include/c++/16.1.1/functional \
   /usr/include/c++/16.1.1/initializer_list \
+  /usr/include/c++/16.1.1/iomanip \
+  /usr/include/c++/16.1.1/ios \
   /usr/include/c++/16.1.1/iosfwd \
+  /usr/include/c++/16.1.1/istream \
   /usr/include/c++/16.1.1/iterator \
   /usr/include/c++/16.1.1/limits \
   /usr/include/c++/16.1.1/list \
+  /usr/include/c++/16.1.1/locale \
   /usr/include/c++/16.1.1/map \
   /usr/include/c++/16.1.1/memory \
   /usr/include/c++/16.1.1/new \
   /usr/include/c++/16.1.1/numeric \
   /usr/include/c++/16.1.1/optional \
+  /usr/include/c++/16.1.1/ostream \
   /usr/include/c++/16.1.1/pstl/execution_defs.h \
   /usr/include/c++/16.1.1/pstl/glue_algorithm_defs.h \
   /usr/include/c++/16.1.1/pstl/glue_memory_defs.h \
@@ -1335,6 +1362,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/pstl/pstl_config.h \
   /usr/include/c++/16.1.1/ratio \
   /usr/include/c++/16.1.1/set \
+  /usr/include/c++/16.1.1/sstream \
   /usr/include/c++/16.1.1/stdexcept \
   /usr/include/c++/16.1.1/stdlib.h \
   /usr/include/c++/16.1.1/streambuf \
@@ -1367,10 +1395,14 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
   /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++locale.h \
   /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
+  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
+  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
   /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/error_constants.h \
   /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/gthr.h \
+  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
   /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
+  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -1379,6 +1411,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
@@ -1390,7 +1423,12 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QElapsedTimer \
+  /usr/include/qt6/QtCore/QFile \
+  /usr/include/qt6/QtCore/QJsonDocument \
+  /usr/include/qt6/QtCore/QJsonObject \
   /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QPoint \
+  /usr/include/qt6/QtCore/QTextStream \
   /usr/include/qt6/QtCore/QTimer \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20bit.h \
@@ -1419,6 +1457,9 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtCore/qbytearrayalgorithms.h \
   /usr/include/qt6/QtCore/qbytearraylist.h \
   /usr/include/qt6/QtCore/qbytearrayview.h \
+  /usr/include/qt6/QtCore/qcalendar.h \
+  /usr/include/qt6/QtCore/qcborcommon.h \
+  /usr/include/qt6/QtCore/qcborvalue.h \
   /usr/include/qt6/QtCore/qchar.h \
   /usr/include/qt6/QtCore/qcheckedint_impl.h \
   /usr/include/qt6/QtCore/qcompare.h \
@@ -1436,12 +1477,18 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtCore/qcoreevent.h \
   /usr/include/qt6/QtCore/qdarwinhelpers.h \
   /usr/include/qt6/QtCore/qdatastream.h \
+  /usr/include/qt6/QtCore/qdatetime.h \
   /usr/include/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/qt6/QtCore/qdebug.h \
+  /usr/include/qt6/QtCore/qdir.h \
+  /usr/include/qt6/QtCore/qdirlisting.h \
   /usr/include/qt6/QtCore/qelapsedtimer.h \
   /usr/include/qt6/QtCore/qendian.h \
   /usr/include/qt6/QtCore/qeventloop.h \
   /usr/include/qt6/QtCore/qexceptionhandling.h \
+  /usr/include/qt6/QtCore/qfile.h \
+  /usr/include/qt6/QtCore/qfiledevice.h \
+  /usr/include/qt6/QtCore/qfileinfo.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
   /usr/include/qt6/QtCore/qforeach.h \
@@ -1456,6 +1503,10 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtCore/qiodevicebase.h \
   /usr/include/qt6/QtCore/qiterable.h \
   /usr/include/qt6/QtCore/qiterator.h \
+  /usr/include/qt6/QtCore/qjsondocument.h \
+  /usr/include/qt6/QtCore/qjsonobject.h \
+  /usr/include/qt6/QtCore/qjsonparseerror.h \
+  /usr/include/qt6/QtCore/qjsonvalue.h \
   /usr/include/qt6/QtCore/qlatin1stringview.h \
   /usr/include/qt6/QtCore/qline.h \
   /usr/include/qt6/QtCore/qlist.h \
@@ -1518,6 +1569,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtCore/qtextstream.h \
   /usr/include/qt6/QtCore/qtformat_impl.h \
   /usr/include/qt6/QtCore/qtimer.h \
+  /usr/include/qt6/QtCore/qtimezone.h \
   /usr/include/qt6/QtCore/qtmetamacros.h \
   /usr/include/qt6/QtCore/qtnoop.h \
   /usr/include/qt6/QtCore/qtpreprocessorsupport.h \
@@ -1530,6 +1582,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtCore/qtypes.h \
   /usr/include/qt6/QtCore/qurl.h \
   /usr/include/qt6/QtCore/qutf8stringview.h \
+  /usr/include/qt6/QtCore/quuid.h \
   /usr/include/qt6/QtCore/qvariant.h \
   /usr/include/qt6/QtCore/qvarlengtharray.h \
   /usr/include/qt6/QtCore/qversiontagging.h \
@@ -1604,12 +1657,14 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtWidgets/QColorDialog \
   /usr/include/qt6/QtWidgets/QComboBox \
   /usr/include/qt6/QtWidgets/QDoubleSpinBox \
+  /usr/include/qt6/QtWidgets/QFileDialog \
   /usr/include/qt6/QtWidgets/QFormLayout \
   /usr/include/qt6/QtWidgets/QGroupBox \
   /usr/include/qt6/QtWidgets/QHBoxLayout \
   /usr/include/qt6/QtWidgets/QLabel \
   /usr/include/qt6/QtWidgets/QLayout \
   /usr/include/qt6/QtWidgets/QMainWindow \
+  /usr/include/qt6/QtWidgets/QMessageBox \
   /usr/include/qt6/QtWidgets/QPushButton \
   /usr/include/qt6/QtWidgets/QSlider \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
@@ -1623,6 +1678,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtWidgets/qcolordialog.h \
   /usr/include/qt6/QtWidgets/qcombobox.h \
   /usr/include/qt6/QtWidgets/qdialog.h \
+  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
+  /usr/include/qt6/QtWidgets/qfiledialog.h \
   /usr/include/qt6/QtWidgets/qformlayout.h \
   /usr/include/qt6/QtWidgets/qframe.h \
   /usr/include/qt6/QtWidgets/qgridlayout.h \
@@ -1631,6 +1688,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/qt6/QtWidgets/qlayout.h \
   /usr/include/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/qt6/QtWidgets/qmainwindow.h \
+  /usr/include/qt6/QtWidgets/qmessagebox.h \
   /usr/include/qt6/QtWidgets/qpushbutton.h \
   /usr/include/qt6/QtWidgets/qrubberband.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
@@ -1657,6 +1715,7 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o: /home/shaun/Projects/sha
   /usr/include/sys/types.h \
   /usr/include/time.h \
   /usr/include/wchar.h \
+  /usr/include/wctype.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/limits.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdbool.h \
@@ -1820,8 +1879,6 @@ libshaderqt.so:
 
 /usr/lib32/libbrotlienc.so.1:
 
-/usr/lib32/libblkid.so.1:
-
 /usr/lib32/libGLdispatch.so.0:
 
 /usr/lib/liburing.so.2:
@@ -1926,19 +1983,17 @@ libshaderqt.so:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/limits.h:
 
+/usr/include/wctype.h:
+
 /usr/include/wchar.h:
 
 /usr/include/sys/types.h:
 
 /usr/include/sys/cdefs.h:
 
-/usr/include/strings.h:
-
 /usr/include/string.h:
 
 /usr/include/stdlib.h:
-
-/usr/include/stdio.h:
 
 /usr/include/qt6/QtWidgets/qtwidgetsglobal.h:
 
@@ -1968,6 +2023,8 @@ libshaderqt.so:
 
 /usr/include/qt6/QtWidgets/qformlayout.h:
 
+/usr/include/qt6/QtWidgets/qdialogbuttonbox.h:
+
 /usr/include/qt6/QtWidgets/qcombobox.h:
 
 /usr/include/qt6/QtWidgets/qcolordialog.h:
@@ -1978,11 +2035,17 @@ libshaderqt.so:
 
 /usr/include/qt6/QtWidgets/QSlider:
 
+/usr/lib32/libblkid.so.1:
+
+/usr/include/qt6/QtWidgets/QMessageBox:
+
 /usr/include/qt6/QtWidgets/QLayout:
 
 /usr/include/qt6/QtWidgets/QGroupBox:
 
 /usr/include/qt6/QtWidgets/QFormLayout:
+
+/usr/include/qt6/QtWidgets/QFileDialog:
 
 /usr/include/qt6/QtOpenGL/qtopenglexports.h:
 
@@ -2040,6 +2103,8 @@ libshaderqt.so:
 
 /usr/include/qt6/QtGui/qinputmethod.h:
 
+/usr/include/qt6/QtWidgets/qmessagebox.h:
+
 /usr/include/qt6/QtGui/qimage.h:
 
 /usr/include/qt6/QtGui/qguiapplication.h:
@@ -2078,6 +2143,8 @@ libshaderqt.so:
 
 /usr/include/qt6/QtCore/qtmetamacros.h:
 
+/usr/include/qt6/QtCore/qtimezone.h:
+
 /usr/include/qt6/QtCore/qtformat_impl.h:
 
 /usr/include/qt6/QtCore/qtdeprecationmarkers.h:
@@ -2089,8 +2156,6 @@ libshaderqt.so:
 /usr/include/qt6/QtCore/qtcore-config.h:
 
 /usr/include/qt6/QtCore/qtconfigmacros.h:
-
-/usr/include/qt6/QtCore/qtconfiginclude.h:
 
 /usr/include/qt6/QtCore/qsysinfo.h:
 
@@ -2156,6 +2221,10 @@ libshaderqt.so:
 
 /usr/include/qt6/QtCore/qline.h:
 
+/usr/include/stdio.h:
+
+/usr/include/qt6/QtCore/qjsondocument.h:
+
 /usr/include/qt6/QtCore/qiterator.h:
 
 /usr/include/qt6/QtCore/qiterable.h:
@@ -2172,11 +2241,19 @@ libshaderqt.so:
 
 /usr/include/qt6/QtCore/qforeach.h:
 
+/usr/include/qt6/QtCore/qfileinfo.h:
+
+/usr/include/qt6/QtCore/qfiledevice.h:
+
+/usr/include/qt6/QtCore/qfile.h:
+
 /usr/include/qt6/QtCore/qexceptionhandling.h:
 
 /usr/include/qt6/QtCore/qeventloop.h:
 
 /usr/include/qt6/QtCore/qelapsedtimer.h:
+
+/usr/include/qt6/QtCore/qdirlisting.h:
 
 /usr/include/qt6/QtCore/qdebug.h:
 
@@ -2200,6 +2277,12 @@ libshaderqt.so:
 
 /usr/include/qt6/QtCore/qchar.h:
 
+/usr/include/qt6/QtCore/qtconfiginclude.h:
+
+/usr/include/qt6/QtCore/qcborvalue.h:
+
+/usr/include/qt6/QtCore/qcalendar.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o:
 
 /usr/include/qt6/QtCore/qbytearrayview.h:
@@ -2222,6 +2305,8 @@ libshaderqt.so:
 
 /usr/include/qt6/QtCore/qalgorithms.h:
 
+/usr/include/qt6/QtCore/qjsonparseerror.h:
+
 /usr/include/qt6/QtCore/qabstractitemmodel.h:
 
 /usr/include/qt6/QtCore/qabstracteventdispatcher.h:
@@ -2237,6 +2322,10 @@ libshaderqt.so:
 /usr/include/qt6/QtCore/q17memory.h:
 
 /usr/include/qt6/QtCore/QTimer:
+
+/usr/include/qt6/QtCore/qcborcommon.h:
+
+/usr/include/qt6/QtCore/QJsonDocument:
 
 /usr/include/qt6/QtCore/QElapsedTimer:
 
@@ -2256,13 +2345,21 @@ libshaderqt.so:
 
 /usr/include/limits.h:
 
+/usr/include/libintl.h:
+
 /usr/include/inttypes.h:
 
 /usr/include/features-time64.h:
 
 /usr/include/errno.h:
 
+/usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/time_members.h:
+
 /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/error_constants.h:
+
+/usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h:
+
+/usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
 
 /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++config.h:
 
@@ -2277,6 +2374,8 @@ libshaderqt.so:
 /usr/include/c++/16.1.1/utility:
 
 /usr/include/c++/16.1.1/unordered_set:
+
+/usr/include/qt6/QtCore/qjsonvalue.h:
 
 /usr/include/c++/16.1.1/type_traits:
 
@@ -2322,6 +2421,8 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/iosfwd:
 
+/usr/include/c++/16.1.1/iomanip:
+
 /usr/include/c++/16.1.1/initializer_list:
 
 /usr/include/c++/16.1.1/functional:
@@ -2342,6 +2443,8 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/debug/assertions.h:
 
+/usr/include/c++/16.1.1/cwctype:
+
 /usr/include/c++/16.1.1/cwchar:
 
 /usr/include/c++/16.1.1/ctime:
@@ -2354,21 +2457,23 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/cstdint:
 
+/usr/include/strings.h:
+
+/usr/include/c++/16.1.1/codecvt:
+
 /usr/include/c++/16.1.1/cmath:
 
 /usr/include/c++/16.1.1/climits:
 
 /usr/include/c++/16.1.1/chrono:
 
-/usr/include/sys/select.h:
-
-/usr/include/c++/16.1.1/cassert:
-
 /usr/include/qt6/QtWidgets/QWidget:
 
 /usr/include/c++/16.1.1/bits/version.h:
 
 /usr/include/c++/16.1.1/bits/vector.tcc:
+
+/usr/include/qt6/QtCore/QJsonObject:
 
 /usr/include/c++/16.1.1/bits/uses_allocator_args.h:
 
@@ -2381,6 +2486,8 @@ libshaderqt.so:
 /usr/include/c++/16.1.1/bits/string_view.tcc:
 
 /usr/include/c++/16.1.1/bits/streambuf.tcc:
+
+/usr/include/c++/16.1.1/bits/stream_iterator.h:
 
 /usr/include/qt6/QtGui/qvectornd.h:
 
@@ -2420,6 +2527,8 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/bits/std_function.h:
 
+/usr/include/c++/16.1.1/bits/sstream.tcc:
+
 /usr/include/c++/16.1.1/bits/specfun.h:
 
 /usr/include/c++/16.1.1/bits/shared_ptr_atomic.h:
@@ -2430,11 +2539,15 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/bits/refwrap.h:
 
+/usr/include/c++/16.1.1/bits/quoted_string.h:
+
 /usr/include/c++/16.1.1/bits/predefined_ops.h:
 
 /usr/lib32/libbz2.so.1.0:
 
 /usr/include/c++/16.1.1/bits/parse_numbers.h:
+
+/usr/include/c++/16.1.1/bits/ostream.h:
 
 /usr/include/c++/16.1.1/bits/node_handle.h:
 
@@ -2445,6 +2558,14 @@ libshaderqt.so:
 /usr/include/c++/16.1.1/bits/memory_resource.h:
 
 /usr/include/c++/16.1.1/bits/localefwd.h:
+
+/usr/include/c++/16.1.1/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/16.1.1/bits/locale_facets_nonio.h:
+
+/usr/include/c++/16.1.1/bits/locale_facets.tcc:
+
+/usr/include/c++/16.1.1/bits/locale_facets.h:
 
 /usr/include/c++/16.1.1/bits/locale_classes.h:
 
@@ -2496,6 +2617,16 @@ libshaderqt.so:
 
 /usr/include/c++/16.1.1/bits/basic_string.h:
 
+/usr/include/sys/select.h:
+
+/usr/include/c++/16.1.1/cassert:
+
+/usr/include/c++/16.1.1/bits/basic_ios.tcc:
+
+/usr/include/c++/16.1.1/ostream:
+
+/usr/include/c++/16.1.1/bits/basic_ios.h:
+
 /usr/include/c++/16.1.1/bits/atomic_base.h:
 
 /usr/include/qt6/QtCore/qyieldcpu.h:
@@ -2523,6 +2654,8 @@ libshaderqt.so:
 /usr/include/c++/16.1.1/algorithm:
 
 /usr/include/bits/xopen_lim.h:
+
+/usr/include/bits/wctype-wchar.h:
 
 /usr/include/qt6/QtGui/qguiapplication_platform.h:
 
@@ -2661,6 +2794,8 @@ libshaderqt.so:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingTargets.cmake:
+
+/usr/include/c++/16.1.1/bits/ostream_print.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginTargetsPrecheck.cmake:
 
@@ -2900,6 +3035,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake:
 
+/usr/include/qt6/QtCore/QFile:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets.cmake:
 
 /usr/share/cmake/Modules/FindPackageMessage.cmake:
@@ -3014,6 +3151,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginConfig.cmake:
 
+/usr/include/qt6/QtCore/QTextStream:
+
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandQtShellIntegrationPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginTargets.cmake:
@@ -3043,6 +3182,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/include/c++/16.1.1/bits/stl_algo.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandIviShellIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qdir.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginTargets.cmake:
 
@@ -3150,6 +3291,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargetsPrecheck.cmake:
 
+/usr/include/c++/16.1.1/bits/ostream.tcc:
+
 /usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginAdditionalTargetInfo.cmake:
@@ -3237,6 +3380,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 /usr/include/bits/setjmp.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6DrmEglServerBufferPluginAdditionalTargetInfo.cmake:
+
+/usr/include/c++/16.1.1/bits/locale_conv.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets-relwithdebinfo.cmake:
 
@@ -3522,6 +3667,8 @@ CMakeFiles/shaderqt-preview.dir/src/preview/main.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets-relwithdebinfo.cmake:
 
+/usr/include/c++/16.1.1/bits/fs_dir.h:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbbuiltinstylespluginAdditionalTargetInfo.cmake:
@@ -3565,6 +3712,8 @@ shaderqt-preview_autogen/mocs_compilation.cpp:
 /usr/lib/cmake/Qt6QmlModels/Qt6QmlModelsAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
+
+/usr/include/c++/16.1.1/filesystem:
 
 /usr/lib/cmake/Qt6/FindWrapAtomic.cmake:
 
@@ -3748,6 +3897,8 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake:
 
+/usr/include/qt6/QtWidgets/qfiledialog.h:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdint.h:
@@ -3773,6 +3924,8 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/16.1.1/bits/istream.tcc:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginTargets-relwithdebinfo.cmake:
 
@@ -3996,6 +4149,8 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 
 /usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargetsPrecheck.cmake:
 
+/usr/include/c++/16.1.1/bits/fs_ops.h:
+
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets.cmake:
 
 /usr/include/qt6/QtCore/q23type_traits.h:
@@ -4021,6 +4176,8 @@ CMakeFiles/shaderqt-preview.dir/shaderqt-preview_autogen/mocs_compilation.cpp.o:
 /usr/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake:
+
+/usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/messages_members.h:
 
 /usr/include/c++/16.1.1/bits/invoke.h:
 
@@ -4075,6 +4232,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptConfigVersion.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QLibInputPluginTargetsPrecheck.cmake:
+
+/usr/include/c++/16.1.1/istream:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginAdditionalTargetInfo.cmake:
 
@@ -4205,6 +4364,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets.cmake:
+
+/usr/include/c++/16.1.1/bits/fs_fwd.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargetsPrecheck.cmake:
 
@@ -4526,10 +4687,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginConfig.cmake:
 
-/usr/include/c++/16.1.1/bits/stream_iterator.h:
-
-/home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticles3dpluginTargets.cmake:
 
 /usr/lib/libglib-2.0.so.0:
@@ -4565,6 +4722,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/16.1.1/bits/fs_path.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginTargets.cmake:
 
@@ -4625,6 +4784,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginTargets.cmake:
+
+/usr/include/c++/16.1.1/locale:
 
 /usr/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfigVersionImpl.cmake:
 
@@ -4846,6 +5007,8 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginTargets-relwithdebinfo.cmake:
 
+/usr/include/qt6/QtCore/qjsonobject.h:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginTargetsPrecheck.cmake:
@@ -4900,6 +5063,8 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbtcimepluginTargetsPrecheck.cmake:
 
+/usr/include/c++/16.1.1/sstream:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargetsPrecheck.cmake:
@@ -4949,6 +5114,8 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6QmlMeta/Qt6QmlMetaConfigVersion.cmake:
+
+/usr/include/qt6/QtCore/QPoint:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargetsPrecheck.cmake:
 
@@ -5019,6 +5186,8 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginTargetsPrecheck.cmake:
+
+/usr/include/qt6/QtCore/qdatetime.h:
 
 /usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginAdditionalTargetInfo.cmake:
 
@@ -5129,6 +5298,8 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Qml/Qt6QmlDependencies.cmake:
 
 /usr/lib/cmake/Qt6Qml/Qt6QmlFindQmlscInternal.cmake:
+
+/usr/include/c++/16.1.1/bits/codecvt.h:
 
 /usr/lib/cmake/Qt6Qml/Qt6QmlPlugins.cmake:
 
@@ -5246,6 +5417,8 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/lib/libgcc_s.so.1:
 
+/usr/include/qt6/QtCore/quuid.h:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6QuickTools/Qt6SvgToQmlMacros.cmake:
@@ -5324,6 +5497,8 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:
 
+/usr/include/c++/16.1.1/ios:
+
 /usr/share/cmake/Modules/FindVulkan.cmake:
 
 /usr/share/cmake/Modules/Linker/GNU-CXX.cmake:
@@ -5347,6 +5522,8 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 /usr/include/qt6/QtOpenGL/qtopenglglobal.h:
 
 /home/shaun/Projects/shaderqt/shaderqt_global.h:
+
+/home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h:
 
 /usr/include/asm-generic/errno.h:
 

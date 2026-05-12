@@ -379,10 +379,25 @@ CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o: \
  /usr/include/qt6/QtOpenGL/qopenglvertexarrayobject.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/QElapsedTimer \
  /usr/include/qt6/QtCore/qelapsedtimer.h /usr/include/qt6/QtGui/QColor \
- /usr/include/qt6/QtCore/QTimer /usr/include/qt6/QtCore/qtimer.h \
- /usr/include/qt6/QtCore/qbasictimer.h \
+ /usr/include/qt6/QtCore/QPoint /usr/include/qt6/QtCore/QTimer \
+ /usr/include/qt6/QtCore/qtimer.h /usr/include/qt6/QtCore/qbasictimer.h \
  /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
  /usr/include/qt6/QtCore/qeventloop.h \
  /usr/include/qt6/QtCore/qdeadlinetimer.h \
  /usr/include/qt6/QtGui/QOpenGLContext /usr/include/qt6/QtGui/QMatrix4x4 \
- /usr/include/qt6/QtGui/QMatrix3x3 /usr/include/qt6/QtCore/QDebug
+ /usr/include/qt6/QtGui/QMatrix3x3 /usr/include/qt6/QtCore/QDebug \
+ /usr/include/qt6/QtGui/QMouseEvent /usr/include/qt6/QtGui/qevent.h \
+ /usr/include/qt6/QtCore/qcoreevent.h /usr/include/qt6/QtCore/qiodevice.h \
+ /usr/include/qt6/QtCore/qurl.h /usr/include/qt6/QtGui/qeventpoint.h \
+ /usr/include/qt6/QtGui/qpointingdevice.h \
+ /usr/include/qt6/QtGui/qinputdevice.h /usr/include/qt6/QtGui/qscreen.h \
+ /usr/include/qt6/QtCore/QList /usr/include/qt6/QtCore/QRect \
+ /usr/include/qt6/QtCore/QSize /usr/include/qt6/QtCore/QSizeF \
+ /usr/include/qt6/QtGui/QTransform \
+ /usr/include/qt6/QtGui/qscreen_platform.h \
+ /usr/include/qt6/QtGui/qguiapplication.h \
+ /usr/include/qt6/QtCore/qcoreapplication.h \
+ /usr/include/qt6/QtCore/qcoreapplication_platform.h \
+ /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
+ /usr/include/qt6/QtGui/qguiapplication_platform.h \
+ /usr/include/qt6/QtGui/QWheelEvent

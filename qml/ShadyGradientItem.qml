@@ -1,13 +1,13 @@
 /**
- * ShaderGradientItem.qml
+ * ShadyGradientItem.qml
  *
  * Pure QML integration of the waterPlane cosmic aurora gradient.
- * Uses ShaderGradientEffect (QQuickFramebufferObject) registered as a QML type.
+ * Uses ShadyGradientEffect (QQuickFramebufferObject) registered as a QML type.
  *
  * Usage:
  *   import ShaderQt 1.0
  *
- *   ShaderGradientItem {
+ *   ShadyGradientItem {
  *       anchors.fill: parent
  *       speed: 0.3
  *       color1: "#00C8FF"
@@ -32,7 +32,7 @@ Item {
     property alias color3:        gradient.color3
 
     // ---- Rendered gradient ----
-    ShaderGradientEffect {
+    ShadyGradientEffect {
         id: gradient
         anchors.fill: parent
 

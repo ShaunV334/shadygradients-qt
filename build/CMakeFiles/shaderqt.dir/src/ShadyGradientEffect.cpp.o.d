@@ -1,8 +1,7 @@
-CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o: \
- /home/shaun/Projects/shaderqt/build/shaderqt_autogen/mocs_compilation.cpp \
+CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o: \
+ /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp \
  /usr/include/stdc-predef.h \
- /home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/moc_ShadyGradientEffect.cpp \
- /home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/../../../src/ShadyGradientEffect.h \
+ /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.h \
  /home/shaun/Projects/shaderqt/shaderqt_global.h \
  /usr/include/qt6/QtCore/qglobal.h /usr/include/c++/16.1.1/type_traits \
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -415,26 +414,60 @@ CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtOpenGL/qopenglvertexarrayobject.h \
  /usr/include/qt6/QtCore/QElapsedTimer \
  /usr/include/qt6/QtCore/qelapsedtimer.h /usr/include/qt6/QtGui/QColor \
- /usr/include/qt6/QtCore/qtmochelpers.h \
- /usr/include/qt6/QtCore/qtmocconstants.h \
- /usr/include/qt6/QtCore/q20algorithm.h \
- /home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/moc_ShadyGradientWidget.cpp \
- /home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/../../../src/ShadyGradientWidget.h \
- /usr/include/qt6/QtOpenGLWidgets/QOpenGLWidget \
- /usr/include/qt6/QtOpenGLWidgets/qopenglwidget.h \
- /usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
- /usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsexports.h \
- /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
- /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
- /usr/include/qt6/QtWidgets/qtwidgets-config.h \
- /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
- /usr/include/qt6/QtGui/qaction.h /usr/include/qt6/QtGui/qicon.h \
- /usr/include/qt6/QtGui/qpixmap.h /usr/include/qt6/QtGui/qpaintdevice.h \
+ /usr/include/qt6/QtOpenGL/QOpenGLFramebufferObject \
+ /usr/include/qt6/QtOpenGL/qopenglframebufferobject.h \
+ /usr/include/qt6/QtGui/qpaintdevice.h \
+ /usr/include/qt6/QtOpenGL/QOpenGLFramebufferObjectFormat \
+ /usr/include/qt6/QtQuick/QQuickWindow \
+ /usr/include/qt6/QtQuick/qquickwindow.h \
+ /usr/include/qt6/QtQuick/qsgrendererinterface.h \
+ /usr/include/qt6/QtQuick/qsgnode.h \
+ /usr/include/qt6/QtQuick/qsggeometry.h /usr/include/qt6/QtCore/QRectF \
+ /usr/include/qt6/QtGui/QMatrix4x4 \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/float.h \
+ /usr/include/qt6/QtGui/qwindow.h /usr/include/qt6/QtCore/QEvent \
+ /usr/include/qt6/QtCore/QMargins /usr/include/qt6/QtGui/qsurface.h \
+ /usr/include/qt6/QtGui/qicon.h /usr/include/qt6/QtGui/qpixmap.h \
  /usr/include/qt6/QtGui/qimage.h /usr/include/qt6/QtGui/qpixelformat.h \
- /usr/include/qt6/QtGui/qpalette.h /usr/include/qt6/QtGui/qbrush.h \
- /usr/include/qt6/QtGui/qfontmetrics.h /usr/include/qt6/QtGui/qfontinfo.h \
- /usr/include/qt6/QtGui/qfontvariableaxis.h \
- /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
- /usr/include/qt6/QtCore/QPoint /usr/include/qt6/QtCore/QTimer \
- /usr/include/qt6/QtCore/qtimer.h
+ /usr/include/qt6/QtQml/qqmldebug.h /usr/include/qt6/QtQml/qqmlinfo.h \
+ /usr/include/qt6/QtCore/QDebug /usr/include/qt6/QtCore/QFile \
+ /usr/include/qt6/QtCore/qfile.h /usr/include/qt6/QtCore/qfiledevice.h \
+ /usr/include/c++/16.1.1/filesystem /usr/include/c++/16.1.1/bits/fs_fwd.h \
+ /usr/include/c++/16.1.1/bits/fs_path.h /usr/include/c++/16.1.1/locale \
+ /usr/include/c++/16.1.1/bits/locale_facets.h \
+ /usr/include/c++/16.1.1/cwctype /usr/include/wctype.h \
+ /usr/include/bits/wctype-wchar.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+ /usr/include/c++/16.1.1/bits/locale_facets.tcc \
+ /usr/include/c++/16.1.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/16.1.1/bits/codecvt.h \
+ /usr/include/c++/16.1.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/16.1.1/bits/locale_conv.h \
+ /usr/include/c++/16.1.1/iomanip \
+ /usr/include/c++/16.1.1/bits/quoted_string.h \
+ /usr/include/c++/16.1.1/sstream /usr/include/c++/16.1.1/istream \
+ /usr/include/c++/16.1.1/ios /usr/include/c++/16.1.1/bits/basic_ios.h \
+ /usr/include/c++/16.1.1/bits/basic_ios.tcc \
+ /usr/include/c++/16.1.1/ostream /usr/include/c++/16.1.1/bits/ostream.h \
+ /usr/include/c++/16.1.1/bits/ostream_print.h \
+ /usr/include/c++/16.1.1/bits/ostream.tcc \
+ /usr/include/c++/16.1.1/bits/istream.tcc \
+ /usr/include/c++/16.1.1/bits/sstream.tcc /usr/include/c++/16.1.1/codecvt \
+ /usr/include/c++/16.1.1/bits/fs_dir.h \
+ /usr/include/c++/16.1.1/bits/fs_ops.h /usr/include/qt6/QtCore/QDir \
+ /usr/include/qt6/QtCore/qdir.h /usr/include/qt6/QtCore/qdirlisting.h \
+ /usr/include/qt6/QtCore/qfileinfo.h /usr/include/qt6/QtCore/qtimezone.h \
+ /usr/include/qt6/QtCore/QJsonDocument \
+ /usr/include/qt6/QtCore/qjsondocument.h \
+ /usr/include/qt6/QtCore/qjsonparseerror.h \
+ /usr/include/qt6/QtCore/QJsonObject \
+ /usr/include/qt6/QtCore/qjsonobject.h \
+ /usr/include/qt6/QtCore/qjsonvalue.h \
+ /usr/include/qt6/QtCore/qcborvalue.h \
+ /usr/include/qt6/QtCore/qcborcommon.h \
+ /usr/include/qt6/QtCore/qregularexpression.h \
+ /usr/include/qt6/QtCore/quuid.h

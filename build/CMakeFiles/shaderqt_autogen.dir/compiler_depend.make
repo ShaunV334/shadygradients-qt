@@ -9,10 +9,10 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
   /home/shaun/Projects/shaderqt/shaderqt.h \
   /home/shaun/Projects/shaderqt/shaderqt_global.h \
   /home/shaun/Projects/shaderqt/shaders.qrc \
-  /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp \
-  /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.h \
-  /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp \
-  /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h \
+  /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp \
+  /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.h \
+  /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp \
+  /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h \
   /usr/bin/cmake \
   /usr/include/GL/gl.h \
   /usr/include/alloca.h \
@@ -290,6 +290,7 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
   /usr/include/qt6/QtCore/QElapsedTimer \
   /usr/include/qt6/QtCore/QList \
   /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QPoint \
   /usr/include/qt6/QtCore/QRect \
   /usr/include/qt6/QtCore/QSize \
   /usr/include/qt6/QtCore/QSizeF \
@@ -1900,8 +1901,6 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingConfig.cmake:
 
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargetsPrecheck.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaConfig.cmake:
@@ -2174,6 +2173,8 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginTargetsPrecheck.cmake:
 
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginTargets-relwithdebinfo.cmake:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dassetutilspluginTargetsPrecheck.cmake:
@@ -2216,6 +2217,8 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagehelperspluginTargets.cmake:
 
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagehelperspluginAdditionalTargetInfo.cmake:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargets.cmake:
@@ -2256,6 +2259,8 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargetsPrecheck.cmake:
 
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets.cmake:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginAdditionalTargetInfo.cmake:
@@ -2283,6 +2288,10 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargetsPrecheck.cmake:
 
 /usr/include/qt6/QtQuick/qquickitem.h:
 
@@ -2313,6 +2322,8 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 /usr/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginConfig.cmake:
 
 /usr/include/bits/types/sigset_t.h:
+
+/usr/include/c++/16.1.1/bits/stream_iterator.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingExtensionTargetsPrecheck.cmake:
 
@@ -2445,6 +2456,8 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 /usr/include/qt6/QtCore/qttranslation.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/bits/libc-header-start.h:
 
 /usr/include/qt6/QtGui/qpalette.h:
 
@@ -2596,6 +2609,8 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/include/qt6/QtCore/qhash.h:
 
+/usr/include/qt6/QtCore/qglobal.h:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginConfig.cmake:
 
 /usr/include/qt6/QtCore/qfunctionpointer.h:
@@ -2620,6 +2635,10 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/include/c++/16.1.1/bits/memory_resource.h:
 
+/usr/include/qt6/QtCore/qtresource.h:
+
+/usr/include/qt6/QtCore/qdarwinhelpers.h:
+
 /usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Quick/Qt6QuickTargetsPrecheck.cmake:
@@ -2631,8 +2650,6 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 /usr/include/time.h:
 
 /usr/include/qt6/QtCore/qcontainerfwd.h:
-
-/usr/include/qt6/QtCore/qchar.h:
 
 /usr/include/qt6/QtCore/qstringview.h:
 
@@ -2780,12 +2797,6 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/include/c++/16.1.1/bits/list.tcc:
 
-/usr/include/bits/libc-header-start.h:
-
-/usr/include/qt6/QtCore/qdarwinhelpers.h:
-
-/usr/include/qt6/QtCore/qtresource.h:
-
 /usr/include/qt6/QtCore/qstringtokenizer.h:
 
 /usr/include/qt6/QtCore/qcoreapplication.h:
@@ -2838,10 +2849,6 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /home/shaun/Projects/shaderqt/shaderqt.cpp:
 
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3stylepluginConfig.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargetsPrecheck.cmake:
-
 /usr/lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginConfig.cmake:
@@ -2857,22 +2864,6 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 /usr/include/c++/16.1.1/backward/binders.h:
 
 /usr/include/qt6/QtCore/qstring.h:
-
-/usr/include/qt6/QtGui/qregion.h:
-
-/usr/lib/cmake/Qt6Qml/Qt6QmlTargetsPrecheck.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIviShellIntegrationPluginTargetsPrecheck.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowConfig.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets-relwithdebinfo.cmake:
-
-/usr/include/c++/16.1.1/bits/new_throw.h:
-
-/usr/include/bits/types/clockid_t.h:
-
-/usr/lib/cmake/Qt6/QtInstallPaths.cmake:
 
 /usr/include/bits/xopen_lim.h:
 
@@ -2916,6 +2907,10 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/include/bits/types/timer_t.h:
 
+/usr/include/qt6/QtCore/qchar.h:
+
+/home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h:
+
 /usr/include/c++/16.1.1/bits/basic_string.h:
 
 /usr/include/c++/16.1.1/bits/streambuf_iterator.h:
@@ -2927,12 +2922,6 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 /usr/include/c++/16.1.1/bits/align.h:
 
 /usr/include/c++/16.1.1/cstring:
-
-/usr/include/qt6/QtCore/qglobal.h:
-
-/usr/include/c++/16.1.1/bits/stream_iterator.h:
-
-/home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h:
 
 /usr/include/c++/16.1.1/bits/requires_hosted.h:
 
@@ -2964,14 +2953,6 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/include/bits/types/struct_itimerspec.h:
 
-/usr/include/bits/struct_rwlock.h:
-
-/usr/include/qt6/QtCore/qshareddata_impl.h:
-
-/usr/include/qt6/QtCore/qconfig.h:
-
-/usr/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
-
 /usr/include/qt6/QtCore/qversionnumber.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginTargets-relwithdebinfo.cmake:
@@ -2991,8 +2972,6 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 /usr/include/qt6/QtGui/qmatrix4x4.h:
 
 /usr/include/bits/types/clock_t.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsStyleKitpluginAdditionalTargetInfo.cmake:
 
@@ -3064,13 +3043,11 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/include/asm/types.h:
 
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargetsPrecheck.cmake:
+
+/usr/include/qt6/QtCore/QPoint:
+
 /usr/include/c++/16.1.1/initializer_list:
-
-/usr/include/bits/types/struct_FILE.h:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagehelperspluginAdditionalTargetInfo.cmake:
-
-/home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp:
 
 /usr/include/asm/bitsperlong.h:
 
@@ -3120,6 +3097,8 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/include/qt6/QtCore/qtdeprecationdefinitions.h:
 
+/home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp:
+
 /usr/lib/cmake/Qt6Gui/Qt6ShmServerBufferPluginConfig.cmake:
 
 /usr/include/asm/posix_types.h:
@@ -3140,9 +3119,89 @@ shaderqt_autogen/timestamp: /home/shaun/Projects/shaderqt/CMakeLists.txt \
 
 /usr/include/qt6/QtCore/qmath.h:
 
+/usr/include/qt6/QtOpenGL/qtopenglglobal.h:
+
+/home/shaun/Projects/shaderqt/shaderqt_global.h:
+
 /usr/include/c++/16.1.1/bits/basic_string.tcc:
 
 /usr/include/c++/16.1.1/bits/stl_iterator_base_funcs.h:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/usr/include/qt6/QtGui/qsurfaceformat.h:
+
+/usr/include/bits/types/mbstate_t.h:
+
+/home/shaun/Projects/shaderqt/shaderqt.h:
+
+/usr/include/c++/16.1.1/bits/char_traits.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/16.1.1/bits/std_abs.h:
+
+/usr/include/bits/types/time_t.h:
+
+/usr/include/c++/16.1.1/bits/stdexcept_except.h:
+
+/usr/include/c++/16.1.1/tr1/gamma.tcc:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargetsPrecheck.cmake:
+
+/usr/include/c++/16.1.1/typeinfo:
+
+CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
+
+/usr/include/qt6/QtCore/qendian.h:
+
+/usr/include/qt6/QtGui/qregion.h:
+
+/usr/lib/cmake/Qt6Qml/Qt6QmlTargetsPrecheck.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIviShellIntegrationPluginTargetsPrecheck.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowConfig.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets-relwithdebinfo.cmake:
+
+/usr/include/c++/16.1.1/bits/new_throw.h:
+
+/usr/include/bits/types/clockid_t.h:
+
+/usr/lib/cmake/Qt6/QtInstallPaths.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagehelperspluginTargets-relwithdebinfo.cmake:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/qt6/QtGui/QSurfaceFormat:
+
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake:
+
+/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginTargetsPrecheck.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginTargets.cmake:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake:
+
+/usr/include/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/c++/16.1.1/bits/localefwd.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandXdgShellIntegrationPluginTargetsPrecheck.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets.cmake:
+
+/usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++locale.h:
+
+/usr/include/c++/16.1.1/ext/type_traits.h:
 
 /usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets.cmake:
 
@@ -3284,48 +3343,6 @@ CMakeFiles/4.3.2/CMakeSystem.cmake:
 
 /usr/include/qt6/QtGui/qfontinfo.h:
 
-/usr/include/c++/16.1.1/bits/char_traits.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/c++/16.1.1/bits/std_abs.h:
-
-/usr/include/bits/types/time_t.h:
-
-/usr/include/c++/16.1.1/bits/stdexcept_except.h:
-
-/usr/include/c++/16.1.1/tr1/gamma.tcc:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargetsPrecheck.cmake:
-
-/usr/include/c++/16.1.1/typeinfo:
-
-CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
-
-/usr/include/qt6/QtCore/qendian.h:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3deffectpluginTargets-relwithdebinfo.cmake:
-
-/home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets.cmake:
-
-/usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++locale.h:
-
-/usr/include/c++/16.1.1/ext/type_traits.h:
-
-/home/shaun/Projects/shaderqt/shaderqt_global.h:
-
-/usr/include/qt6/QtOpenGL/qtopenglglobal.h:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets.cmake:
-
-/home/shaun/Projects/shaderqt/src/ShaderGradientEffect.h:
-
-/usr/include/c++/16.1.1/bits/streambuf.tcc:
-
-/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake:
-
 /usr/include/bits/posix2_lim.h:
 
 /usr/include/qt6/QtCore/q20memory.h:
@@ -3344,35 +3361,9 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake:
 
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagehelperspluginTargets-relwithdebinfo.cmake:
+/usr/include/bits/floatn.h:
 
-/usr/include/bits/waitstatus.h:
-
-/usr/include/qt6/QtGui/QSurfaceFormat:
-
-/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake:
-
-/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginTargetsPrecheck.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginTargets.cmake:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake:
-
-/usr/include/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/c++/16.1.1/bits/localefwd.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandXdgShellIntegrationPluginTargetsPrecheck.cmake:
-
-/usr/include/qt6/QtGui/qsurfaceformat.h:
-
-/usr/include/bits/types/mbstate_t.h:
-
-/home/shaun/Projects/shaderqt/shaderqt.h:
+/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/c++/16.1.1/bits/stl_multiset.h:
 
@@ -3400,9 +3391,13 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/include/bits/endianness.h:
 
-/usr/include/bits/floatn.h:
+/usr/include/qt6/QtCore/qshareddata_impl.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets-relwithdebinfo.cmake:
+/usr/include/bits/struct_rwlock.h:
+
+/usr/include/qt6/QtCore/qconfig.h:
+
+/usr/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets-relwithdebinfo.cmake:
 
@@ -3434,11 +3429,13 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets-relwithdebinfo.cmake:
 
+/home/shaun/Projects/shaderqt/src/ShadyGradientEffect.h:
+
 /usr/include/bits/select.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QMngPluginTargetsPrecheck.cmake:
-
 /usr/include/c++/16.1.1/bits/algorithmfwd.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMngPluginTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets-relwithdebinfo.cmake:
 
@@ -3516,9 +3513,9 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/include/c++/16.1.1/bits/node_handle.h:
 
-/usr/include/c++/16.1.1/bits/stl_set.h:
-
 /usr/include/bits/types/struct_timespec.h:
+
+/usr/include/c++/16.1.1/bits/stl_set.h:
 
 /usr/include/qt6/QtOpenGLWidgets/qtopenglwidgetsglobal.h:
 
@@ -3598,6 +3595,10 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 
 /usr/include/qt6/QtCore/qflags.h:
 
+/usr/include/qt6/QtCore/qfloat16.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginAdditionalTargetInfo.cmake:
+
 /usr/include/qt6/QtCore/qarraydataops.h:
 
 /usr/include/qt6/QtCore/qlist.h:
@@ -3661,6 +3662,10 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/include/c++/16.1.1/bits/stl_uninitialized.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsStyleKitpluginConfig.cmake:
+
+/usr/include/c++/16.1.1/bits/streambuf.tcc:
+
+/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6VirtualKeyboardpluginTargets.cmake:
 
@@ -3753,10 +3758,6 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/include/bits/types/__FILE.h:
 
 /usr/include/qt6/QtCore/qlatin1stringview.h:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/qfloat16.h:
 
 /usr/include/c++/16.1.1/debug/debug.h:
 
@@ -4351,6 +4352,8 @@ CMakeFiles/4.3.2/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargetsPrecheck.cmake:
+
+/home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp:
 
 /usr/lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake:
 

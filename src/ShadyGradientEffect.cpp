@@ -1,4 +1,4 @@
-#include "ShaderGradientEffect.h"
+#include "ShadyGradientEffect.h"
 
 #include <QOpenGLFunctions_3_3_Core>
 #include <QOpenGLShaderProgram>
@@ -8,19 +8,23 @@
 #include <QOpenGLFramebufferObjectFormat>
 #include <QQuickWindow>
 #include <QDebug>
+#include <QFile>
+#include <QDir>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <vector>
 
 // ────────────────────────────────────────────────
 // Internal FBO Renderer
 // ────────────────────────────────────────────────
 
-class ShaderGradientRenderer
+class ShadyGradientRenderer
     : public QQuickFramebufferObject::Renderer
     , protected QOpenGLFunctions_3_3_Core
 {
 public:
-    ShaderGradientRenderer() : m_vbo(QOpenGLBuffer::VertexBuffer), m_ibo(QOpenGLBuffer::IndexBuffer) {}
-    ~ShaderGradientRenderer() override {
+    ShadyGradientRenderer() : m_vbo(QOpenGLBuffer::VertexBuffer), m_ibo(QOpenGLBuffer::IndexBuffer) {}
+    ~ShadyGradientRenderer() override {
         m_vao.destroy();
         m_vbo.destroy();
         m_ibo.destroy();
@@ -52,17 +56,38 @@ private:
     int m_locC3r=-1,m_locC3g=-1,m_locC3b=-1;
 
     // Sync'd state from the QQuickItem
-    ShaderGradientEffect::RenderState m_state;
+    ShadyGradientEffect::RenderState m_state;
     QSize m_size;
 };
 
 // ────────────────────────────────────────────────
-// ShaderGradientEffect
+// ShadyGradientEffect
 // ────────────────────────────────────────────────
 
-ShaderGradientEffect::ShaderGradientEffect(QQuickItem *parent)
+ShadyGradientEffect::ShadyGradientEffect(QQuickItem *parent)
     : QQuickFramebufferObject(parent)
 {
+    // Load default preset if it exists
+    QFile presetFile(QDir::currentPath() + "/shady_gradient_preset.json");
+    if (presetFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QJsonDocument doc = QJsonDocument::fromJson(presetFile.readAll());
+        if (!doc.isNull() && doc.isObject()) {
+            QJsonObject obj = doc.object();
+            if (obj.contains("type")) {
+                m_type = obj["type"].toString() == "WaterPlane" ? Type::WaterPlane : Type::Sphere;
+            }
+            if (obj.contains("speed")) m_speed = obj["speed"].toDouble();
+            if (obj.contains("noiseDensity")) m_noiseDensity = obj["noiseDensity"].toDouble();
+            if (obj.contains("noiseStrength")) m_noiseStrength = obj["noiseStrength"].toDouble();
+            if (obj.contains("spiral")) m_spiral = obj["spiral"].toDouble();
+            if (obj.contains("pixelDensity")) m_pixelDensity = obj["pixelDensity"].toDouble();
+            if (obj.contains("color1")) m_color1 = QColor(obj["color1"].toString());
+            if (obj.contains("color2")) m_color2 = QColor(obj["color2"].toString());
+            if (obj.contains("color3")) m_color3 = QColor(obj["color3"].toString());
+        }
+        presetFile.close();
+    }
+
     m_elapsed.start();
     setMirrorVertically(true);
 
@@ -70,17 +95,17 @@ ShaderGradientEffect::ShaderGradientEffect(QQuickItem *parent)
     connect(this, &QQuickItem::windowChanged, this, [this](QQuickWindow *w) {
         if (w) {
             connect(w, &QQuickWindow::beforeSynchronizing, this,
-                    &ShaderGradientEffect::update, Qt::DirectConnection);
+                    &ShadyGradientEffect::update, Qt::DirectConnection);
         }
     });
 }
 
-QQuickFramebufferObject::Renderer *ShaderGradientEffect::createRenderer() const
+QQuickFramebufferObject::Renderer *ShadyGradientEffect::createRenderer() const
 {
-    return new ShaderGradientRenderer();
+    return new ShadyGradientRenderer();
 }
 
-ShaderGradientEffect::RenderState ShaderGradientEffect::renderState() const
+ShadyGradientEffect::RenderState ShadyGradientEffect::renderState() const
 {
     return {
         m_type, m_speed, m_noiseDensity, m_noiseStrength, m_spiral,
@@ -89,21 +114,21 @@ ShaderGradientEffect::RenderState ShaderGradientEffect::renderState() const
     };
 }
 
-void ShaderGradientEffect::setType(Type t)          { if (m_type == t) return; m_type = t; emit typeChanged(t); update(); }
-void ShaderGradientEffect::setSpeed(float v)        { if (m_speed == v) return; m_speed = v; emit speedChanged(v); update(); }
-void ShaderGradientEffect::setNoiseDensity(float v) { if (m_noiseDensity == v) return; m_noiseDensity = v; emit noiseDensityChanged(v); update(); }
-void ShaderGradientEffect::setNoiseStrength(float v){ if (m_noiseStrength == v) return; m_noiseStrength = v; emit noiseStrengthChanged(v); update(); }
-void ShaderGradientEffect::setSpiral(float v)       { if (m_spiral == v) return; m_spiral = v; emit spiralChanged(v); update(); }
-void ShaderGradientEffect::setPixelDensity(float v) { if (m_pixelDensity == v) return; m_pixelDensity = v; emit pixelDensityChanged(v); update(); }
-void ShaderGradientEffect::setColor1(const QColor &c){ if (m_color1 == c) return; m_color1 = c; emit color1Changed(c); update(); }
-void ShaderGradientEffect::setColor2(const QColor &c){ if (m_color2 == c) return; m_color2 = c; emit color2Changed(c); update(); }
-void ShaderGradientEffect::setColor3(const QColor &c){ if (m_color3 == c) return; m_color3 = c; emit color3Changed(c); update(); }
+void ShadyGradientEffect::setType(Type t)          { if (m_type == t) return; m_type = t; emit typeChanged(t); update(); }
+void ShadyGradientEffect::setSpeed(float v)        { if (m_speed == v) return; m_speed = v; emit speedChanged(v); update(); }
+void ShadyGradientEffect::setNoiseDensity(float v) { if (m_noiseDensity == v) return; m_noiseDensity = v; emit noiseDensityChanged(v); update(); }
+void ShadyGradientEffect::setNoiseStrength(float v){ if (m_noiseStrength == v) return; m_noiseStrength = v; emit noiseStrengthChanged(v); update(); }
+void ShadyGradientEffect::setSpiral(float v)       { if (m_spiral == v) return; m_spiral = v; emit spiralChanged(v); update(); }
+void ShadyGradientEffect::setPixelDensity(float v) { if (m_pixelDensity == v) return; m_pixelDensity = v; emit pixelDensityChanged(v); update(); }
+void ShadyGradientEffect::setColor1(const QColor &c){ if (m_color1 == c) return; m_color1 = c; emit color1Changed(c); update(); }
+void ShadyGradientEffect::setColor2(const QColor &c){ if (m_color2 == c) return; m_color2 = c; emit color2Changed(c); update(); }
+void ShadyGradientEffect::setColor3(const QColor &c){ if (m_color3 == c) return; m_color3 = c; emit color3Changed(c); update(); }
 
 // ────────────────────────────────────────────────
 // Renderer implementation
 // ────────────────────────────────────────────────
 
-QOpenGLFramebufferObject *ShaderGradientRenderer::createFramebufferObject(const QSize &size)
+QOpenGLFramebufferObject *ShadyGradientRenderer::createFramebufferObject(const QSize &size)
 {
     m_size = size;
     QOpenGLFramebufferObjectFormat fmt;
@@ -112,9 +137,9 @@ QOpenGLFramebufferObject *ShaderGradientRenderer::createFramebufferObject(const 
     return new QOpenGLFramebufferObject(size, fmt);
 }
 
-void ShaderGradientRenderer::synchronize(QQuickFramebufferObject *item)
+void ShadyGradientRenderer::synchronize(QQuickFramebufferObject *item)
 {
-    auto *effect = static_cast<ShaderGradientEffect *>(item);
+    auto *effect = static_cast<ShadyGradientEffect *>(item);
     auto newState = effect->renderState();
     bool typeChanged = (m_state.type != newState.type);
     m_state = newState;
@@ -128,7 +153,7 @@ void ShaderGradientRenderer::synchronize(QQuickFramebufferObject *item)
     }
 }
 
-void ShaderGradientRenderer::render()
+void ShadyGradientRenderer::render()
 {
     if (!m_initialised) {
         init();
@@ -147,14 +172,14 @@ void ShaderGradientRenderer::render()
     proj.perspective(45.0f, aspect, 0.1f, 100.0f);
 
     QMatrix4x4 view;
-    if (m_state.type == ShaderGradientEffect::Type::WaterPlane) {
+    if (m_state.type == ShadyGradientEffect::Type::WaterPlane) {
         view.lookAt({0.0f, 0.0f, 3.9f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
     } else {
         view.lookAt({0.0f, 0.0f, 12.5f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
     }
 
     QMatrix4x4 model;
-    if (m_state.type == ShaderGradientEffect::Type::WaterPlane) {
+    if (m_state.type == ShadyGradientEffect::Type::WaterPlane) {
         model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f);
         model.rotate(180.0f, 0.0f, 1.0f, 0.0f);
         model.rotate(235.0f, 0.0f, 0.0f, 1.0f);
@@ -196,13 +221,13 @@ void ShaderGradientRenderer::render()
     update();
 }
 
-void ShaderGradientRenderer::init()
+void ShadyGradientRenderer::init()
 {
     initializeOpenGLFunctions();
 
     m_program.removeAllShaders();
 
-    if (m_state.type == ShaderGradientEffect::Type::WaterPlane) {
+    if (m_state.type == ShadyGradientEffect::Type::WaterPlane) {
         if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/waterplane.vert"))
             qWarning() << "SGEffect vertex:" << m_program.log();
         if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/waterplane.frag"))
@@ -239,7 +264,7 @@ void ShaderGradientRenderer::init()
     buildMesh();
 }
 
-void ShaderGradientRenderer::buildMesh()
+void ShadyGradientRenderer::buildMesh()
 {
     const int   segsX = std::max(1, static_cast<int>(64 * m_pixelDensity));
     const int   segsY = std::max(1, static_cast<int>(64 * m_pixelDensity));
@@ -248,7 +273,7 @@ void ShaderGradientRenderer::buildMesh()
     std::vector<float> vdata;
     vdata.reserve(vertsX * vertsY * 8);
 
-    if (m_state.type == ShaderGradientEffect::Type::WaterPlane) {
+    if (m_state.type == ShadyGradientEffect::Type::WaterPlane) {
         const float sizeX = 10.0f, sizeY = 10.0f;
         for (int iy = 0; iy < vertsY; ++iy) {
             float v = static_cast<float>(iy) / segsY;

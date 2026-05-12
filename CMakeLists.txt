@@ -24,10 +24,10 @@ set(SHADERQT_LIB_SOURCES
     shaderqt_global.h
     shaderqt.cpp
     shaderqt.h
-    src/ShaderGradientWidget.h
-    src/ShaderGradientWidget.cpp
-    src/ShaderGradientEffect.h
-    src/ShaderGradientEffect.cpp
+    src/ShadyGradientWidget.h
+    src/ShadyGradientWidget.cpp
+    src/ShadyGradientEffect.h
+    src/ShadyGradientEffect.cpp
     shaders.qrc          # embeds the GLSL files as Qt resources
 )
 
@@ -81,8 +81,8 @@ install(TARGETS shaderqt shaderqt-preview
     ARCHIVE DESTINATION lib
 )
 install(FILES
-    src/ShaderGradientWidget.h
-    src/ShaderGradientEffect.h
+    src/ShadyGradientWidget.h
+    src/ShadyGradientEffect.h
     shaderqt.h
     shaderqt_global.h
     DESTINATION include/shaderqt
@@ -93,6 +93,6 @@ install(FILES
     DESTINATION share/shaderqt/shaders
 )
 install(FILES
-    qml/ShaderGradientItem.qml
+    qml/ShadyGradientItem.qml
     DESTINATION share/shaderqt/qml
 )

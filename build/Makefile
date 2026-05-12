@@ -335,53 +335,53 @@ shaderqt_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.s
 .PHONY : shaderqt_autogen/mocs_compilation.cpp.s
 
-src/ShaderGradientEffect.o: src/ShaderGradientEffect.cpp.o
-.PHONY : src/ShaderGradientEffect.o
+src/ShadyGradientEffect.o: src/ShadyGradientEffect.cpp.o
+.PHONY : src/ShadyGradientEffect.o
 
 # target to build an object file
-src/ShaderGradientEffect.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
-.PHONY : src/ShaderGradientEffect.cpp.o
+src/ShadyGradientEffect.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o
+.PHONY : src/ShadyGradientEffect.cpp.o
 
-src/ShaderGradientEffect.i: src/ShaderGradientEffect.cpp.i
-.PHONY : src/ShaderGradientEffect.i
+src/ShadyGradientEffect.i: src/ShadyGradientEffect.cpp.i
+.PHONY : src/ShadyGradientEffect.i
 
 # target to preprocess a source file
-src/ShaderGradientEffect.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.i
-.PHONY : src/ShaderGradientEffect.cpp.i
+src/ShadyGradientEffect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.i
+.PHONY : src/ShadyGradientEffect.cpp.i
 
-src/ShaderGradientEffect.s: src/ShaderGradientEffect.cpp.s
-.PHONY : src/ShaderGradientEffect.s
+src/ShadyGradientEffect.s: src/ShadyGradientEffect.cpp.s
+.PHONY : src/ShadyGradientEffect.s
 
 # target to generate assembly for a file
-src/ShaderGradientEffect.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.s
-.PHONY : src/ShaderGradientEffect.cpp.s
+src/ShadyGradientEffect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.s
+.PHONY : src/ShadyGradientEffect.cpp.s
 
-src/ShaderGradientWidget.o: src/ShaderGradientWidget.cpp.o
-.PHONY : src/ShaderGradientWidget.o
+src/ShadyGradientWidget.o: src/ShadyGradientWidget.cpp.o
+.PHONY : src/ShadyGradientWidget.o
 
 # target to build an object file
-src/ShaderGradientWidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
-.PHONY : src/ShaderGradientWidget.cpp.o
+src/ShadyGradientWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o
+.PHONY : src/ShadyGradientWidget.cpp.o
 
-src/ShaderGradientWidget.i: src/ShaderGradientWidget.cpp.i
-.PHONY : src/ShaderGradientWidget.i
+src/ShadyGradientWidget.i: src/ShadyGradientWidget.cpp.i
+.PHONY : src/ShadyGradientWidget.i
 
 # target to preprocess a source file
-src/ShaderGradientWidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.i
-.PHONY : src/ShaderGradientWidget.cpp.i
+src/ShadyGradientWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.i
+.PHONY : src/ShadyGradientWidget.cpp.i
 
-src/ShaderGradientWidget.s: src/ShaderGradientWidget.cpp.s
-.PHONY : src/ShaderGradientWidget.s
+src/ShadyGradientWidget.s: src/ShadyGradientWidget.cpp.s
+.PHONY : src/ShadyGradientWidget.s
 
 # target to generate assembly for a file
-src/ShaderGradientWidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.s
-.PHONY : src/ShaderGradientWidget.cpp.s
+src/ShadyGradientWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shaderqt.dir/build.make CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.s
+.PHONY : src/ShadyGradientWidget.cpp.s
 
 src/preview/main.o: src/preview/main.cpp.o
 .PHONY : src/preview/main.o
@@ -437,12 +437,12 @@ help:
 	@echo "... shaderqt_autogen/mocs_compilation.o"
 	@echo "... shaderqt_autogen/mocs_compilation.i"
 	@echo "... shaderqt_autogen/mocs_compilation.s"
-	@echo "... src/ShaderGradientEffect.o"
-	@echo "... src/ShaderGradientEffect.i"
-	@echo "... src/ShaderGradientEffect.s"
-	@echo "... src/ShaderGradientWidget.o"
-	@echo "... src/ShaderGradientWidget.i"
-	@echo "... src/ShaderGradientWidget.s"
+	@echo "... src/ShadyGradientEffect.o"
+	@echo "... src/ShadyGradientEffect.i"
+	@echo "... src/ShadyGradientEffect.s"
+	@echo "... src/ShadyGradientWidget.o"
+	@echo "... src/ShadyGradientWidget.i"
+	@echo "... src/ShadyGradientWidget.s"
 	@echo "... src/preview/main.o"
 	@echo "... src/preview/main.i"
 	@echo "... src/preview/main.s"

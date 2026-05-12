@@ -10,10 +10,10 @@
  /home/shaun/Projects/shaderqt/shaderqt.h
  /home/shaun/Projects/shaderqt/shaderqt_global.h
  /home/shaun/Projects/shaderqt/shaders.qrc
- /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp
- /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.h
- /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp
- /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h
+ /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp
+ /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.h
+ /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp
+ /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h
  /usr/bin/cmake
  /usr/include/GL/gl.h
  /usr/include/alloca.h
@@ -291,6 +291,7 @@
  /usr/include/qt6/QtCore/QElapsedTimer
  /usr/include/qt6/QtCore/QList
  /usr/include/qt6/QtCore/QObject
+ /usr/include/qt6/QtCore/QPoint
  /usr/include/qt6/QtCore/QRect
  /usr/include/qt6/QtCore/QSize
  /usr/include/qt6/QtCore/QSizeF

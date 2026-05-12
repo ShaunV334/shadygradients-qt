@@ -1,4 +1,4 @@
-/home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/moc_ShaderGradientWidget.cpp: /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h \
+/home/shaun/Projects/shaderqt/build/shaderqt_autogen/UVLADIE3JM/moc_ShadyGradientWidget.cpp: /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h \
   /home/shaun/Projects/shaderqt/build/shaderqt_autogen/moc_predefs.h \
   /home/shaun/Projects/shaderqt/shaderqt_global.h \
   /usr/include/GL/gl.h \

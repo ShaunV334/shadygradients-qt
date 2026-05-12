@@ -3,8 +3,8 @@ libshaderqt.so: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o \
   CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o \
   CMakeFiles/shaderqt.dir/shaderqt.cpp.o \
-  CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o \
-  CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o \
+  CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o \
+  CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o \
   CMakeFiles/shaderqt.dir/shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp.o \
   /usr/lib/libQt6OpenGLWidgets.so.6.11.0 \
   /usr/lib/libQt6QuickWidgets.so.6.11.0 \
@@ -54,9 +54,9 @@ CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o:
 
 CMakeFiles/shaderqt.dir/shaderqt.cpp.o:
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o:
+CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o:
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o:
+CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o:
 
 CMakeFiles/shaderqt.dir/shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp.o:
 

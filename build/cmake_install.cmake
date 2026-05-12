@@ -83,8 +83,8 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/shaderqt" TYPE FILE FILES
-    "/home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h"
-    "/home/shaun/Projects/shaderqt/src/ShaderGradientEffect.h"
+    "/home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h"
+    "/home/shaun/Projects/shaderqt/src/ShadyGradientEffect.h"
     "/home/shaun/Projects/shaderqt/shaderqt.h"
     "/home/shaun/Projects/shaderqt/shaderqt_global.h"
     )
@@ -98,7 +98,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/shaderqt/qml" TYPE FILE FILES "/home/shaun/Projects/shaderqt/qml/ShaderGradientItem.qml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/shaderqt/qml" TYPE FILE FILES "/home/shaun/Projects/shaderqt/qml/ShadyGradientItem.qml")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

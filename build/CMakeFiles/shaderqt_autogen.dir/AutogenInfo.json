@@ -1721,15 +1721,15 @@
 			null
 		],
 		[
-			"/home/shaun/Projects/shaderqt/src/ShaderGradientEffect.h",
+			"/home/shaun/Projects/shaderqt/src/ShadyGradientEffect.h",
 			"MU",
-			"UVLADIE3JM/moc_ShaderGradientEffect.cpp",
+			"UVLADIE3JM/moc_ShadyGradientEffect.cpp",
 			null
 		],
 		[
-			"/home/shaun/Projects/shaderqt/src/ShaderGradientWidget.h",
+			"/home/shaun/Projects/shaderqt/src/ShadyGradientWidget.h",
 			"MU",
-			"UVLADIE3JM/moc_ShaderGradientWidget.cpp",
+			"UVLADIE3JM/moc_ShadyGradientWidget.cpp",
 			null
 		]
 	],
@@ -1816,12 +1816,12 @@
 	[
 		[ "/home/shaun/Projects/shaderqt/shaderqt.cpp", "MU", null ],
 		[
-			"/home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp",
+			"/home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp",
+			"/home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp",
 			"MU",
 			null
 		]

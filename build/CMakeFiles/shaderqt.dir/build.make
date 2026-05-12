@@ -118,33 +118,33 @@ CMakeFiles/shaderqt.dir/shaderqt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shaderqt.dir/shaderqt.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaun/Projects/shaderqt/shaderqt.cpp -o CMakeFiles/shaderqt.dir/shaderqt.cpp.s
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o: CMakeFiles/shaderqt.dir/flags.make
-CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o: /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp
-CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o: CMakeFiles/shaderqt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shaun/Projects/shaderqt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o -MF CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o.d -o CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o -c /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp
+CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o: CMakeFiles/shaderqt.dir/flags.make
+CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o: /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp
+CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o: CMakeFiles/shaderqt.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shaun/Projects/shaderqt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o -MF CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o.d -o CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o -c /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp > CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.i
+CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp > CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.i
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaun/Projects/shaderqt/src/ShaderGradientWidget.cpp -o CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.s
+CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaun/Projects/shaderqt/src/ShadyGradientWidget.cpp -o CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.s
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o: CMakeFiles/shaderqt.dir/flags.make
-CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o: /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp
-CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o: CMakeFiles/shaderqt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shaun/Projects/shaderqt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o -MF CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o.d -o CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o -c /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp
+CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o: CMakeFiles/shaderqt.dir/flags.make
+CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o: /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp
+CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o: CMakeFiles/shaderqt.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shaun/Projects/shaderqt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o -MF CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o.d -o CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o -c /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp > CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.i
+CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp > CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.i
 
-CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaun/Projects/shaderqt/src/ShaderGradientEffect.cpp -o CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.s
+CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaun/Projects/shaderqt/src/ShadyGradientEffect.cpp -o CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.s
 
 CMakeFiles/shaderqt.dir/shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp.o: CMakeFiles/shaderqt.dir/flags.make
 CMakeFiles/shaderqt.dir/shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp.o: shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp
@@ -164,8 +164,8 @@ CMakeFiles/shaderqt.dir/shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp.s: cmake_for
 shaderqt_OBJECTS = \
 "CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/shaderqt.dir/shaderqt.cpp.o" \
-"CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o" \
-"CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o" \
+"CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o" \
+"CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o" \
 "CMakeFiles/shaderqt.dir/shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp.o"
 
 # External object files for target shaderqt
@@ -173,8 +173,8 @@ shaderqt_EXTERNAL_OBJECTS =
 
 libshaderqt.so: CMakeFiles/shaderqt.dir/shaderqt_autogen/mocs_compilation.cpp.o
 libshaderqt.so: CMakeFiles/shaderqt.dir/shaderqt.cpp.o
-libshaderqt.so: CMakeFiles/shaderqt.dir/src/ShaderGradientWidget.cpp.o
-libshaderqt.so: CMakeFiles/shaderqt.dir/src/ShaderGradientEffect.cpp.o
+libshaderqt.so: CMakeFiles/shaderqt.dir/src/ShadyGradientWidget.cpp.o
+libshaderqt.so: CMakeFiles/shaderqt.dir/src/ShadyGradientEffect.cpp.o
 libshaderqt.so: CMakeFiles/shaderqt.dir/shaderqt_autogen/EWIEGA46WW/qrc_shaders.cpp.o
 libshaderqt.so: CMakeFiles/shaderqt.dir/build.make
 libshaderqt.so: CMakeFiles/shaderqt.dir/compiler_depend.ts

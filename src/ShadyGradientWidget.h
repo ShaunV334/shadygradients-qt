@@ -9,10 +9,14 @@
 #include <QOpenGLVertexArrayObject>
 #include <QElapsedTimer>
 #include <QColor>
+#include <QPoint>
 #include <QTimer>
 #include <memory>
 
-class SHADERQT_EXPORT ShaderGradientWidget
+class QMouseEvent;
+class QWheelEvent;
+
+class SHADERQT_EXPORT ShadyGradientWidget
     : public QOpenGLWidget,
       protected QOpenGLFunctions_3_3_Core
 {
@@ -36,8 +40,8 @@ public:
     };
     Q_ENUM(Type)
 
-    explicit ShaderGradientWidget(QWidget *parent = nullptr);
-    ~ShaderGradientWidget() override;
+    explicit ShadyGradientWidget(QWidget *parent = nullptr);
+    ~ShadyGradientWidget() override;
 
     // ---- Getters ----
     Type   type()          const { return m_type; }
@@ -76,6 +80,10 @@ protected:
     void initializeGL()  override;
     void resizeGL(int w, int h) override;
     void paintGL()       override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+    void wheelEvent(QWheelEvent *event) override;
 
 private:
     void buildMesh();
@@ -118,4 +126,11 @@ private:
     QColor m_color1        = QColor(0x56, 0x06, 0xff);
     QColor m_color2        = QColor(0xfe, 0x89, 0x89);
     QColor m_color3        = QColor(0x00, 0x00, 0x00);
+
+    // Interactive orbit controls for the preview widget
+    bool   m_dragging        = false;
+    QPoint m_lastMousePos;
+    float  m_orbitYaw        = 0.0f;
+    float  m_orbitPitch      = 0.0f;
+    float  m_cameraDistance  = 0.0f;
 };

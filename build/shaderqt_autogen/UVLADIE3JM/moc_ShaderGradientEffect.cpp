@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'ShaderGradientEffect.h'
+** Meta object code from reading C++ file 'ShadyGradientEffect.h'
 **
 ** Created by: The Qt Meta Object Compiler version 69 (Qt 6.11.0)
 **
@@ -34,11 +34,11 @@ namespace {
 struct qt_meta_tag_ZN20ShaderGradientEffectE_t {};
 } // unnamed namespace
 
-template <> constexpr inline auto ShaderGradientEffect::qt_create_metaobjectdata<qt_meta_tag_ZN20ShaderGradientEffectE_t>()
+template <> constexpr inline auto ShadyGradientEffect::qt_create_metaobjectdata<qt_meta_tag_ZN20ShaderGradientEffectE_t>()
 {
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
-        "ShaderGradientEffect",
+        "ShadyGradientEffect",
         "QML.Element",
         "auto",
         "typeChanged",
@@ -138,10 +138,10 @@ template <> constexpr inline auto ShaderGradientEffect::qt_create_metaobjectdata
     QtMocHelpers::ClassInfos qt_classinfo({
             {    1,    2 },
     });
-    return QtMocHelpers::metaObjectData<ShaderGradientEffect, void>(QMC::MetaObjectFlag{}, qt_stringData,
+    return QtMocHelpers::metaObjectData<ShadyGradientEffect, void>(QMC::MetaObjectFlag{}, qt_stringData,
             qt_methods, qt_properties, qt_enums, qt_constructors, qt_classinfo);
 }
-Q_CONSTINIT const QMetaObject ShaderGradientEffect::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject ShadyGradientEffect::staticMetaObject = { {
     QMetaObject::SuperData::link<QQuickFramebufferObject::staticMetaObject>(),
     qt_staticMetaObjectStaticContent<qt_meta_tag_ZN20ShaderGradientEffectE_t>.stringdata,
     qt_staticMetaObjectStaticContent<qt_meta_tag_ZN20ShaderGradientEffectE_t>.data,
@@ -151,9 +151,9 @@ Q_CONSTINIT const QMetaObject ShaderGradientEffect::staticMetaObject = { {
     nullptr
 } };
 
-void ShaderGradientEffect::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void ShadyGradientEffect::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<ShaderGradientEffect *>(_o);
+    auto *_t = static_cast<ShadyGradientEffect *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->typeChanged((*reinterpret_cast<std::add_pointer_t<enum Type>>(_a[1]))); break;
@@ -169,23 +169,23 @@ void ShaderGradientEffect::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientEffect::*)(Type )>(_a, &ShaderGradientEffect::typeChanged, 0))
+        if (QtMocHelpers::indexOfMethod<void (ShadyGradientEffect::*)(Type )>(_a, &ShadyGradientEffect::typeChanged, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientEffect::*)(float )>(_a, &ShaderGradientEffect::speedChanged, 1))
+        if (QtMocHelpers::indexOfMethod<void (ShadyGradientEffect::*)(float )>(_a, &ShadyGradientEffect::speedChanged, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientEffect::*)(float )>(_a, &ShaderGradientEffect::noiseDensityChanged, 2))
+        if (QtMocHelpers::indexOfMethod<void (ShadyGradientEffect::*)(float )>(_a, &ShadyGradientEffect::noiseDensityChanged, 2))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientEffect::*)(float )>(_a, &ShaderGradientEffect::noiseStrengthChanged, 3))
+        if (QtMocHelpers::indexOfMethod<void (ShadyGradientEffect::*)(float )>(_a, &ShadyGradientEffect::noiseStrengthChanged, 3))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientEffect::*)(float )>(_a, &ShaderGradientEffect::spiralChanged, 4))
+        if (QtMocHelpers::indexOfMethod<void (ShadyGradientEffect::*)(float )>(_a, &ShadyGradientEffect::spiralChanged, 4))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientEffect::*)(float )>(_a, &ShaderGradientEffect::pixelDensityChanged, 5))
+        if (QtMocHelpers::indexOfMethod<void (ShadyGradientEffect::*)(float )>(_a, &ShadyGradientEffect::pixelDensityChanged, 5))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientEffect::*)(const QColor & )>(_a, &ShaderGradientEffect::color1Changed, 6))
+        if (QtMocHelpers::indexOfMethod<void (ShadyGradientEffect::*)(const QColor & )>(_a, &ShadyGradientEffect::color1Changed, 6))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientEffect::*)(const QColor & )>(_a, &ShaderGradientEffect::color2Changed, 7))
+        if (QtMocHelpers::indexOfMethod<void (ShadyGradientEffect::*)(const QColor & )>(_a, &ShadyGradientEffect::color2Changed, 7))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ShaderGradientEffect::*)(const QColor & )>(_a, &ShaderGradientEffect::color3Changed, 8))
+        if (QtMocHelpers::indexOfMethod<void (ShadyGradientEffect::*)(const QColor & )>(_a, &ShadyGradientEffect::color3Changed, 8))
             return;
     }
     if (_c == QMetaObject::ReadProperty) {
@@ -220,12 +220,12 @@ void ShaderGradientEffect::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
     }
 }
 
-const QMetaObject *ShaderGradientEffect::metaObject() const
+const QMetaObject *ShadyGradientEffect::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *ShaderGradientEffect::qt_metacast(const char *_clname)
+void *ShadyGradientEffect::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN20ShaderGradientEffectE_t>.strings))
@@ -233,7 +233,7 @@ void *ShaderGradientEffect::qt_metacast(const char *_clname)
     return QQuickFramebufferObject::qt_metacast(_clname);
 }
 
-int ShaderGradientEffect::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int ShadyGradientEffect::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QQuickFramebufferObject::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -258,55 +258,55 @@ int ShaderGradientEffect::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void ShaderGradientEffect::typeChanged(Type _t1)
+void ShadyGradientEffect::typeChanged(Type _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
 }
 
 // SIGNAL 1
-void ShaderGradientEffect::speedChanged(float _t1)
+void ShadyGradientEffect::speedChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
 }
 
 // SIGNAL 2
-void ShaderGradientEffect::noiseDensityChanged(float _t1)
+void ShadyGradientEffect::noiseDensityChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
 }
 
 // SIGNAL 3
-void ShaderGradientEffect::noiseStrengthChanged(float _t1)
+void ShadyGradientEffect::noiseStrengthChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1);
 }
 
 // SIGNAL 4
-void ShaderGradientEffect::spiralChanged(float _t1)
+void ShadyGradientEffect::spiralChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 4, nullptr, _t1);
 }
 
 // SIGNAL 5
-void ShaderGradientEffect::pixelDensityChanged(float _t1)
+void ShadyGradientEffect::pixelDensityChanged(float _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 5, nullptr, _t1);
 }
 
 // SIGNAL 6
-void ShaderGradientEffect::color1Changed(const QColor & _t1)
+void ShadyGradientEffect::color1Changed(const QColor & _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 6, nullptr, _t1);
 }
 
 // SIGNAL 7
-void ShaderGradientEffect::color2Changed(const QColor & _t1)
+void ShadyGradientEffect::color2Changed(const QColor & _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 7, nullptr, _t1);
 }
 
 // SIGNAL 8
-void ShaderGradientEffect::color3Changed(const QColor & _t1)
+void ShadyGradientEffect::color3Changed(const QColor & _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 8, nullptr, _t1);
 }
