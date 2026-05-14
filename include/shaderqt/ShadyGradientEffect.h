@@ -49,7 +49,8 @@ class SHADERQT_EXPORT ShadyGradientEffect : public QQuickFramebufferObject
 public:
     enum class Type {
         WaterPlane,
-        Sphere
+        Sphere,
+        Plane
     };
     Q_ENUM(Type)
 

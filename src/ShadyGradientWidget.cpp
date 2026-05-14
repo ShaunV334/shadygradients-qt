@@ -38,7 +38,10 @@ ShadyGradientWidget::ShadyGradientWidget(QWidget *parent)
         if (!doc.isNull() && doc.isObject()) {
             QJsonObject obj = doc.object();
             if (obj.contains("type")) {
-                m_type = obj["type"].toString() == "WaterPlane" ? Type::WaterPlane : Type::Sphere;
+                QString tStr = obj["type"].toString();
+                if (tStr == "WaterPlane") m_type = Type::WaterPlane;
+                else if (tStr == "Plane") m_type = Type::Plane;
+                else m_type = Type::Sphere;
             }
             if (obj.contains("speed")) m_speed = obj["speed"].toDouble();
             if (obj.contains("noiseDensity")) m_noiseDensity = obj["noiseDensity"].toDouble();
@@ -142,6 +145,13 @@ void ShadyGradientWidget::setupShaders()
         if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/waterplane.frag")) {
             qWarning() << "Fragment shader compile error:" << m_program.log();
         }
+    } else if (m_type == Type::Plane) {
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/plane.vert")) {
+            qWarning() << "Vertex shader compile error:" << m_program.log();
+        }
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/plane.frag")) {
+            qWarning() << "Fragment shader compile error:" << m_program.log();
+        }
     } else {
         if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/sphere.vert")) {
             qWarning() << "Vertex shader compile error:" << m_program.log();
@@ -190,7 +200,7 @@ void ShadyGradientWidget::buildMesh()
     std::vector<float> vdata;
     vdata.reserve(vertsX * vertsY * 8);
 
-    if (m_type == Type::WaterPlane) {
+    if (m_type == Type::WaterPlane || m_type == Type::Plane) {
         const float sizeX = 10.0f, sizeY = 10.0f;
         for (int iy = 0; iy < vertsY; ++iy) {
             float v = static_cast<float>(iy) / segsY;
@@ -355,16 +365,16 @@ void ShadyGradientWidget::paintGL()
     proj.perspective(45.0f, aspect, 0.1f, 100.0f);
 
     QMatrix4x4 view;
-    const float baseDistance = (m_type == Type::WaterPlane) ? 3.9f : 12.5f;
+    const float baseDistance = (m_type == Type::WaterPlane || m_type == Type::Plane) ? 3.9f : 12.5f;
     const float cameraDistance = std::max(0.5f, baseDistance + m_cameraDistance);
-    if (m_type == Type::WaterPlane) {
+    if (m_type == Type::WaterPlane || m_type == Type::Plane) {
         view.lookAt({0.0f, 0.0f, cameraDistance}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
     } else {
         view.lookAt({0.0f, 0.0f, cameraDistance}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
     }
 
     QMatrix4x4 baseModel;
-    if (m_type == Type::WaterPlane) {
+    if (m_type == Type::WaterPlane || m_type == Type::Plane) {
         baseModel.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle
         baseModel.rotate(180.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle
         baseModel.rotate(235.0f, 0.0f, 0.0f, 1.0f);         // rotationZ

@@ -83,7 +83,10 @@ ShadyGradientEffect::ShadyGradientEffect(QQuickItem *parent)
         if (!doc.isNull() && doc.isObject()) {
             QJsonObject obj = doc.object();
             if (obj.contains("type")) {
-                m_type = obj["type"].toString() == "WaterPlane" ? Type::WaterPlane : Type::Sphere;
+                QString tStr = obj["type"].toString();
+                if (tStr == "WaterPlane") m_type = Type::WaterPlane;
+                else if (tStr == "Plane") m_type = Type::Plane;
+                else m_type = Type::Sphere;
             }
             if (obj.contains("speed")) m_speed = obj["speed"].toDouble();
             if (obj.contains("noiseDensity")) m_noiseDensity = obj["noiseDensity"].toDouble();
@@ -183,12 +186,20 @@ void ShadyGradientRenderer::render()
     QMatrix4x4 view;
     if (m_state.type == ShadyGradientEffect::Type::WaterPlane) {
         view.lookAt({0.0f, 0.0f, 3.9f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
+    } else if (m_state.type == ShadyGradientEffect::Type::Plane) {
+        // use same camera as waterplane
+        view.lookAt({0.0f, 0.0f, 3.9f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
     } else {
         view.lookAt({0.0f, 0.0f, 12.5f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
     }
 
     QMatrix4x4 model;
     if (m_state.type == ShadyGradientEffect::Type::WaterPlane) {
+        model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f);
+        model.rotate(180.0f, 0.0f, 1.0f, 0.0f);
+        model.rotate(235.0f, 0.0f, 0.0f, 1.0f);
+    } else if (m_state.type == ShadyGradientEffect::Type::Plane) {
+        // use same rotation as waterplane
         model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f);
         model.rotate(180.0f, 0.0f, 1.0f, 0.0f);
         model.rotate(235.0f, 0.0f, 0.0f, 1.0f);
@@ -241,6 +252,11 @@ void ShadyGradientRenderer::init()
             qWarning() << "SGEffect vertex:" << m_program.log();
         if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/waterplane.frag"))
             qWarning() << "SGEffect fragment:" << m_program.log();
+    } else if (m_state.type == ShadyGradientEffect::Type::Plane) {
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/plane.vert"))
+            qWarning() << "SGEffect vertex:" << m_program.log();
+        if (!m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/plane.frag"))
+            qWarning() << "SGEffect fragment:" << m_program.log();
     } else {
         if (!m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaders/sphere.vert"))
             qWarning() << "SGEffect vertex:" << m_program.log();
@@ -282,7 +298,7 @@ void ShadyGradientRenderer::buildMesh()
     std::vector<float> vdata;
     vdata.reserve(vertsX * vertsY * 8);
 
-    if (m_state.type == ShadyGradientEffect::Type::WaterPlane) {
+    if (m_state.type == ShadyGradientEffect::Type::WaterPlane || m_state.type == ShadyGradientEffect::Type::Plane) {
         const float sizeX = 10.0f, sizeY = 10.0f;
         for (int iy = 0; iy < vertsY; ++iy) {
             float v = static_cast<float>(iy) / segsY;

@@ -36,7 +36,8 @@ class SHADERQT_EXPORT ShadyGradientWidget
 public:
     enum class Type {
         WaterPlane,
-        Sphere
+        Sphere,
+        Plane
     };
     Q_ENUM(Type)
 

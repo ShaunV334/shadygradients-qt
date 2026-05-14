@@ -154,6 +154,7 @@ int main(int argc, char *argv[])
     auto *typeCombo = new QComboBox;
     typeCombo->addItem("WaterPlane", QVariant::fromValue(ShadyGradientWidget::Type::WaterPlane));
     typeCombo->addItem("Sphere", QVariant::fromValue(ShadyGradientWidget::Type::Sphere));
+    typeCombo->addItem("Plane", QVariant::fromValue(ShadyGradientWidget::Type::Plane));
     typeCombo->setStyleSheet("QComboBox { background-color: #1a1a2e; border: 1px solid #333; border-radius: 4px; padding: 4px; }");
     pLayout->addWidget(typeCombo);
 
@@ -361,8 +362,10 @@ int main(int argc, char *argv[])
             }
 
             QString typeName = typeCombo->currentText();
-            QString typeEnum = typeName == "WaterPlane" ? "ShadyGradientWidget::Type::WaterPlane" : "ShadyGradientWidget::Type::Sphere";
-            QString qmlTypeEnum = typeName == "WaterPlane" ? "ShadyGradientItem.WaterPlane" : "ShadyGradientItem.Sphere";
+            QString typeEnum = typeName == "WaterPlane" ? "ShadyGradientWidget::Type::WaterPlane" : 
+                               typeName == "Plane" ? "ShadyGradientWidget::Type::Plane" : "ShadyGradientWidget::Type::Sphere";
+            QString qmlTypeEnum = typeName == "WaterPlane" ? "ShadyGradientItem.WaterPlane" : 
+                                  typeName == "Plane" ? "ShadyGradientItem.Plane" : "ShadyGradientItem.Sphere";
 
             QTextStream out(&file);
 
