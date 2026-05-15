@@ -1,6 +1,6 @@
-# ShaderQt API Reference
+# ShadyGradient-Qt API Reference
 
-This document details the public API provided by the ShaderQt library for both C++ (Qt Widgets) and QML (Qt Quick).
+This document details the public API provided by the ShadyGradient-Qt library for both C++ (Qt Widgets) and QML (Qt Quick).
 
 ---
 

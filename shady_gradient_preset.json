@@ -1,13 +1,13 @@
 {
     "cameraAzimuth": 186,
-    "cameraDistance": 39.220001220703125,
+    "cameraDistance": 60,
     "cameraPolar": 69.5,
     "color1": "#00c8ff",
     "color2": "#b400ff",
     "color3": "#001450",
     "fieldOfView": 10,
-    "noiseDensity": 5.539999961853027,
-    "noiseStrength": 3.450000047683716,
+    "noiseDensity": 1.5,
+    "noiseStrength": 0.800000011920929,
     "objectPosX": 0,
     "objectPosY": 0,
     "objectPosZ": 0,
@@ -15,7 +15,7 @@
     "objectRotY": 0,
     "objectRotZ": 0,
     "pixelDensity": 4.699999809265137,
-    "speed": 0.05999999865889549,
-    "spiral": 10,
+    "speed": 0.30000001192092896,
+    "spiral": 2,
     "type": "WaterPlane"
 }

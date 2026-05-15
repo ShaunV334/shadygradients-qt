@@ -1,6 +1,6 @@
-# ShaderQt
+# ShadyGradient-Qt
 
-ShaderQt is a modern C++ and QML library for Qt 6 that provides smooth, beautiful, and highly customizable shaders based on the [ShaderGradient](https://github.com/ruucm/shadergradient) project. It provides an easy-to-use API for embedding complex WebGL-style animated gradients in both traditional QWidget-based applications and modern QML interfaces.
+ShadyGradiennt-Qt is a modern C++ and QML library for Qt 6 that provides smooth, beautiful, and highly customizable shaders based on the [ShaderGradient](https://github.com/ruucm/shadergradient) project. It provides an easy-to-use API for embedding complex WebGL-style animated gradients in both traditional QWidget-based applications and modern QML interfaces.
 
 ![ShaderQt Preview](preview.png)
 
