@@ -96,6 +96,18 @@ ShadyGradientEffect::ShadyGradientEffect(QQuickItem *parent)
             if (obj.contains("color1")) m_color1 = QColor(obj["color1"].toString());
             if (obj.contains("color2")) m_color2 = QColor(obj["color2"].toString());
             if (obj.contains("color3")) m_color3 = QColor(obj["color3"].toString());
+            
+            // View / Camera
+            if (obj.contains("cameraDistance")) m_cameraDistance = obj["cameraDistance"].toDouble();
+            if (obj.contains("cameraAzimuth")) m_baseAzimuth = obj["cameraAzimuth"].toDouble();
+            if (obj.contains("cameraPolar")) m_basePolar = obj["cameraPolar"].toDouble();
+            if (obj.contains("objectPosX")) m_objectPosX = obj["objectPosX"].toDouble();
+            if (obj.contains("objectPosY")) m_objectPosY = obj["objectPosY"].toDouble();
+            if (obj.contains("objectPosZ")) m_objectPosZ = obj["objectPosZ"].toDouble();
+            if (obj.contains("objectRotX")) m_objectRotX = obj["objectRotX"].toDouble();
+            if (obj.contains("objectRotY")) m_objectRotY = obj["objectRotY"].toDouble();
+            if (obj.contains("objectRotZ")) m_objectRotZ = obj["objectRotZ"].toDouble();
+            if (obj.contains("fieldOfView")) m_fieldOfView = obj["fieldOfView"].toDouble();
         }
         presetFile.close();
     }
@@ -122,7 +134,11 @@ ShadyGradientEffect::RenderState ShadyGradientEffect::renderState() const
     return {
         m_type, m_speed, m_noiseDensity, m_noiseStrength, m_spiral,
         static_cast<float>(m_elapsed.elapsed()) / 1000.0f,
-        m_color1, m_color2, m_color3
+        m_color1, m_color2, m_color3,
+        m_cameraDistance, m_baseAzimuth, m_basePolar,
+        m_objectPosX, m_objectPosY, m_objectPosZ,
+        m_objectRotX, m_objectRotY, m_objectRotZ,
+        m_fieldOfView
     };
 }
 
@@ -135,6 +151,20 @@ void ShadyGradientEffect::setPixelDensity(float v) { if (m_pixelDensity == v) re
 void ShadyGradientEffect::setColor1(const QColor &c){ if (m_color1 == c) return; m_color1 = c; emit color1Changed(c); update(); }
 void ShadyGradientEffect::setColor2(const QColor &c){ if (m_color2 == c) return; m_color2 = c; emit color2Changed(c); update(); }
 void ShadyGradientEffect::setColor3(const QColor &c){ if (m_color3 == c) return; m_color3 = c; emit color3Changed(c); update(); }
+
+void ShadyGradientEffect::setCameraDistance(float v) { v = std::clamp(v, 0.5f, 60.0f); if (m_cameraDistance == v) return; m_cameraDistance = v; emit cameraDistanceChanged(v); update(); }
+void ShadyGradientEffect::setCameraAzimuth(float v)  { if (m_baseAzimuth == v) return; m_baseAzimuth = v; emit cameraAzimuthChanged(v); update(); }
+void ShadyGradientEffect::setCameraPolar(float v)    { if (m_basePolar == v) return; m_basePolar = v; emit cameraPolarChanged(v); update(); }
+
+void ShadyGradientEffect::setObjectPosX(float v) { if (m_objectPosX == v) return; m_objectPosX = v; emit objectPositionChanged(); update(); }
+void ShadyGradientEffect::setObjectPosY(float v) { if (m_objectPosY == v) return; m_objectPosY = v; emit objectPositionChanged(); update(); }
+void ShadyGradientEffect::setObjectPosZ(float v) { if (m_objectPosZ == v) return; m_objectPosZ = v; emit objectPositionChanged(); update(); }
+
+void ShadyGradientEffect::setObjectRotX(float v) { if (m_objectRotX == v) return; m_objectRotX = v; emit objectRotationChanged(); update(); }
+void ShadyGradientEffect::setObjectRotY(float v) { if (m_objectRotY == v) return; m_objectRotY = v; emit objectRotationChanged(); update(); }
+void ShadyGradientEffect::setObjectRotZ(float v) { if (m_objectRotZ == v) return; m_objectRotZ = v; emit objectRotationChanged(); update(); }
+
+void ShadyGradientEffect::setFieldOfView(float v) { if (m_fieldOfView == v) return; m_fieldOfView = v; emit fieldOfViewChanged(v); update(); }
 
 // ────────────────────────────────────────────────
 // Renderer implementation
@@ -181,33 +211,39 @@ void ShadyGradientRenderer::render()
     const float aspect = m_size.width() / static_cast<float>(m_size.height() ? m_size.height() : 1);
 
     QMatrix4x4 proj;
-    proj.perspective(45.0f, aspect, 0.1f, 100.0f);
+    proj.perspective(m_state.fieldOfView > 0 ? m_state.fieldOfView : 45.0f, aspect, 0.1f, 100.0f);
 
     QMatrix4x4 view;
-    if (m_state.type == ShadyGradientEffect::Type::WaterPlane) {
-        view.lookAt({0.0f, 0.0f, 3.9f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
-    } else if (m_state.type == ShadyGradientEffect::Type::Plane) {
-        // use same camera as waterplane
-        view.lookAt({0.0f, 0.0f, 3.9f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
+    float baseDist = m_state.cameraDistance;
+    float basePolar = m_state.cameraPolar;
+    float baseAzimuth = m_state.cameraAzimuth;
+    float baseRotZ = 0.0f;
+    
+    if (baseDist == 0.0f) {
+        if (m_state.type == ShadyGradientEffect::Type::WaterPlane || m_state.type == ShadyGradientEffect::Type::Plane) {
+            baseDist = 3.9f; basePolar = 115.0f; baseAzimuth = 180.0f; baseRotZ = 235.0f;
+        } else {
+            baseDist = 12.5f; basePolar = 140.0f; baseAzimuth = 250.0f; baseRotZ = 140.0f;
+        }
     } else {
-        view.lookAt({0.0f, 0.0f, 12.5f}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
+        if (m_state.type == ShadyGradientEffect::Type::WaterPlane || m_state.type == ShadyGradientEffect::Type::Plane) {
+            baseRotZ = 235.0f;
+        } else {
+            baseRotZ = 140.0f;
+        }
     }
 
+    view.lookAt({0.0f, 0.0f, baseDist}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
+
     QMatrix4x4 model;
-    if (m_state.type == ShadyGradientEffect::Type::WaterPlane) {
-        model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f);
-        model.rotate(180.0f, 0.0f, 1.0f, 0.0f);
-        model.rotate(235.0f, 0.0f, 0.0f, 1.0f);
-    } else if (m_state.type == ShadyGradientEffect::Type::Plane) {
-        // use same rotation as waterplane
-        model.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f);
-        model.rotate(180.0f, 0.0f, 1.0f, 0.0f);
-        model.rotate(235.0f, 0.0f, 0.0f, 1.0f);
-    } else {
-        model.rotate(140.0f - 90.0f, 1.0f, 0.0f, 0.0f);
-        model.rotate(250.0f, 0.0f, 1.0f, 0.0f);
-        model.rotate(140.0f, 0.0f, 0.0f, 1.0f);
-    }
+    model.rotate(basePolar - 90.0f, 1.0f, 0.0f, 0.0f);
+    model.rotate(baseAzimuth, 0.0f, 1.0f, 0.0f);
+    model.rotate(baseRotZ, 0.0f, 0.0f, 1.0f);
+    
+    model.rotate(m_state.objectRotX, 1.0f, 0.0f, 0.0f);
+    model.rotate(m_state.objectRotY, 0.0f, 1.0f, 0.0f);
+    model.rotate(m_state.objectRotZ, 0.0f, 0.0f, 1.0f);
+    model.translate(m_state.objectPosX, m_state.objectPosY, m_state.objectPosZ);
 
     const QMatrix4x4 mv = view * model;
     const QMatrix3x3 nm = mv.normalMatrix();

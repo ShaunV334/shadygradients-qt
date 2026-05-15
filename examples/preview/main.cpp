@@ -12,6 +12,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QFormLayout>
+#include <QPair>
 #include <QSlider>
 #include <QLabel>
 #include <QPushButton>
@@ -19,6 +20,9 @@
 #include <QDoubleSpinBox>
 #include <QGroupBox>
 #include <QComboBox>
+#include <QScrollArea>
+#include <QToolButton>
+#include <QStackedWidget>
 #include <QSurfaceFormat>
 #include <QFont>
 #include <QFontDatabase>
@@ -28,6 +32,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QButtonGroup>
 
 // ---- Helpers ----
 
@@ -62,62 +67,125 @@ int main(int argc, char *argv[])
     app.setApplicationName("ShadyGradient");
     app.setOrganizationName("Collective");
 
-    // Dark style sheet
+    // Light theme stylesheet
     app.setStyleSheet(R"(
-        QMainWindow, QWidget {
-            background-color: #0d0d14;
-            color: #e0e0f0;
+        QWidget {
             font-family: 'Inter', 'Segoe UI', sans-serif;
             font-size: 13px;
         }
+        QMainWindow { background-color: #0d0d14; }
+        
+        QWidget#bottomDock {
+            background-color: #f9f6f2;
+            border-radius: 20px;
+            border: 1px solid #e5dfd5;
+        }
+        
         QGroupBox {
-            border: 1px solid #2a2a40;
-            border-radius: 8px;
-            margin-top: 12px;
-            padding: 8px;
-            font-weight: bold;
-            color: #a0a0c0;
+            border: none;
+            margin-top: 0px;
+            padding: 0px;
+            font-weight: normal;
         }
         QGroupBox::title {
             subcontrol-origin: margin;
-            left: 10px;
-            padding: 0 4px;
+            left: 0px;
+            padding: 0;
+            color: #ff5a17;
+            font-weight: bold;
         }
+        
         QSlider::groove:horizontal {
             height: 4px;
-            background: #2a2a44;
+            background: #f7d5ca;
             border-radius: 2px;
         }
         QSlider::handle:horizontal {
-            background: #7c5af0;
+            background: #ff5a17;
             border: none;
-            width: 14px;
-            height: 14px;
-            margin: -5px 0;
-            border-radius: 7px;
+            width: 16px;
+            height: 16px;
+            margin: -6px 0;
+            border-radius: 8px;
         }
         QSlider::sub-page:horizontal {
-            background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                stop:0 #4040c0, stop:1 #a050ff);
+            background: #ff5a17;
             border-radius: 2px;
         }
-        QLabel { color: #c0c0e0; }
-        QLabel#valueLabel { color: #7c5af0; font-weight: bold; min-width: 40px; }
+        
+        QLabel { color: #ff5a17; font-weight: bold; font-size: 12px; }
+        QLabel#valueLabel { 
+            color: #ff5a17; 
+            font-weight: bold; 
+            background: #f0e4de; 
+            border-radius: 6px; 
+            padding: 4px; 
+            margin-right: 8px;
+        }
+        
         QPushButton#colorBtn {
             border-radius: 6px;
             min-height: 32px;
-            border: 2px solid #333;
+            border: 2px solid #ddd;
         }
-        QLabel#titleLabel {
-            font-size: 18px;
+        
+        QTabBar {
+            background: transparent;
+        }
+        QTabBar::tab {
+            background: transparent;
+            color: #f7cabf;
+            padding: 8px 12px;
+            margin-right: 4px;
+            border: none;
+            border-radius: 12px;
+            font-size: 14px;
             font-weight: bold;
-            color: #ffffff;
-            padding: 8px 0;
         }
-        QLabel#subtitleLabel {
-            font-size: 11px;
-            color: #6060a0;
-            padding-bottom: 12px;
+        QTabBar::tab:selected {
+            color: #ff5a17;
+            background: transparent;
+        }
+        QTabBar::tab:hover:!selected {
+            color: #ff8a57;
+        }
+        
+        QScrollArea {
+            border: none;
+            background: transparent;
+        }
+        QScrollBar:vertical {
+            width: 0px;
+            background: transparent;
+        }
+        
+        QPushButton#typeBtn {
+            background-color: transparent;
+            color: #ff5a17;
+            border: none;
+            border-radius: 12px;
+            padding: 6px 14px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        QPushButton#typeBtn:checked {
+            background-color: #f0e4de;
+        }
+        QPushButton#typeBtn:hover:!checked {
+            background-color: #f7efe9;
+        }
+        
+        QPushButton#iconBtn {
+            color: #ff5a17;
+            border: none;
+            background: transparent;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 6px;
+            padding: 4px;
+        }
+        QPushButton#iconBtn:hover {
+            background: #f0e4de;
         }
     )");
 
@@ -127,36 +195,77 @@ int main(int argc, char *argv[])
     win.resize(1200, 720);
 
     QWidget *central = new QWidget;
-    QHBoxLayout *root = new QHBoxLayout(central);
+    QGridLayout *root = new QGridLayout(central);
     root->setContentsMargins(0, 0, 0, 0);
-    root->setSpacing(0);
     win.setCentralWidget(central);
 
-    // ---- Shader widget (left, fills most of window) ----
+    // ---- Shader widget (fills window) ----
     auto *sg = new ShadyGradientWidget;
     sg->setMinimumSize(600, 400);
-    root->addWidget(sg, 1);
+    root->addWidget(sg, 0, 0);
 
-    // ---- Control panel (right side) ----
-    QWidget *panel = new QWidget;
-    panel->setFixedWidth(260);
-    panel->setStyleSheet("QWidget { background-color: #0a0a12; border-left: 1px solid #1a1a2e; }");
-    QVBoxLayout *pLayout = new QVBoxLayout(panel);
-    pLayout->setContentsMargins(16, 16, 16, 16);
-    pLayout->setSpacing(8);
+    // ---- Overlay for the pill menu ----
+    QVBoxLayout *overlayLayout = new QVBoxLayout;
+    overlayLayout->addStretch(1);
+    
+    QWidget *bottomDock = new QWidget;
+    bottomDock->setObjectName("bottomDock");
+    bottomDock->setFixedWidth(560);
+    
+    QVBoxLayout *dockLayout = new QVBoxLayout(bottomDock);
+    dockLayout->setContentsMargins(20, 20, 20, 10);
+    dockLayout->setSpacing(10);
+    dockLayout->setSizeConstraint(QLayout::SetFixedSize);
+    
+    QWidget *sectionContainer = new QWidget;
+    QVBoxLayout *sectionLayout = new QVBoxLayout(sectionContainer);
+    sectionLayout->setContentsMargins(0, 0, 0, 0);
+    dockLayout->addWidget(sectionContainer);
+    
+    QList<QWidget*> pages;
+    
+    // Tabs and icons at the bottom of the pill
+    QHBoxLayout *bottomBarLayout = new QHBoxLayout;
+    bottomBarLayout->setContentsMargins(0, 8, 0, 0);
+    
+    QTabBar *sectionTabs = new QTabBar;
+    sectionTabs->addTab("Shape");
+    sectionTabs->addTab("Colors");
+    sectionTabs->addTab("Motion");
+    sectionTabs->addTab("View");
+    sectionTabs->setDrawBase(false);
+    bottomBarLayout->addWidget(sectionTabs);
+    
+    bottomBarLayout->addStretch();
+    dockLayout->addLayout(bottomBarLayout);
+    
+    overlayLayout->addWidget(bottomDock, 0, Qt::AlignHCenter);
+    overlayLayout->addSpacing(30); // Margin from bottom edge
+    root->addLayout(overlayLayout, 0, 0);
 
-    // Title
-    auto *titleLbl = new QLabel("ShadyGradient");
-    titleLbl->setObjectName("titleLabel");
-    pLayout->addWidget(titleLbl);
+    // Helper to make pages
+    auto makePage = [&](const QString &title) {
+        QWidget *content = new QWidget;
+        auto *layout = new QVBoxLayout(content);
+        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setSpacing(12);
+        sectionLayout->addWidget(content);
+        pages.append(content);
+        content->hide(); // hidden initially
+        Q_UNUSED(title);
+        return layout;
+    };
 
-    // Type Selector
-    auto *typeCombo = new QComboBox;
-    typeCombo->addItem("WaterPlane", QVariant::fromValue(ShadyGradientWidget::Type::WaterPlane));
-    typeCombo->addItem("Sphere", QVariant::fromValue(ShadyGradientWidget::Type::Sphere));
-    typeCombo->addItem("Plane", QVariant::fromValue(ShadyGradientWidget::Type::Plane));
-    typeCombo->setStyleSheet("QComboBox { background-color: #1a1a2e; border: 1px solid #333; border-radius: 4px; padding: 4px; }");
-    pLayout->addWidget(typeCombo);
+    QVBoxLayout *shapeLayout = makePage("Shape");
+    QVBoxLayout *colorsLayout = makePage("Colors");
+    QVBoxLayout *motionLayout = makePage("Motion");
+    QVBoxLayout *viewLayout = makePage("View");
+
+    QMap<QString, QVBoxLayout*> sectionLayouts;
+    sectionLayouts.insert("Shape", shapeLayout);
+    sectionLayouts.insert("Colors", colorsLayout);
+    sectionLayouts.insert("Motion", motionLayout);
+    sectionLayouts.insert("View", viewLayout);
 
     // ---- Helper: labelled slider ----
     auto addSlider = [&](QVBoxLayout *parent, const QString &label,
@@ -164,16 +273,23 @@ int main(int argc, char *argv[])
                          std::function<void(int)> onChange) -> QSlider* {
         auto *row = new QHBoxLayout;
         auto *lbl = new QLabel(label);
+        lbl->setMinimumWidth(100);
+        
         auto *valLbl = new QLabel(QString::number(val));
         valLbl->setObjectName("valueLabel");
-        valLbl->setFixedWidth(36);
-        row->addWidget(lbl);
-        row->addStretch();
-        row->addWidget(valLbl);
-        parent->addLayout(row);
-
+        valLbl->setFixedSize(36, 24);
+        valLbl->setAlignment(Qt::AlignCenter);
+        
         auto *slider = makeSlider(min, max, val);
-        parent->addWidget(slider);
+        slider->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        
+        row->addWidget(lbl);
+        row->addStretch(1);
+        row->addWidget(valLbl);
+        row->addWidget(slider, 3);
+        
+        // Insert before stretch
+        parent->insertLayout(parent->count() - 1, row);
 
         QObject::connect(slider, &QSlider::valueChanged, [=](int v) {
             valLbl->setText(QString::number(v));
@@ -182,26 +298,53 @@ int main(int argc, char *argv[])
         return slider;
     };
 
-    // ---- Animation group ----
+    auto addSectionGroup = [&](const QString &section, QGroupBox *grp) {
+        auto* l = sectionLayouts.value(section);
+        l->insertWidget(l->count() - 1, grp);
+    };
+
+    QObject::connect(sectionTabs, &QTabBar::currentChanged, [pages](int index) {
+        for(int i = 0; i < pages.size(); ++i) {
+            pages[i]->setVisible(i == index);
+        }
+    });
+
+    // ==========================================
+    // SHAPE PAGE
+    // ==========================================
     {
-        auto *grp = new QGroupBox("Animation");
-        auto *gl  = new QVBoxLayout(grp);
+        QHBoxLayout *typeLayout = new QHBoxLayout;
+        auto *typeLbl = new QLabel("Type");
+        typeLbl->setMinimumWidth(100);
+        typeLayout->addWidget(typeLbl);
+        typeLayout->addStretch(1);
+        
+        QPushButton *btnPlane = new QPushButton("Plane");
+        QPushButton *btnSphere = new QPushButton("Sphere");
+        QPushButton *btnWater = new QPushButton("Water");
+        btnPlane->setObjectName("typeBtn"); btnPlane->setCheckable(true);
+        btnSphere->setObjectName("typeBtn"); btnSphere->setCheckable(true);
+        btnWater->setObjectName("typeBtn"); btnWater->setCheckable(true);
+        
+        QButtonGroup *typeGroup = new QButtonGroup(&win);
+        typeGroup->setExclusive(true);
+        typeGroup->addButton(btnPlane, 0);
+        typeGroup->addButton(btnSphere, 1);
+        typeGroup->addButton(btnWater, 2);
+        btnWater->setChecked(true); // Default
+        
+        typeLayout->addWidget(btnPlane);
+        typeLayout->addWidget(btnSphere);
+        typeLayout->addWidget(btnWater);
+        
+        shapeLayout->insertLayout(shapeLayout->count() - 1, typeLayout);
 
-        // Speed  — 0..100 → 0.0..2.0
-        auto *speedSlider = addSlider(gl, "Speed", 0, 100, 30, [sg](int v) {
-            sg->setSpeed(v / 50.0f);
-        });
-        QObject::connect(sg, &ShadyGradientWidget::speedChanged, [speedSlider](float v) {
-            speedSlider->setValue(qRound(v * 50.0f));
-        });
-
-        pLayout->addWidget(grp);
-
-        // Update when type changes
-        QObject::connect(typeCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), [=](int index) {
-            auto type = typeCombo->itemData(index).value<ShadyGradientWidget::Type>();
-            sg->setType(type);
-            if (type == ShadyGradientWidget::Type::Sphere) {
+        QObject::connect(typeGroup, QOverload<int>::of(&QButtonGroup::idClicked), [=](int id) {
+            if (id == 0) sg->setType(ShadyGradientWidget::Type::Plane);
+            else if (id == 1) sg->setType(ShadyGradientWidget::Type::Sphere);
+            else if (id == 2) sg->setType(ShadyGradientWidget::Type::WaterPlane);
+            
+            if (id == 1) { // Sphere
                 sg->setColor1(QColor("#809bd6"));
                 sg->setColor2(QColor("#910aff"));
                 sg->setColor3(QColor("#af38ff"));
@@ -219,56 +362,47 @@ int main(int argc, char *argv[])
                 sg->setSpiral(2.0f);
             }
         });
-    }
-
-    // ---- Surface group ----
-    {
-        auto *grp = new QGroupBox("Surface");
-        auto *gl  = new QVBoxLayout(grp);
-
-        // Noise Density — 0..700 → 0.0..7.0
-        auto *densitySlider = addSlider(gl, "Noise Density", 0, 700, 150, [sg](int v) {
-            sg->setNoiseDensity(v / 100.0f);
-        });
-        QObject::connect(sg, &ShadyGradientWidget::noiseDensityChanged, [densitySlider](float v) {
-            densitySlider->setValue(qRound(v * 100.0f));
-        });
-
+        
         // Noise Strength — 0..1000 → 0.0..10.0
-        auto *strengthSlider = addSlider(gl, "Noise Strength", 0, 1000, 80, [sg](int v) {
+        auto *strengthSlider = addSlider(shapeLayout, "Noise Strength", 0, 1000, 80, [sg](int v) {
             sg->setNoiseStrength(v / 100.0f);
         });
         QObject::connect(sg, &ShadyGradientWidget::noiseStrengthChanged, [strengthSlider](float v) {
             strengthSlider->setValue(qRound(v * 100.0f));
         });
 
+        // Noise Density — 0..700 → 0.0..7.0
+        auto *densitySlider = addSlider(shapeLayout, "Noise Density", 0, 700, 150, [sg](int v) {
+            sg->setNoiseDensity(v / 100.0f);
+        });
+        QObject::connect(sg, &ShadyGradientWidget::noiseDensityChanged, [densitySlider](float v) {
+            densitySlider->setValue(qRound(v * 100.0f));
+        });
+
         // Spiral — 0..700 → 0.0..7.0
-        auto *spiralSlider = addSlider(gl, "Spiral", 0, 100, 20, [sg](int v) {
+        auto *spiralSlider = addSlider(shapeLayout, "Spiral", 0, 100, 20, [sg](int v) {
             sg->setSpiral(v / 10.0f);
         });
         QObject::connect(sg, &ShadyGradientWidget::spiralChanged, [spiralSlider](float v) {
             spiralSlider->setValue(qRound(v * 10.0f));
         });
-
-        pLayout->addWidget(grp);
-    }
-
-    // ---- Colors group ----
-    {
-        auto *grp = new QGroupBox("Gradient Colors");
-        auto *gl  = new QVBoxLayout(grp);
-        gl->setSpacing(10);
-
-        struct ColorEntry { QString label; QColor *prop; void (ShadyGradientWidget::*setter)(const QColor&); };
-
-        auto *pixelDensitySlider = addSlider(gl, "Pixel Density", 1, 100, 10, [sg](int v) {
+        
+        auto *pixelDensitySlider = addSlider(shapeLayout, "Pixel Density", 1, 100, 10, [sg](int v) {
             sg->setPixelDensity(v / 10.0f);
         });
         QObject::connect(sg, &ShadyGradientWidget::pixelDensityChanged, [pixelDensitySlider](float v) {
             pixelDensitySlider->setValue(qRound(v * 10.0f));
         });
+    }
 
-        // We need stable pointers — store colors on the heap
+    // ==========================================
+    // COLORS PAGE
+    // ==========================================
+    {
+        auto *grp = new QGroupBox("Gradient Colors");
+        auto *gl  = new QVBoxLayout(grp);
+        gl->setSpacing(10);
+
         static QColor c1(  0, 200, 255), c2(180,   0, 255), c3(  0,  20,  80);
 
         auto makeColorRow = [&](const QString &lbl, QColor &col,
@@ -305,132 +439,158 @@ int main(int argc, char *argv[])
         makeColorRow("Color 2 (B)",  c2, &ShadyGradientWidget::setColor2, &ShadyGradientWidget::color2Changed);
         makeColorRow("Color 3 (C)",  c3, &ShadyGradientWidget::setColor3, &ShadyGradientWidget::color3Changed);
 
-        pLayout->addWidget(grp);
+        addSectionGroup("Colors", grp);
+    }
+    
+    // ==========================================
+    // MOTION PAGE
+    // ==========================================
+    {
+        // Speed  — 0..100 → 0.0..2.0
+        auto *speedSlider = addSlider(motionLayout, "Speed", 0, 100, 30, [sg](int v) {
+            sg->setSpeed(v / 50.0f);
+        });
+        QObject::connect(sg, &ShadyGradientWidget::speedChanged, [speedSlider](float v) {
+            speedSlider->setValue(qRound(v * 50.0f));
+        });
     }
 
-    // ---- Presets ----
+    // ==========================================
+    // VIEW PAGE
+    // ==========================================
     {
-        auto *grp = new QGroupBox("Presets");
+        auto *grp = new QGroupBox("");
         auto *gl  = new QVBoxLayout(grp);
 
-        struct Preset {
-            QString name;
-            QColor c1, c2, c3;
-            float speed, density, strength;
-        };
+        auto *cameraSection = new QLabel("Camera");
+        gl->addWidget(cameraSection);
 
-        const QList<Preset> presets = {
-            { " Ocean",    QColor(0,150,255), QColor(0,220,200),  QColor(0,20,60),    0.25f, 1.2f, 0.9f },
-            { " Universe", QColor(0,200,255), QColor(180,0,255),  QColor(0,20,80),    0.30f, 1.5f, 0.8f },
-            { " Sunset",   QColor(255,80,0),  QColor(255,180,0),  QColor(120,0,80),   0.20f, 1.0f, 0.7f },
-            { " Forest",   QColor(0,200,80),  QColor(0,100,180),  QColor(0,40,10),    0.15f, 1.8f, 1.0f },
-            { " Plasma",   QColor(255,50,0),  QColor(200,0,255),  QColor(40,0,0),     0.50f, 2.0f, 1.2f },
-        };
-
-        for (const Preset &p : presets) {
-            auto *btn = new QPushButton(p.name);
-            btn->setStyleSheet("QPushButton { background: #1a1a2e; border: 1px solid #333; "
-                               "border-radius: 6px; padding: 6px; text-align: left; }"
-                               "QPushButton:hover { background: #252540; border-color: #7c5af0; }");
-            QObject::connect(btn, &QPushButton::clicked, [sg, p]() {
-                sg->setColor1(p.c1);
-                sg->setColor2(p.c2);
-                sg->setColor3(p.c3);
-                sg->setSpeed(p.speed);
-                sg->setNoiseDensity(p.density);
-                sg->setNoiseStrength(p.strength);
-            });
-            gl->addWidget(btn);
-        }
-        
-        // Save Custom Preset Button
-        auto *saveBtn = new QPushButton("Save Custom Preset...");
-        saveBtn->setStyleSheet("QPushButton { background: #3a2a60; border: 1px solid #7c5af0; "
-                               "border-radius: 6px; padding: 6px; text-align: center; font-weight: bold; }"
-                               "QPushButton:hover { background: #4a3a70; border-color: #9c7af0; }");
-        saveBtn->setMinimumHeight(30);
-        QObject::connect(saveBtn, &QPushButton::clicked, [sg, typeCombo, &win]() {
-            // Save as predetermined file name for auto-loading
-            QString defaultFileName = QDir::currentPath() + "/shady_gradient_preset.json";
-            QString fileName = QFileDialog::getSaveFileName(&win, "Save Custom Preset", defaultFileName, "JSON Files (*.json);;Text Files (*.txt)");
-            if (fileName.isEmpty()) return;
-
-            QFile file(fileName);
-            if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-                QMessageBox::warning(&win, "Error", "Could not open file for writing.");
-                return;
-            }
-
-            QString typeName = typeCombo->currentText();
-            QString typeEnum = typeName == "WaterPlane" ? "ShadyGradientWidget::Type::WaterPlane" : 
-                               typeName == "Plane" ? "ShadyGradientWidget::Type::Plane" : "ShadyGradientWidget::Type::Sphere";
-            QString qmlTypeEnum = typeName == "WaterPlane" ? "ShadyGradientItem.WaterPlane" : 
-                                  typeName == "Plane" ? "ShadyGradientItem.Plane" : "ShadyGradientItem.Sphere";
-
-            QTextStream out(&file);
-
-            if (fileName.endsWith(".json", Qt::CaseInsensitive)) {
-                QJsonObject rootObj;
-                rootObj["type"] = typeName;
-                rootObj["speed"] = sg->speed();
-                rootObj["noiseDensity"] = sg->noiseDensity();
-                rootObj["noiseStrength"] = sg->noiseStrength();
-                rootObj["spiral"] = sg->spiral();
-                rootObj["pixelDensity"] = sg->pixelDensity();
-                rootObj["color1"] = sg->color1().name();
-                rootObj["color2"] = sg->color2().name();
-                rootObj["color3"] = sg->color3().name();
-                QJsonDocument doc(rootObj);
-                out << doc.toJson(QJsonDocument::Indented);
-            } else {
-                // Default to a text file with copy-pasteable snippets
-                out << "========== JSON CONFIG ==========\n";
-                out << "{\n";
-                out << "  \"type\": \"" << typeName << "\",\n";
-                out << "  \"speed\": " << sg->speed() << ",\n";
-                out << "  \"noiseDensity\": " << sg->noiseDensity() << ",\n";
-                out << "  \"noiseStrength\": " << sg->noiseStrength() << ",\n";
-                out << "  \"spiral\": " << sg->spiral() << ",\n";
-                out << "  \"pixelDensity\": " << sg->pixelDensity() << ",\n";
-                out << "  \"color1\": \"" << sg->color1().name() << "\",\n";
-                out << "  \"color2\": \"" << sg->color2().name() << "\",\n";
-                out << "  \"color3\": \"" << sg->color3().name() << "\"\n";
-                out << "}\n\n";
-
-                out << "========== C++ SNIPPET ==========\n";
-                out << "sg->setType(" << typeEnum << ");\n";
-                out << "sg->setSpeed(" << sg->speed() << "f);\n";
-                out << "sg->setNoiseDensity(" << sg->noiseDensity() << "f);\n";
-                out << "sg->setNoiseStrength(" << sg->noiseStrength() << "f);\n";
-                out << "sg->setSpiral(" << sg->spiral() << "f);\n";
-                out << "sg->setPixelDensity(" << sg->pixelDensity() << "f);\n";
-                out << "sg->setColor1(QColor(\"" << sg->color1().name() << "\"));\n";
-                out << "sg->setColor2(QColor(\"" << sg->color2().name() << "\"));\n";
-                out << "sg->setColor3(QColor(\"" << sg->color3().name() << "\"));\n\n";
-
-                out << "========== QML SNIPPET ==========\n";
-                out << "ShadyGradientItem {\n";
-                out << "    type: " << qmlTypeEnum << "\n";
-                out << "    speed: " << sg->speed() << "\n";
-                out << "    noiseDensity: " << sg->noiseDensity() << "\n";
-                out << "    noiseStrength: " << sg->noiseStrength() << "\n";
-                out << "    spiral: " << sg->spiral() << "\n";
-                out << "    pixelDensity: " << sg->pixelDensity() << "\n";
-                out << "    color1: \"" << sg->color1().name() << "\"\n";
-                out << "    color2: \"" << sg->color2().name() << "\"\n";
-                out << "    color3: \"" << sg->color3().name() << "\"\n";
-                out << "}\n";
-            }
-            file.close();
-            QMessageBox::information(&win, "Success", "Preset saved successfully.");
+        // Distance: absolute camera distance in the range 0.50 .. 60.00
+        auto *distanceSlider = addSlider(gl, "Distance", 50, 6000, qRound(sg->cameraDistance() * 100.0f), [sg](int v) {
+            sg->setCameraDistance(v / 100.0f);
         });
-        gl->addWidget(saveBtn);
+        QObject::connect(sg, &ShadyGradientWidget::cameraDistanceChanged, [distanceSlider](float v) {
+            distanceSlider->setValue(qRound(v * 100.0f));
+        });
 
-        pLayout->addWidget(grp);
+        // Camera angles
+        auto *azSlider = addSlider(gl, "azimuth", 0, 360, qRound(sg->cameraAzimuth()), [sg](int v) {
+            sg->setCameraAzimuth(static_cast<float>(v));
+        });
+        QObject::connect(sg, &ShadyGradientWidget::cameraAzimuthChanged, [azSlider](float v) {
+            azSlider->setValue(qRound(v));
+        });
+
+        auto *polarSlider = addSlider(gl, "polar", 0, 180, qRound(sg->cameraPolar()), [sg](int v) {
+            sg->setCameraPolar(static_cast<float>(v));
+        });
+        QObject::connect(sg, &ShadyGradientWidget::cameraPolarChanged, [polarSlider](float v) {
+            polarSlider->setValue(qRound(v));
+        });
+
+        auto *objectPositionSection = new QLabel("Object Position");
+        objectPositionSection->setStyleSheet("padding-top: 6px;");
+        gl->addWidget(objectPositionSection);
+
+        auto *posXSlider = addSlider(gl, "x", -200, 200, qRound(sg->objectPosX() * 10.0f), [sg](int v) {
+            sg->setObjectPosX(v / 10.0f);
+        });
+        auto *posYSlider = addSlider(gl, "y", -200, 200, qRound(sg->objectPosY() * 10.0f), [sg](int v) {
+            sg->setObjectPosY(v / 10.0f);
+        });
+        auto *posZSlider = addSlider(gl, "z", -200, 200, qRound(sg->objectPosZ() * 10.0f), [sg](int v) {
+            sg->setObjectPosZ(v / 10.0f);
+        });
+        QObject::connect(sg, &ShadyGradientWidget::objectPositionChanged, [=]() {
+            posXSlider->setValue(qRound(sg->objectPosX() * 10.0f));
+            posYSlider->setValue(qRound(sg->objectPosY() * 10.0f));
+            posZSlider->setValue(qRound(sg->objectPosZ() * 10.0f));
+        });
+
+        auto *objectRotationSection = new QLabel("Object Rotation");
+        objectRotationSection->setStyleSheet("padding-top: 6px;");
+        gl->addWidget(objectRotationSection);
+
+        auto *rotXSlider = addSlider(gl, "x", 0, 360, qRound(sg->objectRotX()), [sg](int v) {
+            sg->setObjectRotX(static_cast<float>(v));
+        });
+        auto *rotYSlider = addSlider(gl, "y", 0, 360, qRound(sg->objectRotY()), [sg](int v) {
+            sg->setObjectRotY(static_cast<float>(v));
+        });
+        auto *rotZSlider = addSlider(gl, "z", 0, 360, qRound(sg->objectRotZ()), [sg](int v) {
+            sg->setObjectRotZ(static_cast<float>(v));
+        });
+        QObject::connect(sg, &ShadyGradientWidget::objectRotationChanged, [=]() {
+            rotXSlider->setValue(qRound(sg->objectRotX()));
+            rotYSlider->setValue(qRound(sg->objectRotY()));
+            rotZSlider->setValue(qRound(sg->objectRotZ()));
+        });
+
+        // Field of view 10..120
+        auto *fovSlider = addSlider(gl, "Field of view", 10, 120, qRound(sg->fieldOfView()), [sg](int v) {
+            sg->setFieldOfView(static_cast<float>(v));
+        });
+        QObject::connect(sg, &ShadyGradientWidget::fieldOfViewChanged, [fovSlider](float v) {
+            fovSlider->setValue(qRound(v));
+        });
+
+        addSectionGroup("View", grp);
     }
 
-    pLayout->addStretch();
-    root->addWidget(panel);
+    // Save Custom Preset Button
+    auto *saveBtn = new QPushButton("Save Custom Preset");
+    saveBtn->setStyleSheet("QPushButton { background: #f0e4de; color: #ff5a17; border-radius: 12px; padding: 8px 16px; font-weight: bold; font-size: 14px; margin-top: 10px; }"
+                           "QPushButton:hover { background: #f7efe9; }");
+    QObject::connect(saveBtn, &QPushButton::clicked, [sg, &win]() {
+        QString fileName = QDir::currentPath() + "/shady_gradient_preset.json";
+
+        QFile file(fileName);
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            QMessageBox::warning(&win, "Error", "Could not open file for writing.");
+            return;
+        }
+
+        QString typeName = sg->type() == ShadyGradientWidget::Type::WaterPlane ? "WaterPlane" : 
+                           sg->type() == ShadyGradientWidget::Type::Plane ? "Plane" : "Sphere";
+
+        QJsonObject rootObj;
+        rootObj["type"] = typeName;
+        rootObj["speed"] = sg->speed();
+        rootObj["noiseDensity"] = sg->noiseDensity();
+        rootObj["noiseStrength"] = sg->noiseStrength();
+        rootObj["spiral"] = sg->spiral();
+        rootObj["pixelDensity"] = sg->pixelDensity();
+        rootObj["color1"] = sg->color1().name();
+        rootObj["color2"] = sg->color2().name();
+        rootObj["color3"] = sg->color3().name();
+        
+        // Add View properties
+        rootObj["cameraDistance"] = sg->cameraDistance();
+        rootObj["cameraAzimuth"] = sg->cameraAzimuth();
+        rootObj["cameraPolar"] = sg->cameraPolar();
+        rootObj["objectPosX"] = sg->objectPosX();
+        rootObj["objectPosY"] = sg->objectPosY();
+        rootObj["objectPosZ"] = sg->objectPosZ();
+        rootObj["objectRotX"] = sg->objectRotX();
+        rootObj["objectRotY"] = sg->objectRotY();
+        rootObj["objectRotZ"] = sg->objectRotZ();
+        rootObj["fieldOfView"] = sg->fieldOfView();
+
+        QJsonDocument doc(rootObj);
+        QTextStream out(&file);
+        out << doc.toJson(QJsonDocument::Indented);
+        file.close();
+        
+        QMessageBox::information(&win, "Success", "Preset saved successfully.");
+    });
+    
+    // Add to View page
+    viewLayout->addWidget(saveBtn);
+
+    // Initialize to default
+    sectionTabs->setCurrentIndex(0);
+    pages[0]->setVisible(true);
+
     win.show();
     return app.exec();
 }

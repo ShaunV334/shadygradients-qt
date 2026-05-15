@@ -51,6 +51,17 @@ ShadyGradientWidget::ShadyGradientWidget(QWidget *parent)
             if (obj.contains("color1")) m_color1 = QColor(obj["color1"].toString());
             if (obj.contains("color2")) m_color2 = QColor(obj["color2"].toString());
             if (obj.contains("color3")) m_color3 = QColor(obj["color3"].toString());
+            
+            if (obj.contains("cameraDistance")) m_cameraDistance = obj["cameraDistance"].toDouble();
+            if (obj.contains("cameraAzimuth")) m_baseAzimuth = obj["cameraAzimuth"].toDouble();
+            if (obj.contains("cameraPolar")) m_basePolar = obj["cameraPolar"].toDouble();
+            if (obj.contains("objectPosX")) m_objectPosX = obj["objectPosX"].toDouble();
+            if (obj.contains("objectPosY")) m_objectPosY = obj["objectPosY"].toDouble();
+            if (obj.contains("objectPosZ")) m_objectPosZ = obj["objectPosZ"].toDouble();
+            if (obj.contains("objectRotX")) m_objectRotX = obj["objectRotX"].toDouble();
+            if (obj.contains("objectRotY")) m_objectRotY = obj["objectRotY"].toDouble();
+            if (obj.contains("objectRotZ")) m_objectRotZ = obj["objectRotZ"].toDouble();
+            if (obj.contains("fieldOfView")) m_fieldOfView = obj["fieldOfView"].toDouble();
         }
         presetFile.close();
     }
@@ -94,11 +105,40 @@ void ShadyGradientWidget::setType(Type t) {
     m_type = t;
     emit typeChanged(t);
     makeCurrent();
+    // Apply sensible default base orientation for each type
+    if (m_type == Type::WaterPlane || m_type == Type::Plane) {
+        m_basePolar = 115.0f;
+        m_baseAzimuth = 180.0f;
+        m_baseRotationZ = 235.0f;
+        m_cameraDistance = 3.9f;
+    } else {
+        m_basePolar = 140.0f;
+        m_baseAzimuth = 250.0f;
+        m_baseRotationZ = 140.0f;
+        m_cameraDistance = 12.5f;
+    }
+
     setupShaders();
     buildMesh();
     update();
     doneCurrent();
 }
+
+// ---- Camera / object setters ----
+
+void ShadyGradientWidget::setCameraDistance(float v) { v = std::clamp(v, 0.5f, 60.0f); if (m_cameraDistance == v) return; m_cameraDistance = v; emit cameraDistanceChanged(v); update(); }
+void ShadyGradientWidget::setCameraAzimuth(float v)  { if (m_baseAzimuth == v) return; m_baseAzimuth = v; emit cameraAzimuthChanged(v); update(); }
+void ShadyGradientWidget::setCameraPolar(float v)    { if (m_basePolar == v) return; m_basePolar = v; emit cameraPolarChanged(v); update(); }
+
+void ShadyGradientWidget::setObjectPosX(float v) { if (m_objectPosX == v) return; m_objectPosX = v; emit objectPositionChanged(); update(); }
+void ShadyGradientWidget::setObjectPosY(float v) { if (m_objectPosY == v) return; m_objectPosY = v; emit objectPositionChanged(); update(); }
+void ShadyGradientWidget::setObjectPosZ(float v) { if (m_objectPosZ == v) return; m_objectPosZ = v; emit objectPositionChanged(); update(); }
+
+void ShadyGradientWidget::setObjectRotX(float v) { if (m_objectRotX == v) return; m_objectRotX = v; emit objectRotationChanged(); update(); }
+void ShadyGradientWidget::setObjectRotY(float v) { if (m_objectRotY == v) return; m_objectRotY = v; emit objectRotationChanged(); update(); }
+void ShadyGradientWidget::setObjectRotZ(float v) { if (m_objectRotZ == v) return; m_objectRotZ = v; emit objectRotationChanged(); update(); }
+
+void ShadyGradientWidget::setFieldOfView(float v) { if (m_fieldOfView == v) return; m_fieldOfView = v; emit fieldOfViewChanged(v); update(); }
 
 void ShadyGradientWidget::setSpeed(float v)        { if (m_speed == v) return; m_speed = v; emit speedChanged(v); }
 void ShadyGradientWidget::setNoiseDensity(float v) { if (m_noiseDensity == v) return; m_noiseDensity = v; emit noiseDensityChanged(v); update(); }
@@ -311,8 +351,12 @@ void ShadyGradientWidget::mouseMoveEvent(QMouseEvent *event)
         const QPoint delta = event->pos() - m_lastMousePos;
         m_lastMousePos = event->pos();
 
-        m_orbitYaw += static_cast<float>(delta.x()) * 0.5f;
-        m_orbitPitch = std::clamp(m_orbitPitch + static_cast<float>(delta.y()) * 0.5f, -80.0f, 80.0f);
+        if (event->modifiers() & Qt::ShiftModifier) {
+            setCameraDistance(m_cameraDistance - static_cast<float>(delta.y()) * 0.03f);
+        } else {
+            setCameraAzimuth(std::fmod(m_baseAzimuth + static_cast<float>(delta.x()) * 0.5f + 360.0f, 360.0f));
+            setCameraPolar(std::clamp(m_basePolar + static_cast<float>(delta.y()) * 0.5f, 0.0f, 180.0f));
+        }
 
         update();
         event->accept();
@@ -338,8 +382,7 @@ void ShadyGradientWidget::wheelEvent(QWheelEvent *event)
 {
     const float steps = event->angleDelta().y() / 120.0f;
     if (steps != 0.0f) {
-        m_cameraDistance = std::clamp(m_cameraDistance - steps * 0.6f, -8.0f, 16.0f);
-        update();
+        setCameraDistance(m_cameraDistance - steps * 0.6f);
         event->accept();
         return;
     }
@@ -362,11 +405,10 @@ void ShadyGradientWidget::paintGL()
     const float aspect = static_cast<float>(width()) / static_cast<float>(height() ? height() : 1);
 
     QMatrix4x4 proj;
-    proj.perspective(45.0f, aspect, 0.1f, 100.0f);
+    proj.perspective(m_fieldOfView, aspect, 0.1f, 100.0f);
 
     QMatrix4x4 view;
-    const float baseDistance = (m_type == Type::WaterPlane || m_type == Type::Plane) ? 3.9f : 12.5f;
-    const float cameraDistance = std::max(0.5f, baseDistance + m_cameraDistance);
+    const float cameraDistance = std::max(0.5f, m_cameraDistance);
     if (m_type == Type::WaterPlane || m_type == Type::Plane) {
         view.lookAt({0.0f, 0.0f, cameraDistance}, {0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f});
     } else {
@@ -374,21 +416,17 @@ void ShadyGradientWidget::paintGL()
     }
 
     QMatrix4x4 baseModel;
-    if (m_type == Type::WaterPlane || m_type == Type::Plane) {
-        baseModel.rotate(115.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle
-        baseModel.rotate(180.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle
-        baseModel.rotate(235.0f, 0.0f, 0.0f, 1.0f);         // rotationZ
-    } else {
-        baseModel.rotate(140.0f - 90.0f, 1.0f, 0.0f, 0.0f); // cPolarAngle=140
-        baseModel.rotate(250.0f, 0.0f, 1.0f, 0.0f);         // cAzimuthAngle=250
-        baseModel.rotate(140.0f, 0.0f, 0.0f, 1.0f);         // rotationZ=140
-    }
+    baseModel.rotate(m_basePolar - 90.0f, 1.0f, 0.0f, 0.0f);
+    baseModel.rotate(m_baseAzimuth, 0.0f, 1.0f, 0.0f);
+    baseModel.rotate(m_baseRotationZ, 0.0f, 0.0f, 1.0f);
 
-    QMatrix4x4 orbit;
-    orbit.rotate(m_orbitYaw, 0.0f, 1.0f, 0.0f);
-    orbit.rotate(m_orbitPitch, 1.0f, 0.0f, 0.0f);
+    // Apply object rotations then translation (object-local transforms)
+    baseModel.rotate(m_objectRotX, 1.0f, 0.0f, 0.0f);
+    baseModel.rotate(m_objectRotY, 0.0f, 1.0f, 0.0f);
+    baseModel.rotate(m_objectRotZ, 0.0f, 0.0f, 1.0f);
+    baseModel.translate(m_objectPosX, m_objectPosY, m_objectPosZ);
 
-    const QMatrix4x4 mv = view * orbit * baseModel;
+    const QMatrix4x4 mv = view * baseModel;
     const QMatrix3x3 normalMat = mv.normalMatrix();
 
     // ---- Set uniforms ----
